@@ -53,7 +53,7 @@
       <column name="pages_keywords" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="pages_text" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="false" jdbcType="-1"/>
       <column name="pages_create_date" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
-      <column name="page_name" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="page_name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
       <index name="unique_page_name" unique="true" columns="page_name"/>
     </table>

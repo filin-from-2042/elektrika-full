@@ -12,11 +12,18 @@ class Home extends CI_Controller
     {
         $this->load->model('Page_model');
 
-        $oPage=$this->Page_model->GetPageContent('Home');
+        $this->Page_model->SetPageName('Home');
 
-        $this->load->view('header.php',$oPage);
-        $this->load->view('home.php',$oPage);
-        $this->load->view('footer.php',$oPage);
+        $oHomeContent=$this->Page_model->GetPageContent();
+        $aTabs=$this->Page_model->GetContentByDelimiter();
+
+
+        $this->load->view('main/header.php',$oHomeContent);
+        $this->load->view('main/carousel.php',$oHomeContent);
+        $this->load->view('home.php',$aTabs);
+        $this->load->view('main/tabs-images.php',$oHomeContent);
+        $this->load->view('main/mail-panel.php',$oHomeContent);
+        $this->load->view('main/footer.php',$oHomeContent);
 
        // var_dump($oPage);
     }
