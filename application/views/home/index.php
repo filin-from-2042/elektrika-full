@@ -1,3 +1,6 @@
+<?php
+    $this->load->view('main/carousel.php');
+?>
 <div class="short-info">
     <div class="container">
         <nav class="navbar navbar-default">
@@ -77,3 +80,7 @@
         </div>
     </div>
 </div>
+<?php
+    $this->load->view('main/tabs-images.php');
+    $this->load->view('main/mail-panel.php');
+?>

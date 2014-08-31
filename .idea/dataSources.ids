@@ -11,6 +11,7 @@
     <schema name="" catalog="information_schema"/>
     <schema name="" catalog="mysql"/>
     <schema name="" catalog="performance_schema"/>
+    <schema name="" catalog="store"/>
     <schema name="" catalog="test"/>
     <table name="books" schema="" catalog="ci" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -1055,6 +1056,127 @@
       <column name="THREAD_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="PROCESSLIST_ID" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
       <column name="NAME" sqlType="VARCHAR" length="128" precision="0" nullable="false" jdbcType="12"/>
+    </table>
+    <table name="activate_tokens" schema="" catalog="store" type="TABLE">
+      <column name="activate_token_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="activate_token_user_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="activate_token_hash" sqlType="CHAR" length="64" precision="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="activate_token_id"/>
+      <foreign-key name="activate_tokens_ibfk_1" columns="activate_token_user_id" ref-table="users" ref-schema="" ref-catalog="store" ref-columns="user_id" update-rule="0" delete-rule="0" deferrability="2"/>
+    </table>
+    <table name="categories" schema="" catalog="store" type="TABLE">
+      <column name="category_id" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="false" jdbcType="-6" autoIncrement="true"/>
+      <column name="category_pid" sqlType="TINYINT" length="3" precision="0" nullable="true" jdbcType="-6"/>
+      <column name="category_title" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="category_url" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="category_seo_description" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="category_seo_keywords" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="category_priority" sqlType="TINYINT" length="3" precision="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="category_id"/>
+      <exported-key name="fk_categories_has_products_categories1" table="categories_products" schema="" catalog="store" columns="id_category"/>
+    </table>
+    <table name="categories_products" schema="" catalog="store" type="TABLE">
+      <column name="id_category" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="false" jdbcType="-6"/>
+      <column name="id_product" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id_category,id_product"/>
+      <foreign-key name="fk_categories_has_products_categories1" columns="id_category" ref-table="categories" ref-schema="" ref-catalog="store" ref-columns="category_id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="fk_categories_has_products_products1" columns="id_product" ref-table="products" ref-schema="" ref-catalog="store" ref-columns="id_product" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="fk_categories_has_products_categories1_idx" unique="false" columns="id_category"/>
+      <index name="fk_categories_has_products_products1_idx" unique="false" columns="id_product"/>
+    </table>
+    <table name="comments" schema="" catalog="store" type="TABLE">
+      <column name="comment_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="comment_pid" sqlType="INT UNSIGNED" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="text" sqlType="TEXT" length="65535" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="comment_date_create" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="post_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="comment_id"/>
+      <foreign-key name="fk_comments_posts1" columns="post_id" ref-table="posts" ref-schema="" ref-catalog="store" ref-columns="post_id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <foreign-key name="fk_comments_users1" columns="user_id" ref-table="users" ref-schema="" ref-catalog="store" ref-columns="user_id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="fk_comments_posts1_idx" unique="false" columns="post_id"/>
+      <index name="fk_comments_users1_idx" unique="false" columns="user_id"/>
+    </table>
+    <table name="orders" schema="" catalog="store" type="TABLE">
+      <column name="order_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="order_name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="order_phone" sqlType="VARCHAR" length="45" precision="0" nullable="true" jdbcType="12"/>
+      <column name="order_date_create" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="order_content" sqlType="TEXT" length="65535" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="order_address" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="user_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="order_status" sqlType="ENUM" length="9" precision="0" nullable="true" jdbcType="1" def="J2FjdGl2ZSc="/>
+      <column name="order_email" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="order_message" sqlType="TEXT" length="65535" precision="0" nullable="true" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="order_id"/>
+      <foreign-key name="fk_orders_users1" columns="user_id" ref-table="users" ref-schema="" ref-catalog="store" ref-columns="user_id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="fk_orders_users1_idx" unique="false" columns="user_id"/>
+    </table>
+    <table name="posts" schema="" catalog="store" type="TABLE">
+      <column name="post_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="post_title" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="post_description" sqlType="TEXT" length="65535" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="post_text" sqlType="TEXT" length="65535" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="post_date_create" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="post_date_update" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="post_url" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="post_type" sqlType="ENUM" length="6" precision="0" nullable="true" jdbcType="1" def="J2Jsb2cn"/>
+      <column name="post_seo_description" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="user_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <column name="post_comment_status" sqlType="ENUM" length="7" precision="0" nullable="true" jdbcType="1" def="J2VuYWJsZSc="/>
+      <primary-key name="PRIMARY" columns="post_id"/>
+      <foreign-key name="fk_posts_users1" columns="user_id" ref-table="users" ref-schema="" ref-catalog="store" ref-columns="user_id" update-rule="0" delete-rule="0" deferrability="2"/>
+      <exported-key name="fk_comments_posts1" table="comments" schema="" catalog="store" columns="post_id"/>
+      <index name="fk_posts_users1_idx" unique="false" columns="user_id"/>
+    </table>
+    <table name="products" schema="" catalog="store" type="TABLE">
+      <column name="id_product" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="product_title" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="product_description" sqlType="TEXT" length="65535" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="product_price" sqlType="DECIMAL UNSIGNED" length="11" precision="2" nullable="true" jdbcType="3" def="MC4wMA=="/>
+      <column name="product_count" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="true" jdbcType="-6" def="MA=="/>
+      <column name="product_date_create" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="product_date_update" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="product_action_price" sqlType="DECIMAL" length="11" precision="2" nullable="true" jdbcType="3" def="MC4wMA=="/>
+      <column name="product_status" sqlType="ENUM" length="7" precision="0" nullable="true" jdbcType="1" def="J2RlZmF1bHQn"/>
+      <column name="product_image_front" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="product_image_1" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="product_image_2" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="product_image_3" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="product_image_4" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="product_image_5" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="product_comment_status" sqlType="ENUM" length="7" precision="0" nullable="true" jdbcType="1" def="J2VuYWJsZSc="/>
+      <primary-key name="PRIMARY" columns="id_product"/>
+      <exported-key name="fk_categories_has_products_products1" table="categories_products" schema="" catalog="store" columns="id_product"/>
+    </table>
+    <table name="remember_tokens" schema="" catalog="store" type="TABLE">
+      <column name="remember_token_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="remember_token_user_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="remember_token_hash" sqlType="CHAR" length="64" precision="0" nullable="false" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="remember_token_id"/>
+      <foreign-key name="remember_tokens_ibfk_1" columns="remember_token_user_id" ref-table="users" ref-schema="" ref-catalog="store" ref-columns="user_id" update-rule="0" delete-rule="0" deferrability="2"/>
+    </table>
+    <table name="settings" schema="" catalog="store" type="TABLE">
+      <column name="title" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="value" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="id_setting" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <primary-key name="PRIMARY" columns="id_setting"/>
+    </table>
+    <table name="users" schema="" catalog="store" type="TABLE">
+      <column name="user_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="user_password_hash" sqlType="VARCHAR" length="64" precision="0" nullable="false" jdbcType="12"/>
+      <column name="user_email" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="user_ip" sqlType="VARCHAR" length="45" precision="0" nullable="true" jdbcType="12"/>
+      <column name="user_date_create" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="user_last_date_visited" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="user_activated" sqlType="TINYINT UNSIGNED" length="3" precision="0" nullable="false" jdbcType="-6" def="MA=="/>
+      <primary-key name="PRIMARY" columns="user_id"/>
+      <exported-key name="activate_tokens_ibfk_1" table="activate_tokens" schema="" catalog="store" columns="activate_token_user_id"/>
+      <exported-key name="fk_comments_users1" table="comments" schema="" catalog="store" columns="user_id"/>
+      <exported-key name="fk_orders_users1" table="orders" schema="" catalog="store" columns="user_id"/>
+      <exported-key name="fk_posts_users1" table="posts" schema="" catalog="store" columns="user_id"/>
+      <exported-key name="remember_tokens_ibfk_1" table="remember_tokens" schema="" catalog="store" columns="remember_token_user_id"/>
     </table>
   </data-source>
 </component>

@@ -131,3 +131,7 @@
         </div>
     </div>
 </div>
+<?php
+    $this->load->view('main/tabs-images.php');
+    $this->load->view('main/mail-panel.php');
+?>
