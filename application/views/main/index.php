@@ -1,3 +1,6 @@
+<?php
+    $this->load->helper('url');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,10 +38,10 @@
             </div>
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><a href="" class="home"><img src="/images/home.png"></a></li>
-                    <li><a href="">ABOUT US</a></li>
-                    <li><a href="">PORTFOLIO</a></li>
-                    <li><a href="">SERVICES</a></li>
+                    <li><?= anchor('home', '<img src="/images/home.png">')?></li>
+                    <li><a href="<?=site_url('about')?>">О Компании</a></li>
+<!--                    <li><a href="">PORTFOLIO</a></li>-->
+                    <li><a href="<?=site_url('services')?>">Услуги</a></li>
                     <li class="dropdown">
                         <a href="" class="dropdown-toggle" data-toggle="dropdown">BLOG<span class="caret"></span></a>
                         <ul  class="dropdown-menu" role="menu">
@@ -53,7 +56,7 @@
                             <li><a href="">Tutorials</a></li>
                         </ul>
                     </li>
-                    <li><a href="">CONTACTS</a></li>
+                    <li><a href="<?=site_url('contact')?>">Контакты</a></li>
                 </ul>
             </div>
         </div>
@@ -69,7 +72,7 @@
                 <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">
                     <span class="title-menu">Site Navigation</span>
                     <ul>
-                        <li><a href="">Home</a></li>
+                        <li><a href="<?=site_url('home')?>">Home</a></li>
                         <li><a href="">About</a></li>
                         <li><a href="">Portfolio</a></li>
                         <li><a href="">Services</a></li>

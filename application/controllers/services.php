@@ -2,33 +2,32 @@
 /**
  * Created by PhpStorm.
  * User: Set
- * Date: 09.08.14
- * Time: 14:39
+ * Date: 03.09.14
+ * Time: 22:44
  */
+
 include "cpagecontroller.php";
-class About extends CPageController
+class Services extends CPageController
 {
-    public $cPageName = 'About';
+    public $cPageName = 'Services';
 
     public $aPagesToTabs = array(
-                                    'tab_1' => 'people_working',
-                                    'tab_2' => 'we_prof',
-                                    'tab_3' => 'quality_work'
+                                    'tab_1' => 'web_design',
+                                    'tab_2' => 'marketing',
+                                    'tab_3' => 'brand_design'
                                 );
 
     public function index()
     {
         // Get preview text
-        $aFullAbout = $this->Page_model->GetPageContent('about-full', 'about');
-        $this->data->aPreviewText = $this->Page_model->GetContentByDelimiter( $aFullAbout[0]["pages_text"], '<!--PreviewDelimiter-->' );
-
-        $this->data->aTabs = array();
+        $aFullAbout = $this->Page_model->GetPageContent('services', 'general');
+        $this->data->aPreviewText = $this->Page_model->GetContentByDelimiter( $aFullAbout[0]["pages_text"], '<!--TabDelimiter-->' );
 
         // Render preview pages text on tabs
         foreach($this->aPagesToTabs as $cKey => $cValue)
         {
             // All content of current page
-            $cTabContent = $this->Page_model->GetPageContent($cValue, 'about');
+            $cTabContent = $this->Page_model->GetPageContent($cValue, 'services');
             // Preview separated text
             $aPreview = $this->Page_model->GetContentByDelimiter( $cTabContent[0]["pages_text"], '<!--PreviewDelimiter-->' );
             // Add text to general array

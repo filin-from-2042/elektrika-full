@@ -16,7 +16,7 @@
                                     <button type="submit" class="btn btn-danger">Sing up</button>
                                     <div class="form-group">
                                         <label class="sr-only" for="exampleInputEmail2">Email</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="You email address">
+                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Ваш Email">
                                     </div>
                                 </form>
                             </div>

@@ -19,7 +19,7 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="who">
                         <div class="col-md-8 col-sm-8">
-                            <?=$tab_1;?>
+                            <?=$aTabs["tab_1"];?>
                         </div>
                         <div class="col-md-4 col-sm-4">
                             <img src="/images/image-about.png" alt="image about us" class="img-responsive">
@@ -27,7 +27,7 @@
                     </div>
                     <div class="tab-pane" id="why">
                         <div class="col-md-8 col-sm-8">
-                            <?=$tab_2;?>
+                            <?=$aTabs["tab_2"];?>
                         </div>
                         <div class="col-md-4 col-sm-4">
                             <img src="/images/image-about.png" alt="image about us">
@@ -35,7 +35,7 @@
                     </div>
                     <div class="tab-pane" id="can">
                         <div class="col-md-8  col-sm-8">
-                            <?=$tab_3;?>
+                            <?=$aTabs["tab_3"];?>
                         </div>
                         <div class="col-md-4 col-sm-4">
                             <img src="/images/image-about.png" alt="image about us">
@@ -43,7 +43,7 @@
                     </div>
                     <div class="tab-pane" id="test">
                         <div class="col-md-8  col-sm-8">
-                            <?=$tab_4;?>
+                            <?=$aTabs["tab_4"];?>
                         </div>
                         <div class="col-md-4 col-sm-4">
                             <img src="/images/image-about.png" alt="image about us">

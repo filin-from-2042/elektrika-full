@@ -16,7 +16,7 @@ class CPageController extends CI_Controller
     public $cDescription ='Магазин "Электрика"';
     // Keywords of page, same in field 'el_page.pages_keywords'
     public $cKeywords ='Лампочки, розетки, батарейки';
-    // Array with full data of page
+    // Object with full data of page
     public $data;
 
     public function __construct()
@@ -24,7 +24,7 @@ class CPageController extends CI_Controller
         parent::__construct();
         // Initializing of page
         $this->load->model('Page_model');
-        $this->data = $this->Page_model->GetPageContent($this->cPageName);
+        $this->data = $this->Page_model->GetPageContent($this->cPageName, 'general', false);
         $this->cTitle = $this->data->pages_title;
         $this->cDescription = $this->data->pages_description;
         $this->cKeywords = $this->data->pages_keywords;
