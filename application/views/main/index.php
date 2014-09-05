@@ -39,24 +39,23 @@
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
                     <li><?= anchor('home', '<img src="/images/home.png">')?></li>
-                    <li><a href="<?=site_url('about')?>">О Компании</a></li>
-<!--                    <li><a href="">PORTFOLIO</a></li>-->
-                    <li><a href="<?=site_url('services')?>">Услуги</a></li>
+                    <li><?= anchor('about','О Компании')?></li>
+                    <li><?= anchor('services','Услуги')?></a></li>
                     <li class="dropdown">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown">BLOG<span class="caret"></span></a>
+                        <?= anchor('','Новости<span class="caret"></span>',array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'))?>
                         <ul  class="dropdown-menu" role="menu">
                             <li id="arrow-sub" class="hidden-xs"><img src="/images/arrow-sub.png"></li>
-                            <li><a href="">App Media</a></li>
-                            <li><a href="">Branding</a></li>
-                            <li><a href="">Case Study</a></li>
-                            <li><a href="">Devices</a></li>
-                            <li><a href="">obs</a></li>
-                            <li><a href="">Networks</a></li>
-                            <li><a href="">Staff</a></li>
-                            <li><a href="">Tutorials</a></li>
+                            <li><?= anchor('','App Media')?></li>
+                            <li><?= anchor('','Branding')?></li>
+                            <li><?= anchor('','Case Study')?></li>
+                            <li><?= anchor('','Device')?></li>
+                            <li><?= anchor('','obs')?></li>
+                            <li><?= anchor('','Networks')?></li>
+                            <li><?= anchor('','Staff')?></li>
+                            <li><?= anchor('','Tutorials')?></li>
                         </ul>
                     </li>
-                    <li><a href="<?=site_url('contact')?>">Контакты</a></li>
+                    <li><?= anchor('contact','Контакты')?></a></li>
                 </ul>
             </div>
         </div>
@@ -70,45 +69,44 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">
-                    <span class="title-menu">Site Navigation</span>
+                    <span class="title-menu">Навигация</span>
                     <ul>
-                        <li><a href="<?=site_url('home')?>">Home</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Portfolio</a></li>
-                        <li><a href="">Services</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><?= anchor('home','Главная')?></li>
+                        <li><?= anchor('about','О компании')?></li>
+                        <li><?= anchor('news','Новости')?></li>
+                        <li><?= anchor('services','Услуши')?></li>
+                        <li><?= anchor('contact','Контакты')?></li>
                     </ul>
                 </div>
                 <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">
-                    <span class="title-menu">Blog Categories</span>
+                    <span class="title-menu">Новости</span>
                     <ul>
-                        <li><a href="">App Media</a></li>
-                        <li><a href="">Branding</a></li>
-                        <li><a href="">Case studio</a></li>
-                        <li><a href="">Devices</a></li>
-                        <li><a href="">Jobs</a></li>
-                        <li><a href="">Networks</a></li>
+                        <li><?= anchor('home','App Media')?></li>
+                        <li><?= anchor('home','Branding')?></li>
+                        <li><?= anchor('home','Case studio')?></li>
+                        <li><?= anchor('home','Devices')?></li>
+                        <li><?= anchor('home','Jobs')?></li>
+                        <li><?= anchor('home','Networks')?></li>
                     </ul></div>
                 <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">
-                    <span class="title-menu">Jobs Board</span>
+                    <span class="title-menu">Доска вакансий</span>
                     <ul>
-                        <li><a href="">Animation</a></li>
-                        <li><a href="">Brand Identy</a></li>
-                        <li><a href="">Development</a></li>
-                        <li><a href="">Graphic Design</a></li>
-                        <li><a href="">Marketing</a></li>
-                        <li><a href="">Web Design</a></li>
+                        <li><?= anchor('home','Animation')?></li>
+                        <li><?= anchor('home','Brand Identy')?></li>
+                        <li><?= anchor('home','Development')?></li>
+                        <li><?= anchor('home','Graphic Design')?></li>
+                        <li><?= anchor('home','Marketing')?></li>
+                        <li><?= anchor('home','Web Design')?></li>
                     </ul></div>
                 <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">
                     <span class="title-menu">Connect</span>
                     <ul>
-                        <li><a href="">Twitter</a></li>
-                        <li><a href="">Facebook</a></li>
-                        <li><a href="">Youtube</a></li>
-                        <li><a href="">Flickr</a></li>
-                        <li><a href="">Vimeo</a></li>
-                        <li><a href="">Tumblr</a></li>
+                        <li><?= anchor('home','Twitter')?></li>
+                        <li><?= anchor('home','Facebook')?></li>
+                        <li><?= anchor('home','Youtube')?></li>
+                        <li><?= anchor('home','Flickr')?></li>
+                        <li><?= anchor('home','Vimeo')?></li>
+                        <li><?= anchor('home','Tumblr')?></li>
                     </ul></div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 copy-text">
                     <img src="/images/image-footer.png"/>
