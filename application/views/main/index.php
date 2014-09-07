@@ -112,12 +112,9 @@
                     <img src="/images/image-footer.png"/>
                     <div class="col-lg-8 col-md-8">
                         <p class="title-copyright">BrandMedia &trade;</p>
-                        <p class="copyright">Copyright © 2010-2011 BrandMedia. All rights reserved.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nullam elit turpis, semper sed consequat a, malesuada
-                            vel neque.</p>
+                        <p class="copyright"><?=$this->config->item('company_copyright')?></p>
                         <p class="bottom-links">
-                            <a href="#">Terms & Conditions&nbsp;&#124;&nbsp;</a><a href="#">Privacy&nbsp;&#124;&nbsp;</a><a href="#">Contact Us</a>
+                            <?= anchor('home','Terms & Conditions')?>&nbsp;&#124;&nbsp;<?= anchor('home','Privacy')?>&nbsp;&#124;&nbsp;<?= anchor('home','Contact Us')?>
                         </p>
 
                     </div>

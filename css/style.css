@@ -465,6 +465,9 @@ header .dropdown-menu > li#arrow-sub {
     padding: 0;
     text-align: justify;
 }
+.footer .bottom-links{
+    color:#fff;
+}
 
 /******************************Top-title-panel**********************/
 .top-title-panel .container{

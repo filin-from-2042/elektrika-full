@@ -13,7 +13,6 @@ class Contact extends CPageController
 
     public function index()
     {
-
         $this->load->view('main/index.php');
     }
 }
