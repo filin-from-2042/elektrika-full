@@ -74,7 +74,7 @@
                         <li><?= anchor('home','Главная')?></li>
                         <li><?= anchor('about','О компании')?></li>
                         <li><?= anchor('news','Новости')?></li>
-                        <li><?= anchor('services','Услуши')?></li>
+                        <li><?= anchor('services','Услуги')?></li>
                         <li><?= anchor('contact','Контакты')?></li>
                     </ul>
                 </div>
