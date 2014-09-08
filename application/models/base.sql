@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 08 2014 г., 20:36
+-- Время создания: Сен 08 2014 г., 22:30
 -- Версия сервера: 5.5.37-log
 -- Версия PHP: 5.3.28
 
@@ -15,27 +15,6 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `elektrika-db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `elektrika-db`;
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `el_articles`
---
-
-DROP TABLE IF EXISTS `el_articles`;
-CREATE TABLE IF NOT EXISTS `el_articles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `article_title` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  `article_description` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  `article_keywords` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  `article_content` text COLLATE utf8_unicode_ci NOT NULL,
-  `article_tags` text COLLATE utf8_unicode_ci,
-  `article_create_date` datetime DEFAULT NULL,
-  `article_update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `article_author` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  `article_status` enum('enable','disable') COLLATE utf8_unicode_ci DEFAULT 'enable',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -54,6 +33,28 @@ CREATE TABLE IF NOT EXISTS `el_comments` (
   `comments_article_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_comment_post` (`comments_article_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `el_news`
+--
+
+DROP TABLE IF EXISTS `el_news`;
+CREATE TABLE IF NOT EXISTS `el_news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `news_title` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `news_description` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `news_keywords` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `news_content` longtext COLLATE utf8_unicode_ci,
+  `news_tags` longtext COLLATE utf8_unicode_ci,
+  `news_create_date` datetime DEFAULT NULL,
+  `news_update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `news_author` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `news_status` char(7) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `news_type` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -105,4 +106,4 @@ INSERT INTO `el_pages` (`id`, `pages_title`, `pages_description`, `pages_keyword
 -- Ограничения внешнего ключа таблицы `el_comments`
 --
 ALTER TABLE `el_comments`
-ADD CONSTRAINT `FK_comment_post` FOREIGN KEY (`comments_article_id`) REFERENCES `el_articles` (`id`);
+ADD CONSTRAINT `FK_comment_post` FOREIGN KEY (`comments_article_id`) REFERENCES `el_news` (`id`);
