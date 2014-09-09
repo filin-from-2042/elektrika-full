@@ -74,7 +74,7 @@ class CBaseModel extends CI_Model
      * @param string $delimiter - delimiter, by which string will be explode
      * @return array - array with tabs content
      */
-    public function GetContentByDelimiter($cRows,  $delimiter = '<!--TabDelimiter-->' )
+    public function GetContentByDelimiter($cRows,  $delimiter = '<!--TabDelimiter-->', $cTabPrefix = 'tab_' )
     {
         $aTabs = explode($delimiter, $cRows);
 
@@ -83,9 +83,15 @@ class CBaseModel extends CI_Model
         foreach($aTabs as $key => $value)
         {
             $key++;
-            $aAssocTabs["tab_".$key]=$value;
+            $aAssocTabs[$cTabPrefix.$key]=$value;
         }
 
         return $aAssocTabs;
+    }
+
+    //-------------------------------------------- GET ALL COUNT --------------------------------------------------/
+    public function GetCount()
+    {
+        return $this->db->count_all_results($this->cTableName);
     }
 }

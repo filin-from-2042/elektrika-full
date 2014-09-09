@@ -1,6 +1,3 @@
-<?php
-    $this->load->helper('url');
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,7 +60,7 @@
 </header>
 <div class="content">
     <?php
-        $this->load->view($this->cPageName.'/index.php',$this->data);
+        $this->load->view($this->cViewDIR.'/index.php',$this->data);
     ?>
     <div class="footer">
         <div class="container">

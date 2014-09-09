@@ -9,6 +9,8 @@ class CBaseController extends CI_Controller
 {
     // Name of page, same in field 'el_page.page_name'
     public $cPageName = '';
+    // Directory of view 'index.php' for current controller
+    public $cViewDIR = '';
     // Title of page, same in field 'el_page.pages_title'
     public $cTitle ='Электрика';
     // Description of page, same in field 'el_page.pages_description'
@@ -17,4 +19,10 @@ class CBaseController extends CI_Controller
     public $cKeywords ='Лампочки, розетки, батарейки';
     // Object with full data of page
     public $data;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->cViewDIR = $this->cPageName;
+    }
 }

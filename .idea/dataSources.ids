@@ -11,6 +11,12 @@
     <schema name="" catalog="mysql"/>
     <schema name="" catalog="performance_schema"/>
     <schema name="" catalog="test"/>
+    <table name="el_categories" schema="" catalog="elektrika-db" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="categories_name" sqlType="VARCHAR" length="50" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="el_news2categories_ibfk_2" table="el_news2categories" schema="" catalog="elektrika-db" columns="category_id"/>
+    </table>
     <table name="el_comments" schema="" catalog="elektrika-db" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="comments_content" sqlType="TEXT" length="65535" precision="0" nullable="false" jdbcType="-1"/>
@@ -31,11 +37,23 @@
       <column name="news_tags" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="true" jdbcType="-1"/>
       <column name="news_create_date" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
       <column name="news_update_date" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <column name="news_preview_image" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="news_author" sqlType="VARCHAR" length="128" precision="0" nullable="true" jdbcType="12"/>
       <column name="news_status" sqlType="CHAR" length="7" precision="0" nullable="true" jdbcType="1"/>
       <column name="news_type" sqlType="VARCHAR" length="100" precision="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
       <exported-key name="FK_comment_post" table="el_comments" schema="" catalog="elektrika-db" columns="comments_article_id"/>
+      <exported-key name="el_news2categories_ibfk_1" table="el_news2categories" schema="" catalog="elektrika-db" columns="news_id"/>
+    </table>
+    <table name="el_news2categories" schema="" catalog="elektrika-db" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="news_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="category_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="el_news2categories_ibfk_2" columns="category_id" ref-table="el_categories" ref-schema="" ref-catalog="elektrika-db" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="el_news2categories_ibfk_1" columns="news_id" ref-table="el_news" ref-schema="" ref-catalog="elektrika-db" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_news2categories_news_id" unique="true" columns="news_id"/>
+      <index name="FK_news2categories_category_id" unique="false" columns="category_id"/>
     </table>
     <table name="el_pages" schema="" catalog="elektrika-db" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>

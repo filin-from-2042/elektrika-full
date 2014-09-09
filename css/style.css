@@ -617,7 +617,8 @@ header .dropdown-menu > li#arrow-sub {
 }
 .blog-columns .main-column .author,
 .blog-columns .main-column .post-date,
-.blog-columns .main-column .post-categories {
+.blog-columns .main-column .post-categories,
+.blog-columns .main-column .post-categories a{
     color: #d9e3ec;
 }
 .blog-columns .main-column .post-numbers{
