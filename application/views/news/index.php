@@ -15,7 +15,7 @@
                         {
                             $cCurrentCategories.='<a href="'.site_url('news/categories').'/'.$aCategory["id"].'">'.$aCategory["categories_name"].'</a>';
                             // If last don't concatenate
-                            if($aCategory["id"] != $aLastCategory["id"]) $cCurrentCategories.=',';
+                            if($aCategory["id"] != $aLastCategory["id"]) $cCurrentCategories.=', ';
                         }
                         echo '<div class="post-preview clearfix">
                                 <div class="post-title clearfix">

@@ -10,8 +10,7 @@ include "cbasecontroller.php";
 class News extends CBaseController
 {
     public $cPageName = 'news';
-    //public $cViewDIR = 'news';
-    public $nPageLimit = 2;
+    public $aPaginationConfig = array();
 
     public function __construct()
     {
@@ -20,62 +19,90 @@ class News extends CBaseController
         $this->load->model("news_model");
         // Initialize pagination
         $this->load->library('pagination');
+
+        // Initialize pagination config
+        $this->config->load("news_pagination");
+        // Array with pagination config
+        $this->aPaginationConfig["per_page"] = $this->config->item('per_page');
+        $this->aPaginationConfig["full_tag_open"] = $this->config->item('full_tag_open');
+        $this->aPaginationConfig["full_tag_close"] = $this->config->item('full_tag_close');
+        $this->aPaginationConfig["prev_tag_open"] = $this->config->item('prev_tag_open');
+        $this->aPaginationConfig["prev_tag_close"] = $this->config->item('prev_tag_close');
+        $this->aPaginationConfig["prev_link"] = $this->config->item('prev_link');
+        $this->aPaginationConfig["next_tag_open"] = $this->config->item('next_tag_open');
+        $this->aPaginationConfig["next_tag_close"] = $this->config->item('next_tag_close');
+        $this->aPaginationConfig["next_link"] = $this->config->item('next_link');
     }
 
-    public function index($nStart = 0, $cCategoryID = '')
+    public function index($nStart = 0)
     {
-        $config['base_url'] = site_url().'/news/index';
-        $config['total_rows'] = $this->news_model->GetCount();
-        $config['per_page'] = '2';
-        $config['full_tag_open'] = '<ul class="pager">';
-        $config['full_tag_close'] = '</ul>';
-        $config['prev_tag_open'] = '<li class="previous">';
-        $config['prev_tag_close'] = '</li>';
-        $config['prev_link'] = 'На предыдущую';
-        $config['next_tag_open'] = '<li class="next">';
-        $config['next_tag_close'] = '</li>';
-        $config['next_link'] = 'На следующую';
-
-        $this->pagination->initialize($config);
+        // Adding pagination configuration and initializing
+        $this->aPaginationConfig['base_url'] = site_url().'/news/index';
+        $this->aPaginationConfig['total_rows'] = $this->news_model->GetAllCount();
+        $this->pagination->initialize($this->aPaginationConfig);
 
         // All rows with news
-        $this->data->aAllNews = $this->news_model->GetLimitNews(intval($nStart),$this->nPageLimit, (!empty($cCategoryID) ? $cCategoryID: '' ));
-        // Adding categories for all news
-        foreach($this->data->aAllNews as &$aNews)
-        {
-            $aNews["news_categories"]=$this->news_model->GetCurrentCategories($aNews["id"]);
-        }
-        // All categories for right column
-        $this->data->aCategories = $this->news_model->GetAllCategories();
-        $this->load->view('main/index.php');
+        $this->data->aAllNews = $this->news_model->GetLimitNews(intval($nStart),$this->aPaginationConfig['per_page']);
 
+        // Render all page, right column with getting categories and archives
+        $this->RenderGeneralData();
     }
 
-    public function categories($cCategoryID)
+    public function categories($cCategoryID, $nStart = 0)
     {
+        // Adding pagination configuration and initializing
+        $this->aPaginationConfig['base_url'] = site_url().'/news/categories/'. $cCategoryID . '/';
+        $this->aPaginationConfig['total_rows'] = $this->news_model->GetCategoryCount($cCategoryID);
+        $this->aPaginationConfig['uri_segment'] = 4;
+        $this->pagination->initialize($this->aPaginationConfig);
 
-        $config['base_url'] = site_url().'news/categories';
-        $config['total_rows'] = $this->news_model->GetCount();
-        $config['per_page'] = '2';
-        $config['full_tag_open'] = '<ul class="pager">';
-        $config['full_tag_close'] = '</ul>';
-        $config['prev_tag_open'] = '<li class="previous">';
-        $config['prev_tag_close'] = '</li>';
-        $config['prev_link'] = 'На предыдущую';
-        $config['next_tag_open'] = '<li class="next">';
-        $config['next_tag_close'] = '</li>';
-        $config['next_link'] = 'На следующую';
-
-        $this->pagination->initialize($config);
-
-        $this->index(0, intval($cCategoryID),'news/categories');
+        // All rows with news
+        $this->data->aAllNews = $this->news_model->GetLimitNewsEx(intval($nStart),$this->aPaginationConfig['per_page'], $cCategoryID);
+        // Render all page, right column with getting categories and archives
+        $this->RenderGeneralData();
     }
 
+
+    public function archives($cArchiveID, $nStart = 0)
+    {
+        $nArchiveID = intval($cArchiveID);
+
+        // Adding pagination configuration and initializing
+        $this->aPaginationConfig['base_url'] = site_url().'/news/archives/'. $cArchiveID . '/';
+        $this->aPaginationConfig['total_rows'] = $this->news_model->GetArchiveCount(intval($cArchiveID));
+        $this->aPaginationConfig['uri_segment'] = 4;
+        $this->pagination->initialize($this->aPaginationConfig);
+
+        // Archive date from col 'archive_date'
+        $cArchiveDate = $this->news_model->GetArchiveDate($nArchiveID);
+
+        // All rows with news
+        $this->data->aAllNews = $this->news_model->GetLimitNewsEx(intval($nStart),$this->aPaginationConfig["per_page"], '',$cArchiveDate);
+        // Render all page, right column with getting categories and archives
+        $this->RenderGeneralData();
+
+    }
     public function singlenews($cNewsId)
     {
         if( isset($cNewsId) && !empty($cNewsId) )
         {
 
         }
+    }
+
+    //-------------------------------------------- RENDER WITH GENERAL DATA ----------------------------------------------------/
+
+    public function RenderGeneralData()
+    {
+        // Adding categories for all news
+        foreach($this->data->aAllNews as &$aNews)
+        {
+            $aNews["news_categories"] = $this->news_model->GetCurrentCategories($aNews["id"]);
+        }
+
+        // All categories for right column
+        $this->data->aCategories = $this->news_model->GetAllCategories();
+
+        $this->load->view('main/index.php');
     }
 }

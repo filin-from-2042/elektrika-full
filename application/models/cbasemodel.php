@@ -90,7 +90,7 @@ class CBaseModel extends CI_Model
     }
 
     //-------------------------------------------- GET ALL COUNT --------------------------------------------------/
-    public function GetCount()
+    public function GetAllCount()
     {
         return $this->db->count_all_results($this->cTableName);
     }
