@@ -16,13 +16,13 @@ class News extends CBaseController
     {
         parent::__construct();
 
-        $this->load->model("news_model");
+        //$this->load->model("news_model");
         // Initialize pagination
         $this->load->library('pagination');
 
         // Initialize pagination config
         $this->config->load("news_pagination");
-        // Array with pagination config
+        // Initializing array with pagination config
         $this->aPaginationConfig["per_page"] = $this->config->item('per_page');
         $this->aPaginationConfig["full_tag_open"] = $this->config->item('full_tag_open');
         $this->aPaginationConfig["full_tag_close"] = $this->config->item('full_tag_close');
@@ -52,12 +52,13 @@ class News extends CBaseController
     {
         // Adding pagination configuration and initializing
         $this->aPaginationConfig['base_url'] = site_url().'/news/categories/'. $cCategoryID . '/';
-        $this->aPaginationConfig['total_rows'] = $this->news_model->GetCategoryCount($cCategoryID);
+        $this->aPaginationConfig['total_rows'] = $this->news_model->GetCategoryCount(intval($cCategoryID));
         $this->aPaginationConfig['uri_segment'] = 4;
         $this->pagination->initialize($this->aPaginationConfig);
 
         // All rows with news
-        $this->data->aAllNews = $this->news_model->GetLimitNewsEx(intval($nStart),$this->aPaginationConfig['per_page'], $cCategoryID);
+        $this->data->aAllNews = $this->news_model->GetLimitNewsEx(intval($nStart),$this->aPaginationConfig['per_page'], intval($cCategoryID));
+
         // Render all page, right column with getting categories and archives
         $this->RenderGeneralData();
     }
@@ -73,11 +74,12 @@ class News extends CBaseController
         $this->aPaginationConfig['uri_segment'] = 4;
         $this->pagination->initialize($this->aPaginationConfig);
 
-        // Archive date from col 'archive_date'
+        // Archive date from col 'archive_date(ex. 2014-09)'
         $cArchiveDate = $this->news_model->GetArchiveDate($nArchiveID);
 
         // All rows with news
         $this->data->aAllNews = $this->news_model->GetLimitNewsEx(intval($nStart),$this->aPaginationConfig["per_page"], '',$cArchiveDate);
+
         // Render all page, right column with getting categories and archives
         $this->RenderGeneralData();
 
@@ -102,7 +104,8 @@ class News extends CBaseController
 
         // All categories for right column
         $this->data->aCategories = $this->news_model->GetAllCategories();
-
+        // All archives for right column
+        $this->data->aArchives = $this->news_model->GetAllArchives();
         $this->load->view('main/index.php');
     }
 }

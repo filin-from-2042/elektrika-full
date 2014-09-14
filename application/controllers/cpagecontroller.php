@@ -15,6 +15,10 @@ class CPageController extends CBaseController
         // Initializing of page
         $this->load->model('Page_model');
         $this->data = $this->Page_model->GetPageContent($this->cPageName, 'general', false);
+
+        // All categories for top header and right column
+        $this->data->aCategories = $this->Page_model->GetAllCategories();
+
         $this->cTitle = $this->data->pages_title;
         $this->cDescription = $this->data->pages_description;
         $this->cKeywords = $this->data->pages_keywords;

@@ -11,12 +11,9 @@
 
 <title><?=$this->cTitle?></title>
 
-<!-- Bootstrap core CSS -->
 <link href="/css/bootstrap.min.css" rel="stylesheet">
-<!-- Bootstrap theme -->
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 
-<!-- Custom styles for this template -->
 <link href="/css/style.css" rel="stylesheet">
 
 </head>
@@ -31,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a id="logo" href="#" class="navbar-brand"><img src="/images/logo.png"></a>
+                <a id="logo" href="#" class="navbar-brand"><img src="/images/logo-el.png"></a>
             </div>
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
@@ -42,14 +39,13 @@
                         <?= anchor('','Новости<span class="caret"></span>',array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'))?>
                         <ul  class="dropdown-menu" role="menu">
                             <li id="arrow-sub" class="hidden-xs"><img src="/images/arrow-sub.png"></li>
-                            <li><?= anchor('','App Media')?></li>
-                            <li><?= anchor('','Branding')?></li>
-                            <li><?= anchor('','Case Study')?></li>
-                            <li><?= anchor('','Device')?></li>
-                            <li><?= anchor('','obs')?></li>
-                            <li><?= anchor('','Networks')?></li>
-                            <li><?= anchor('','Staff')?></li>
-                            <li><?= anchor('','Tutorials')?></li>
+                            <li><a href="<?=site_url('news')?>">All</a></li>
+                            <?php
+                                foreach($this->data->aCategories as $aCategory)
+                                {
+                                    echo '<li>'.anchor('news/categories' . '/' . $aCategory["id"],$aCategory["categories_name"]).'</li>';
+                                }
+                            ?>
                         </ul>
                     </li>
                     <li><?= anchor('contact','Контакты')?></a></li>

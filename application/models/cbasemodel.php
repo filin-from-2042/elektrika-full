@@ -94,4 +94,10 @@ class CBaseModel extends CI_Model
     {
         return $this->db->count_all_results($this->cTableName);
     }
+
+    //-------------------------------------------- GET ALL CATEGORIES --------------------------------------------------/
+    public function GetAllCategories()
+    {
+        return $this->db->get("categories")->result_array();
+    }
 }

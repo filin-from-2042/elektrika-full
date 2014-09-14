@@ -6,7 +6,7 @@
  * Time: 19:44
  */
 
-$config['per_page'] = '2';
+$config['per_page'] = 2;
 $config['full_tag_open'] = '<ul class="pager">';
 $config['full_tag_close'] = '</ul>';
 $config['prev_tag_open'] = '<li class="previous">';

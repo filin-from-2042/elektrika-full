@@ -40,10 +40,10 @@ CREATE TABLE IF NOT EXISTS `el_archives` (
 --
 
 INSERT INTO `el_archives` (`id`, `archive_name`, `archive_date`) VALUES
-  (1, ''September 2014'', ''2014 - 09''),
-  (2, ''October 2014'', ''2014 - 10''),
-  (3, ''November 2014'', ''2014 - 11''),
-  (4, ''December 2014'', ''2014 - 12'');
+  (1, 'September 2014', '2014 - 09'),
+  (2, 'October 2014', '2014 - 10'),
+  (3, 'November 2014', '2014 - 11'),
+  (4, 'December 2014', '2014 - 12');
 
 -- --------------------------------------------------------
 
@@ -66,16 +66,16 @@ CREATE TABLE IF NOT EXISTS `el_categories` (
 --
 
 INSERT INTO `el_categories` (`id`, `categories_name`) VALUES
-  (1, ''App Media''),
-  (2, ''Brand Media''),
-  (3, ''CASE Study''),
-  (4, ''Digital''),
-  (5, ''E - Mail''),
-  (6, ''Featured Articles''),
-  (7, ''Graphic Design''),
-  (8, ''Jobs''),
-  (9, ''Multimedia''),
-  (10, ''Networks'');
+  (1, 'App Media'),
+  (2, 'Brand Media'),
+  (3, 'CASE Study'),
+  (4, 'Digital'),
+  (5, 'E - Mail'),
+  (6, 'Featured Articles'),
+  (7, 'Graphic Design'),
+  (8, 'Jobs'),
+  (9, 'Multimedia'),
+  (10, 'Networks');
 
 -- --------------------------------------------------------
 
@@ -93,8 +93,8 @@ CREATE TABLE IF NOT EXISTS `el_comments` (
                          COLLATE utf8_unicode_ci NOT NULL,
   `comments_email`       VARCHAR(128)
                          COLLATE utf8_unicode_ci NOT NULL,
-  `comments_status`      ENUM(''ENABLE'', ''DISABLE'')
-                         COLLATE utf8_unicode_ci DEFAULT ''ENABLE'',
+  `comments_status`      ENUM('ENABLE', 'DISABLE')
+                         COLLATE utf8_unicode_ci DEFAULT 'ENABLE',
   `comments_article_id`  INT(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_comment_post` (`comments_article_id`)
@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `el_news` (
 
 INSERT INTO `el_news` (`id`, `news_title`, `news_description`, `news_keywords`, `news_content`, `news_create_date`, `news_update_date`, `news_preview_image`, `news_author`, `news_status`, `news_type`)
 VALUES
-  (1, ''Тестирование сайта'', ''Тестируем сайт магазина "Электрика"'', ''тестирование'', ''Lorem ipsum dolor sit amet,
+  (1, 'Тестирование сайта', 'Тестируем сайт магазина "Электрика"', 'тестирование', 'Lorem ipsum dolor sit amet,
    consectetur adipiscing elit.Donec luctus purus ut congue malesuada.Curabitur interdum posuere erat quis vulputate.Nunc nec lectus et mi pellentesque consectetur.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Nulla fermentum ipsum ut purus gravida condimentum.Donec facilisis pellentesque blandit.Nulla ac ornare elit,
    a rhoncus libero.Nullam facilisis scelerisque euismod.Sed dolor tortor, pretium sit amet efficitur et,
    fermentum eu neque.Cras posuere mollis odio AT iaculis.Maecenas ac arcu bibendum, ultrices nisl ac,
@@ -154,20 +154,20 @@ VALUES
    a rhoncus libero.Nullam facilisis scelerisque euismod.Sed dolor tortor, pretium sit amet efficitur et,
    fermentum eu neque.Cras posuere mollis odio AT iaculis.Maecenas ac arcu bibendum, ultrices nisl ac,
    vestibulum nulla.Nullam egestas eros ac iaculis pulvinar.Aenean fermentum felis sem,
-   quis ultrices lacus suscipit vitae.'', ''2014 - 09 - 09 00:00:00'', ''2014 - 09 - 09 11:51:21'',
-   '' / images / image - post - preview.png'', ''admin'', ''1'', ''news''),
-  (2, ''Тестирование сайта часть 2'', ''Тестируем сайт магазина "Электрика"'', ''тесирование'',
-   ''Maecenas sed ligula eget risus dictum ornare a et diam. Nam vitae erat eget turpis porttitor molestie eget non velit.Nam cursus massa vitae placerat maximus.Mauris vitae varius dui,
+   quis ultrices lacus suscipit vitae.', '2014 - 09 - 09 00:00:00', '2014 - 09 - 09 11:51:21',
+   ' / images / image - post - preview.png', 'admin', '1', 'news'),
+  (2, 'Тестирование сайта часть 2', 'Тестируем сайт магазина "Электрика"', 'тесирование',
+   'Maecenas sed ligula eget risus dictum ornare a et diam. Nam vitae erat eget turpis porttitor molestie eget non velit.Nam cursus massa vitae placerat maximus.Mauris vitae varius dui,
    et scelerisque augue.Donec blandit ornare augue, at accumsan odio gravida non.Ut commodo lorem non augue cursus,
    sed vestibulum nisi sollicitudin.Cras a pulvinar libero,
    at consequat sem.Nunc eget tellus nec odio posuere dapibus non vitae diam.IN sollicitudin pellentesque risus ut ultrices. Praesent a egestas nunc.Mauris nec risus turpis. Duis vel ex enim.<!--PreviewDelimiter-->Maecenas sed ligula eget risus dictum ornare a et diam.Nam vitae erat eget turpis porttitor molestie eget non velit.Nam cursus massa vitae placerat maximus.Mauris vitae varius dui,
    et scelerisque augue.Donec blandit ornare augue, at accumsan odio gravida non.Ut commodo lorem non augue cursus,
    sed vestibulum nisi sollicitudin.Cras a pulvinar libero,
-   at consequat sem.Nunc eget tellus nec odio posuere dapibus non vitae diam.IN sollicitudin pellentesque risus ut ultrices. Praesent a egestas nunc.Mauris nec risus turpis. Duis vel ex enim.'',
-   ''2014 - 09 - 09 00:00:00'', ''2014 - 09 - 09 10:58:26'', '' / images / image - post - preview.png'', ''admin'', ''1
-   '', ''news''),
-  (3, ''Тестирование сайта - '', ''Тестируем сайт магазина "Электрика"'', ''тестирование'',
-   ''Lorem ipsum dolor sit amet,
+   at consequat sem.Nunc eget tellus nec odio posuere dapibus non vitae diam.IN sollicitudin pellentesque risus ut ultrices. Praesent a egestas nunc.Mauris nec risus turpis. Duis vel ex enim.',
+   '2014 - 09 - 09 00:00:00', '2014 - 09 - 09 10:58:26', ' / images / image - post - preview.png', 'admin', '1
+   ', 'news'),
+  (3, 'Тестирование сайта - ', 'Тестируем сайт магазина "Электрика"', 'тестирование',
+   'Lorem ipsum dolor sit amet,
    consectetur adipiscing elit.Donec luctus purus ut congue malesuada.Curabitur interdum posuere erat quis vulputate.Nunc nec lectus et mi pellentesque consectetur.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Nulla fermentum ipsum ut purus gravida condimentum.Donec facilisis pellentesque blandit.Nulla ac ornare elit,
    a rhoncus libero.Nullam facilisis scelerisque euismod.Sed dolor tortor, pretium sit amet efficitur et,
    fermentum eu neque.Cras posuere mollis odio AT iaculis.Maecenas ac arcu bibendum, ultrices nisl ac,
@@ -177,20 +177,20 @@ VALUES
    a rhoncus libero.Nullam facilisis scelerisque euismod.Sed dolor tortor, pretium sit amet efficitur et,
    fermentum eu neque.Cras posuere mollis odio AT iaculis.Maecenas ac arcu bibendum, ultrices nisl ac,
    vestibulum nulla.Nullam egestas eros ac iaculis pulvinar.Aenean fermentum felis sem,
-   quis ultrices lacus suscipit vitae.'', ''2014 - 09 - 09 00:00:00'', ''2014 - 09 - 10 16:52:37'',
-   '' / images / image - post - preview.png'', ''admin'', ''1'', ''news''),
-  (4, ''Тестирование сайта часть 2 - '', ''Тестируем сайт магазина "Электрика"'', ''тесирование'',
-   ''Maecenas sed ligula eget risus dictum ornare a et diam. Nam vitae erat eget turpis porttitor molestie eget non velit.Nam cursus massa vitae placerat maximus.Mauris vitae varius dui,
+   quis ultrices lacus suscipit vitae.', '2014 - 09 - 09 00:00:00', '2014 - 09 - 10 16:52:37',
+   ' / images / image - post - preview.png', 'admin', '1', 'news'),
+  (4, 'Тестирование сайта часть 2 - ', 'Тестируем сайт магазина "Электрика"', 'тесирование',
+   'Maecenas sed ligula eget risus dictum ornare a et diam. Nam vitae erat eget turpis porttitor molestie eget non velit.Nam cursus massa vitae placerat maximus.Mauris vitae varius dui,
    et scelerisque augue.Donec blandit ornare augue, at accumsan odio gravida non.Ut commodo lorem non augue cursus,
    sed vestibulum nisi sollicitudin.Cras a pulvinar libero,
    at consequat sem.Nunc eget tellus nec odio posuere dapibus non vitae diam.IN sollicitudin pellentesque risus ut ultrices. Praesent a egestas nunc.Mauris nec risus turpis. Duis vel ex enim.<!--PreviewDelimiter-->Maecenas sed ligula eget risus dictum ornare a et diam.Nam vitae erat eget turpis porttitor molestie eget non velit.Nam cursus massa vitae placerat maximus.Mauris vitae varius dui,
    et scelerisque augue.Donec blandit ornare augue, at accumsan odio gravida non.Ut commodo lorem non augue cursus,
    sed vestibulum nisi sollicitudin.Cras a pulvinar libero,
-   at consequat sem.Nunc eget tellus nec odio posuere dapibus non vitae diam.IN sollicitudin pellentesque risus ut ultrices. Praesent a egestas nunc.Mauris nec risus turpis. Duis vel ex enim.'',
-   ''2014 - 10 - 09 00:00:00'', ''2014 - 09 - 10 14:44:58'', '' / images / image - post - preview.png'', ''admin'', ''1
-   '', ''news''),
-  (5, ''Тестирование сайта3 - '', ''Тестируем сайт магазина "Электрика"'', ''тестирование'',
-   ''Lorem ipsum dolor sit amet,
+   at consequat sem.Nunc eget tellus nec odio posuere dapibus non vitae diam.IN sollicitudin pellentesque risus ut ultrices. Praesent a egestas nunc.Mauris nec risus turpis. Duis vel ex enim.',
+   '2014 - 10 - 09 00:00:00', '2014 - 09 - 10 14:44:58', ' / images / image - post - preview.png', 'admin', '1
+   ', 'news'),
+  (5, 'Тестирование сайта3 - ', 'Тестируем сайт магазина "Электрика"', 'тестирование',
+   'Lorem ipsum dolor sit amet,
    consectetur adipiscing elit.Donec luctus purus ut congue malesuada.Curabitur interdum posuere erat quis vulputate.Nunc nec lectus et mi pellentesque consectetur.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Nulla fermentum ipsum ut purus gravida condimentum.Donec facilisis pellentesque blandit.Nulla ac ornare elit,
    a rhoncus libero.Nullam facilisis scelerisque euismod.Sed dolor tortor, pretium sit amet efficitur et,
    fermentum eu neque.Cras posuere mollis odio AT iaculis.Maecenas ac arcu bibendum, ultrices nisl ac,
@@ -200,8 +200,8 @@ VALUES
    a rhoncus libero.Nullam facilisis scelerisque euismod.Sed dolor tortor, pretium sit amet efficitur et,
    fermentum eu neque.Cras posuere mollis odio AT iaculis.Maecenas ac arcu bibendum, ultrices nisl ac,
    vestibulum nulla.Nullam egestas eros ac iaculis pulvinar.Aenean fermentum felis sem,
-   quis ultrices lacus suscipit vitae.'', ''2014 - 09 - 09 00:00:00'', ''2014 - 09 - 10 16:52:37'',
-   '' / images / image - post - preview.png'', ''admin'', ''1'', ''news'');
+   quis ultrices lacus suscipit vitae.', '2014 - 09 - 09 00:00:00', '2014 - 09 - 10 16:52:37',
+   ' / images / image - post - preview.png', 'admin', '1', 'news');
 
 -- --------------------------------------------------------
 
@@ -216,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `el_news2categories` (
   `category_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQUE` (`news_id`, `category_id`)
-    COMMENT ''UNIQUE'',
+    COMMENT 'UNIQUE',
   KEY `FK_news2categories_category_id` (`category_id`),
   KEY `FK_news2categories_news_id` (`news_id`)
 )
@@ -274,8 +274,8 @@ CREATE TABLE IF NOT EXISTS `el_pages` (
 
 INSERT INTO `el_pages` (`id`, `pages_title`, `pages_description`, `pages_keywords`, `pages_text`, `pages_create_date`, `page_name`, `page_type`)
 VALUES
-  (2, ''Магазин Электрика'', ''Магазин электро - товаров в Новомосковске'', ''Розетки, лампочки, кабель'',
-   ''Lorem ipsum dolor sit amet,
+  (2, 'Магазин Электрика', 'Магазин электро - товаров в Новомосковске', 'Розетки, лампочки, кабель',
+   'Lorem ipsum dolor sit amet,
    consectetur adipiscing elit.Morbi ac metus nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra,
    per inceptos himenaeos.Quisque eget est venenatis quam ultrices lobortis eget AT lacus.Mauris tempor justo vel egestas fermentum. Vivamus eu ipsum ligula.Pellentesque et posuere neque. Vivamus a velit sem.Nullam sed urna AT augue fringilla ultrices.Nunc vitae diam a lectus congue cursus IN eget nulla.Ut tincidunt auctor dui,
    non convallis neque consectetur vel.Fusce laoreet felis a nisl laoreet posuere.Nulla facilisi.<!--TabDelimiter-->Ut a elit eget mi ornare mattis.Etiam dignissim,
@@ -298,18 +298,18 @@ VALUES
    neque neque molestie lectus,
    sit amet porta mi odio vitae elit.Phasellus auctor volutpat sapien eu ornare.Nam auctor lacus felis,
    quis vehicula quam ultrices IN.Aliquam erat volutpat.Proin ultricies, sem ac aliquet gravida, nulla mi ornare ligula,
-   sed tincidunt dui nisi et est.'', ''2014 - 08 - 04 18:45:16'', ''home'', ''GENERAL''),
-(3, ''О Нас'', ''Магазин электро - товаров в Новомосковске'', ''Розетки, лампочки, кабель'', ''Lorem ipsum dolor sit amet, consectetur adipiscing elit.IN rhoncus lobortis orci, sed vestibulum leo dapibus et.Fusce IN dolor velit, sit amet vehicula est.INTEGER elit sapien, varius IN tristique et, bibendum quis enim.Donec scelerisque ante neque, at pulvinar risus.Nullam semper sagittis magna, nec elementum neque facilisis et.Nulla ullamcorper tincidunt massa.<!--TabDelimiter-->Lorem ipsum dolor sit amet, consectetur adipiscing elit.IN rhoncus lobortis orci, sed vestibulum leo dapibus et.Fusce IN dolor velit, sit amet vehicula est.INTEGER elit sapien, varius IN tristique et, bibendum quis enim.Donec scelerisque ante neque, at pulvinar risus.Nullam semper sagittis magna, nec elementum neque facilisis et.Nulla ullamcorper tincidunt massa.<!--TabDelimiter-->Lorem ipsum dolor sit amet, consectetur adipiscing elit.IN rhoncus lobortis orci, sed vestibulum leo dapibus et.Fusce IN dolor velit, sit amet vehicula est.INTEGER elit sapien, varius IN tristique et, bibendum quis enim.Donec scelerisque ante neque, at pulvinar risus.Nullam semper sagittis magna, nec elementum neque facilisis et.Nulla ullamcorper tincidunt massa.'', ''2014 - 08 - 09 10:56:41'', ''about'', ''GENERAL''),
-(4, ''Контакты'', ''Контакты "Электрики"'', ''Лампочки, розетки, батарейки'', ''Lorem ipsum dolor sit amet, consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et, cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Maecenas gravida lacus non leo congue elementum.Praesent tincidunt lectus nec felis hendrerit id blandit ante consequat.Proin bibendum, \r\narcu eu lobortis egestas, massa leo ullamcorper dolor, non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.'', ''2014 - 09 - 01 17:10:37'', ''contact'', ''GENERAL''),
-(6, ''Подробно о нас'', ''Магазин электро - товаров в Новомосковске'', ''Розетки, лампочки, кабель'', '' Lorem ipsum dolor sit amet, consectetur adipiscing elit.Morbi ac metus nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Quisque eget est venenatis quam ultrices lobortis eget AT lacus.Mauris tempor justo vel egestas fermentum. Vivamus eu ipsum ligula.Pellentesque et posuere neque. Vivamus a velit sem.Nullam sed urna AT augue fringilla ultrices.Nunc vitae diam a lectus congue cursus IN eget nulla.Ut tincidunt auctor dui, non convallis neque consectetur vel.Fusce laoreet felis a nisl laoreet posuere.Nulla facilisi.<!--PreviewDelimiter - - > Lorem ipsum dolor sit amet, consectetur adipiscing elit.Morbi ac metus nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Quisque eget est venenatis quam ultrices lobortis eget AT lacus.Mauris tempor justo vel egestas fermentum. Vivamus eu ipsum ligula.Pellentesque et posuere neque. Vivamus a velit sem.Nullam sed urna AT augue fringilla ultrices.Nunc vitae diam a lectus congue cursus IN eget nulla.Ut tincidunt auctor dui, non convallis neque consectetur vel.Fusce laoreet felis a nisl laoreet posuere.Nulla facilisi.\r\n              '', ''2014 - 09 - 01 17:48:37'', ''about - FULL '', ''about''),
-(8, ''Кто мы'', ''Краткая информация о "Электрика"'', ''Розетки, лампочки, кабель'', ''Lorem ipsum dolor sit amet, consectetur adipiscing elit.Morbi ac metus nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Quisque eget est venenatis quam ultrices lobortis eget AT lacus.Mauris tempor justo vel egestas fermentum. Vivamus eu ipsum ligula.Pellentesque et posuere neque. Vivamus a velit sem.Nullam sed urna AT augue fringilla ultrices.Nunc vitae diam a lectus congue cursus IN eget nulla.Ut tincidunt auctor dui, non convallis neque consectetur vel.Fusce laoreet felis a nisl laoreet posuere.Nulla facilisi.<!--PreviewDelimiter - - > Lorem ipsum dolor sit amet, consectetur adipiscing elit.Morbi ac metus nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Quisque eget est venenatis quam ultrices lobortis eget AT lacus.Mauris tempor justo vel egestas fermentum. Vivamus eu ipsum ligula.Pellentesque et posuere neque. Vivamus a velit sem.Nullam sed urna AT augue fringilla ultrices.Nunc vitae diam a lectus congue cursus IN eget nulla.Ut tincidunt auctor dui, non convallis neque consectetur vel.Fusce laoreet felis a nisl laoreet posuere.Nulla facilisi.'', ''2014 - 09 - 02 14:41:09'', ''who_we'', ''home''),
-(9, ''Почему стоит обратиться к нам'', ''Преимущества "Электрика"'', ''Розетки, лампочки, кабель'', ''Ut a elit eget mi ornare mattis.Etiam dignissim, diam sit amet faucibus ultricies, enim velit hendrerit ipsum, sed facilisis dui purus a turpis.Donec id ante dapibus, aliquet tellus non, semper erat.Nulla non dapibus lorem.Proin vitae lacinia nisi.Sed sed nisl dapibus orci volutpat dignissim dapibus vitae elit.Morbi dapibus cursus erat, et pharetra risus luctus sit amet.Vestibulum dapibus lacinia scelerisque. Praesent porta eget risus id imperdiet.Fusce nec sapien dolor.Vestibulum mollis eleifend lorem, a rhoncus dui euismod ut.Nam pulvinar nibh et leo sodales, quis sagittis libero pellentesque.IN egestas rhoncus augue non molestie. IN suscipit felis erat, IN cursus arcu euismod et.<!--PreviewDelimiter-->Ut a elit eget mi ornare mattis.Etiam dignissim, diam sit amet faucibus ultricies, enim velit hendrerit ipsum, sed facilisis dui purus a turpis.Donec id ante dapibus, aliquet tellus non, semper erat.Nulla non dapibus lorem.Proin vitae lacinia nisi.Sed sed nisl dapibus orci volutpat dignissim dapibus vitae elit.Morbi dapibus cursus erat, et pharetra risus luctus sit amet.Vestibulum dapibus lacinia scelerisque. Praesent porta eget risus id imperdiet.Fusce nec sapien dolor.Vestibulum mollis eleifend lorem, a rhoncus dui euismod ut.Nam pulvinar nibh et leo sodales, quis sagittis libero pellentesque.IN egestas rhoncus augue non molestie. IN suscipit felis erat, IN cursus arcu euismod et.'', ''2014 - 09 - 02 14:45:00'', ''why_us'', ''home''),
-(10, ''Что мы предлагаем'', ''Описание деятельности "Электрика"'', ''Розетки, лампочки, кабель'', ''Proin AT erat quis elit euismod pulvinar.Nulla luctus, mauris eget condimentum faucibus, est velit ultrices mi, quis euismod tortor diam non nunc.Aenean ac ultricies dui. Donec tincidunt felis vitae varius laoreet.Nam aliquet est congue neque ornare ullamcorper.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Donec est ante, eleifend sit amet adipiscing pellentesque, facilisis quis arcu.Suspendisse sapien velit, interdum non ligula id, tincidunt commodo massa.Nullam suscipit blandit nunc, convallis elementum nibh semper vehicula.Pellentesque dictum nisi IN neque hendrerit, quis volutpat justo vulputate.Nunc sit amet risus viverra, posuere libero accumsan, mattis nulla.Proin vitae fringilla sem.Curabitur non eros dui.<!--PreviewDelimiter-->Proin AT erat quis elit euismod pulvinar.Nulla luctus, mauris eget condimentum faucibus, est velit ultrices mi, quis euismod tortor diam non nunc.Aenean ac ultricies dui. Donec tincidunt felis vitae varius laoreet.Nam aliquet est congue neque ornare ullamcorper.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Donec est ante, eleifend sit amet adipiscing pellentesque, facilisis quis arcu.Suspendisse sapien velit, interdum non ligula id, tincidunt commodo massa.Nullam suscipit blandit nunc, convallis elementum nibh semper vehicula.Pellentesque dictum nisi IN neque hendrerit, quis volutpat justo vulputate.Nunc sit amet risus viverra, posuere libero accumsan, mattis nulla.Proin vitae fringilla sem.Curabitur non eros dui.'', ''2014 - 09 - 02 14:45:00'', ''we_offer'', ''home''),
-(11, ''Отзывы'', ''Отзывы о "Электрика"'', ''Розетки, лампочки, кабель'', ''Suspendisse fringilla varius sagittis.Pellentesque nisi ligula, tincidunt quis sollicitudin a, ultrices vitae lorem.Vivamus auctor, orci sed aliquam suscipit, neque neque molestie lectus, sit amet porta mi odio vitae elit.Phasellus auctor volutpat sapien eu ornare.Nam auctor lacus felis, quis vehicula quam ultrices IN.Aliquam erat volutpat.Proin ultricies, sem ac aliquet gravida, nulla mi ornare ligula, sed tincidunt dui nisi et est.<!--PreviewDelimiter-->Suspendisse fringilla varius sagittis.Pellentesque nisi ligula, tincidunt quis sollicitudin a, ultrices vitae lorem.Vivamus auctor, orci sed aliquam suscipit, neque neque molestie lectus, sit amet porta mi odio vitae elit.Phasellus auctor volutpat sapien eu ornare.Nam auctor lacus felis, quis vehicula quam ultrices IN.Aliquam erat volutpat.Proin ultricies, sem ac aliquet gravida, nulla mi ornare ligula, sed tincidunt dui nisi et est.'', ''2014 - 09 - 02 14:47:16'', ''testimonials'', ''home''),
-(12, ''Наши сотрудники'', ''Сотрудники "Электрика"'', ''Розетки, лампочки, кабель'', ''Lorem ipsum dolor sit amet, consectetur adipiscing elit.IN rhoncus lobortis orci, sed vestibulum leo dapibus et.Fusce IN dolor velit, sit amet vehicula est.INTEGER elit sapien, varius IN tristique et, bibendum quis enim.Donec scelerisque ante neque, at pulvinar risus.Nullam semper sagittis magna, nec elementum neque facilisis et.Nulla ullamcorper tincidunt massa.'', ''2014 - 09 - 03 18:19:20'', ''people_working'', ''about''),
-(13, ''Мы профессионалы'', ''Профессиональные услуги "Электрика"'', ''Розетки, лампочки, кабель'', ''Lorem ipsum dolor sit amet, consectetur adipiscing elit.IN rhoncus lobortis orci, sed vestibulum leo dapibus et.Fusce IN dolor velit, sit amet vehicula est.INTEGER elit sapien, varius IN tristique et, bibendum quis enim.Donec scelerisque ante neque, at pulvinar risus.Nullam semper sagittis magna, nec elementum neque facilisis et.Nulla ullamcorper tincidunt massa.'', ''2014 - 09 - 03 18:19:20'', ''we_prof'', ''about''),
-(14, ''Качество обслуживания'', ''Качественное  обслуживание в магазине "Электрика"'', ''Розетки, лампочки, кабель'', ''Lorem ipsum dolor sit amet, consectetur adipiscing elit.IN rhoncus lobortis orci, sed vestibulum leo dapibus et.Fusce IN dolor velit, sit amet vehicula est.INTEGER elit sapien, varius IN tristique et, bibendum quis enim.Donec scelerisque ante neque, at pulvinar risus.Nullam semper sagittis magna, nec elementum neque facilisis et.Nulla ullamcorper tincidunt massa.'', ''2014 - 09 - 03 18:21:50'', ''quality_work'', ''about''),
-  (15, ''Web_design'', ''Услуги магазина "Электрика"'', ''Розетки, лампочки, кабель'', ''Lorem ipsum dolor sit amet,
+   sed tincidunt dui nisi et est.', '2014 - 08 - 04 18:45:16', 'home', 'GENERAL'),
+(3, 'О Нас', 'Магазин электро - товаров в Новомосковске', 'Розетки, лампочки, кабель', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.IN rhoncus lobortis orci, sed vestibulum leo dapibus et.Fusce IN dolor velit, sit amet vehicula est.INTEGER elit sapien, varius IN tristique et, bibendum quis enim.Donec scelerisque ante neque, at pulvinar risus.Nullam semper sagittis magna, nec elementum neque facilisis et.Nulla ullamcorper tincidunt massa.<!--TabDelimiter-->Lorem ipsum dolor sit amet, consectetur adipiscing elit.IN rhoncus lobortis orci, sed vestibulum leo dapibus et.Fusce IN dolor velit, sit amet vehicula est.INTEGER elit sapien, varius IN tristique et, bibendum quis enim.Donec scelerisque ante neque, at pulvinar risus.Nullam semper sagittis magna, nec elementum neque facilisis et.Nulla ullamcorper tincidunt massa.<!--TabDelimiter-->Lorem ipsum dolor sit amet, consectetur adipiscing elit.IN rhoncus lobortis orci, sed vestibulum leo dapibus et.Fusce IN dolor velit, sit amet vehicula est.INTEGER elit sapien, varius IN tristique et, bibendum quis enim.Donec scelerisque ante neque, at pulvinar risus.Nullam semper sagittis magna, nec elementum neque facilisis et.Nulla ullamcorper tincidunt massa.', '2014 - 08 - 09 10:56:41', 'about', 'GENERAL'),
+(4, 'Контакты', 'Контакты "Электрики"', 'Лампочки, розетки, батарейки', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et, cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Maecenas gravida lacus non leo congue elementum.Praesent tincidunt lectus nec felis hendrerit id blandit ante consequat.Proin bibendum, \r\narcu eu lobortis egestas, massa leo ullamcorper dolor, non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.', '2014 - 09 - 01 17:10:37', 'contact', 'GENERAL'),
+(6, 'Подробно о нас', 'Магазин электро - товаров в Новомосковске', 'Розетки, лампочки, кабель', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.Morbi ac metus nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Quisque eget est venenatis quam ultrices lobortis eget AT lacus.Mauris tempor justo vel egestas fermentum. Vivamus eu ipsum ligula.Pellentesque et posuere neque. Vivamus a velit sem.Nullam sed urna AT augue fringilla ultrices.Nunc vitae diam a lectus congue cursus IN eget nulla.Ut tincidunt auctor dui, non convallis neque consectetur vel.Fusce laoreet felis a nisl laoreet posuere.Nulla facilisi.<!--PreviewDelimiter - - > Lorem ipsum dolor sit amet, consectetur adipiscing elit.Morbi ac metus nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Quisque eget est venenatis quam ultrices lobortis eget AT lacus.Mauris tempor justo vel egestas fermentum. Vivamus eu ipsum ligula.Pellentesque et posuere neque. Vivamus a velit sem.Nullam sed urna AT augue fringilla ultrices.Nunc vitae diam a lectus congue cursus IN eget nulla.Ut tincidunt auctor dui, non convallis neque consectetur vel.Fusce laoreet felis a nisl laoreet posuere.Nulla facilisi.\r\n              ', '2014 - 09 - 01 17:48:37', 'about - FULL ', 'about'),
+(8, 'Кто мы', 'Краткая информация о "Электрика"', 'Розетки, лампочки, кабель', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.Morbi ac metus nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Quisque eget est venenatis quam ultrices lobortis eget AT lacus.Mauris tempor justo vel egestas fermentum. Vivamus eu ipsum ligula.Pellentesque et posuere neque. Vivamus a velit sem.Nullam sed urna AT augue fringilla ultrices.Nunc vitae diam a lectus congue cursus IN eget nulla.Ut tincidunt auctor dui, non convallis neque consectetur vel.Fusce laoreet felis a nisl laoreet posuere.Nulla facilisi.<!--PreviewDelimiter - - > Lorem ipsum dolor sit amet, consectetur adipiscing elit.Morbi ac metus nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Quisque eget est venenatis quam ultrices lobortis eget AT lacus.Mauris tempor justo vel egestas fermentum. Vivamus eu ipsum ligula.Pellentesque et posuere neque. Vivamus a velit sem.Nullam sed urna AT augue fringilla ultrices.Nunc vitae diam a lectus congue cursus IN eget nulla.Ut tincidunt auctor dui, non convallis neque consectetur vel.Fusce laoreet felis a nisl laoreet posuere.Nulla facilisi.', '2014 - 09 - 02 14:41:09', 'who_we', 'home'),
+(9, 'Почему стоит обратиться к нам', 'Преимущества "Электрика"', 'Розетки, лампочки, кабель', 'Ut a elit eget mi ornare mattis.Etiam dignissim, diam sit amet faucibus ultricies, enim velit hendrerit ipsum, sed facilisis dui purus a turpis.Donec id ante dapibus, aliquet tellus non, semper erat.Nulla non dapibus lorem.Proin vitae lacinia nisi.Sed sed nisl dapibus orci volutpat dignissim dapibus vitae elit.Morbi dapibus cursus erat, et pharetra risus luctus sit amet.Vestibulum dapibus lacinia scelerisque. Praesent porta eget risus id imperdiet.Fusce nec sapien dolor.Vestibulum mollis eleifend lorem, a rhoncus dui euismod ut.Nam pulvinar nibh et leo sodales, quis sagittis libero pellentesque.IN egestas rhoncus augue non molestie. IN suscipit felis erat, IN cursus arcu euismod et.<!--PreviewDelimiter-->Ut a elit eget mi ornare mattis.Etiam dignissim, diam sit amet faucibus ultricies, enim velit hendrerit ipsum, sed facilisis dui purus a turpis.Donec id ante dapibus, aliquet tellus non, semper erat.Nulla non dapibus lorem.Proin vitae lacinia nisi.Sed sed nisl dapibus orci volutpat dignissim dapibus vitae elit.Morbi dapibus cursus erat, et pharetra risus luctus sit amet.Vestibulum dapibus lacinia scelerisque. Praesent porta eget risus id imperdiet.Fusce nec sapien dolor.Vestibulum mollis eleifend lorem, a rhoncus dui euismod ut.Nam pulvinar nibh et leo sodales, quis sagittis libero pellentesque.IN egestas rhoncus augue non molestie. IN suscipit felis erat, IN cursus arcu euismod et.', '2014 - 09 - 02 14:45:00', 'why_us', 'home'),
+(10, 'Что мы предлагаем', 'Описание деятельности "Электрика"', 'Розетки, лампочки, кабель', 'Proin AT erat quis elit euismod pulvinar.Nulla luctus, mauris eget condimentum faucibus, est velit ultrices mi, quis euismod tortor diam non nunc.Aenean ac ultricies dui. Donec tincidunt felis vitae varius laoreet.Nam aliquet est congue neque ornare ullamcorper.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Donec est ante, eleifend sit amet adipiscing pellentesque, facilisis quis arcu.Suspendisse sapien velit, interdum non ligula id, tincidunt commodo massa.Nullam suscipit blandit nunc, convallis elementum nibh semper vehicula.Pellentesque dictum nisi IN neque hendrerit, quis volutpat justo vulputate.Nunc sit amet risus viverra, posuere libero accumsan, mattis nulla.Proin vitae fringilla sem.Curabitur non eros dui.<!--PreviewDelimiter-->Proin AT erat quis elit euismod pulvinar.Nulla luctus, mauris eget condimentum faucibus, est velit ultrices mi, quis euismod tortor diam non nunc.Aenean ac ultricies dui. Donec tincidunt felis vitae varius laoreet.Nam aliquet est congue neque ornare ullamcorper.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Donec est ante, eleifend sit amet adipiscing pellentesque, facilisis quis arcu.Suspendisse sapien velit, interdum non ligula id, tincidunt commodo massa.Nullam suscipit blandit nunc, convallis elementum nibh semper vehicula.Pellentesque dictum nisi IN neque hendrerit, quis volutpat justo vulputate.Nunc sit amet risus viverra, posuere libero accumsan, mattis nulla.Proin vitae fringilla sem.Curabitur non eros dui.', '2014 - 09 - 02 14:45:00', 'we_offer', 'home'),
+(11, 'Отзывы', 'Отзывы о "Электрика"', 'Розетки, лампочки, кабель', 'Suspendisse fringilla varius sagittis.Pellentesque nisi ligula, tincidunt quis sollicitudin a, ultrices vitae lorem.Vivamus auctor, orci sed aliquam suscipit, neque neque molestie lectus, sit amet porta mi odio vitae elit.Phasellus auctor volutpat sapien eu ornare.Nam auctor lacus felis, quis vehicula quam ultrices IN.Aliquam erat volutpat.Proin ultricies, sem ac aliquet gravida, nulla mi ornare ligula, sed tincidunt dui nisi et est.<!--PreviewDelimiter-->Suspendisse fringilla varius sagittis.Pellentesque nisi ligula, tincidunt quis sollicitudin a, ultrices vitae lorem.Vivamus auctor, orci sed aliquam suscipit, neque neque molestie lectus, sit amet porta mi odio vitae elit.Phasellus auctor volutpat sapien eu ornare.Nam auctor lacus felis, quis vehicula quam ultrices IN.Aliquam erat volutpat.Proin ultricies, sem ac aliquet gravida, nulla mi ornare ligula, sed tincidunt dui nisi et est.', '2014 - 09 - 02 14:47:16', 'testimonials', 'home'),
+(12, 'Наши сотрудники', 'Сотрудники "Электрика"', 'Розетки, лампочки, кабель', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.IN rhoncus lobortis orci, sed vestibulum leo dapibus et.Fusce IN dolor velit, sit amet vehicula est.INTEGER elit sapien, varius IN tristique et, bibendum quis enim.Donec scelerisque ante neque, at pulvinar risus.Nullam semper sagittis magna, nec elementum neque facilisis et.Nulla ullamcorper tincidunt massa.', '2014 - 09 - 03 18:19:20', 'people_working', 'about'),
+(13, 'Мы профессионалы', 'Профессиональные услуги "Электрика"', 'Розетки, лампочки, кабель', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.IN rhoncus lobortis orci, sed vestibulum leo dapibus et.Fusce IN dolor velit, sit amet vehicula est.INTEGER elit sapien, varius IN tristique et, bibendum quis enim.Donec scelerisque ante neque, at pulvinar risus.Nullam semper sagittis magna, nec elementum neque facilisis et.Nulla ullamcorper tincidunt massa.', '2014 - 09 - 03 18:19:20', 'we_prof', 'about'),
+(14, 'Качество обслуживания', 'Качественное  обслуживание в магазине "Электрика"', 'Розетки, лампочки, кабель', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.IN rhoncus lobortis orci, sed vestibulum leo dapibus et.Fusce IN dolor velit, sit amet vehicula est.INTEGER elit sapien, varius IN tristique et, bibendum quis enim.Donec scelerisque ante neque, at pulvinar risus.Nullam semper sagittis magna, nec elementum neque facilisis et.Nulla ullamcorper tincidunt massa.', '2014 - 09 - 03 18:21:50', 'quality_work', 'about'),
+  (15, 'Web_design', 'Услуги магазина "Электрика"', 'Розетки, лампочки, кабель', 'Lorem ipsum dolor sit amet,
    consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,
    cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Lorem ipsum dolor sit amet,
    consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,
@@ -321,9 +321,9 @@ VALUES
    consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,
    cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Maecenas gravida lacus non leo congue elementum.Praesent tincidunt lectus nec felis hendrerit id blandit ante consequat.Proin bibendum,
    arcu eu lobortis egestas, massa leo ullamcorper dolor,
-   non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.\r\n'',
-   ''2014 - 09 - 03 18:39:55'', ''web_design'', ''services''),
-  (16, ''Marketing'', ''Услуги магазина "Электрика"'', ''Розетки, лампочки, кабель'', ''Lorem ipsum dolor sit amet,
+   non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.\r\n',
+   '2014 - 09 - 03 18:39:55', 'web_design', 'services'),
+  (16, 'Marketing', 'Услуги магазина "Электрика"', 'Розетки, лампочки, кабель', 'Lorem ipsum dolor sit amet,
    consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,
    cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Lorem ipsum dolor sit amet,
    consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,
@@ -335,9 +335,9 @@ VALUES
    consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,
    cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Maecenas gravida lacus non leo congue elementum.Praesent tincidunt lectus nec felis hendrerit id blandit ante consequat.Proin bibendum,
    arcu eu lobortis egestas, massa leo ullamcorper dolor,
-   non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.\r\n'',
-   ''2014 - 09 - 03 18:39:55'', ''marketing'', ''services''),
-  (17, ''Brand design'', ''Услуги магазина "Электрика"'', ''Розетки, лампочки, кабель'', ''Lorem ipsum dolor sit amet,
+   non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.\r\n',
+   '2014 - 09 - 03 18:39:55', 'marketing', 'services'),
+  (17, 'Brand design', 'Услуги магазина "Электрика"', 'Розетки, лампочки, кабель', 'Lorem ipsum dolor sit amet,
    consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,
    cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Lorem ipsum dolor sit amet,
    consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,
@@ -349,17 +349,17 @@ VALUES
    consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,
    cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Maecenas gravida lacus non leo congue elementum.Praesent tincidunt lectus nec felis hendrerit id blandit ante consequat.Proin bibendum,
    arcu eu lobortis egestas, massa leo ullamcorper dolor,
-   non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.'',
-   ''2014 - 09 - 03 18:41:23'', ''brand_design'', ''services''),
-  (18, ''Наши услуги'', ''Услуги магазина "Электрика"'', ''Розетки, лампочки, кабель'',
-   ''Sed ut perspiciatis unde omnis iste natus ERROR sit voluptatem accusantium doloremque laudantium,
+   non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.',
+   '2014 - 09 - 03 18:41:23', 'brand_design', 'services'),
+  (18, 'Наши услуги', 'Услуги магазина "Электрика"', 'Розетки, лампочки, кабель',
+   'Sed ut perspiciatis unde omnis iste natus ERROR sit voluptatem accusantium doloremque laudantium,
    totam rem aperiam,
    eaque ipsa quae.<!--TabDelimiter-->Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
    sed quia consequuntur magni dolores eos qui ratione.<!- - TabDelimiter - - > Neque porro quisquam est,
    qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
    sed quia non numquam eius modi tempora incidunt ut labore.<!--TabDelimiter-->Ut enim ad minima veniam,
-   quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? '', ''2014
-   - 09 - 03 18:43:34'', ''services'', ''GENERAL'');
+   quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? ', '2014
+   - 09 - 03 18:43:34', 'services', 'GENERAL');
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц

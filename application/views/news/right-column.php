@@ -28,7 +28,6 @@
         </div>
         <div class="content-container clearfix">
             <?php
-
                 $nCategoryCounter = 1;
                 echo '<div class="col-md-6  col-sm-6  col-xs-6 "><ul>';
                 foreach($aCategories as $aCategory)
@@ -55,26 +54,26 @@
             <span class="title">Archives</span>
         </div>
         <div class="content-container clearfix">
-            <div class="col-md-6 col-sm-6  col-xs-6">
-                <ul>
-                    <li><a href="#">January 2010</a></li>
-                    <li><a href="#">February 2010</a></li>
-                    <li><a href="#">March 2010</a></li>
-                    <li><a href="#">April 2010</a></li>
-                    <li><a href="#">May 2010</a></li>
-                    <li><a href="#">June 2010</a></li>
-                </ul>
-            </div>
-            <div class="col-md-6  col-sm-6  col-xs-6">
-                <ul>
-                    <li><a href="#">July 2010</a></li>
-                    <li><a href="#">August 2010</a></li>
-                    <li><a href="#">September 2010</a></li>
-                    <li><a href="#">October 2010</a></li>
-                    <li><a href="#">November 2010</a></li>
-                    <li><a href="#">December 2010</a></li>
-                </ul>
-            </div>
+            <?php
+            $nArchiveCounter = 1;
+            echo '<div class="col-md-6 col-sm-6  col-xs-6"><ul>';
+            foreach($aArchives as $aArchive)
+            {
+                if($nArchiveCounter > 6)
+                {
+                    echo '</ul>
+                            </div>
+                            <div class="col-md-6  col-sm-6  col-xs-6 ">
+                                <ul>';
+                    $nArchiveCounter = 1;
+                }
+
+                echo '<li><a href="'. site_url("news/archives") . '/' . $aArchive["id"] . '">'. $aArchive["archive_name"] .'</a></li>';
+                $nArchiveCounter++;
+            }
+            echo '</ul></div>';
+            ?>
+
         </div>
     </div>
     <div class="blog-activity">
