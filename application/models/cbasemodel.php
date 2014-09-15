@@ -68,11 +68,11 @@ class CBaseModel extends CI_Model
     }
 
     //------------------------------------ GET CONTENT BY DELIMITER -------------------------------------------------------
-    /**
-     * Function return content exploded on tabs by specify delimiter
-     * @param $cRows - string with text fo explode
-     * @param string $delimiter - delimiter, by which string will be explode
-     * @return array - array with tabs content
+    /**Function return content exploded on tabs by specify delimiter
+     * @param $cRows
+     * @param string $delimiter
+     * @param string $cTabPrefix
+     * @return array
      */
     public function GetContentByDelimiter($cRows,  $delimiter = '<!--TabDelimiter-->', $cTabPrefix = 'tab_' )
     {
@@ -89,13 +89,21 @@ class CBaseModel extends CI_Model
         return $aAssocTabs;
     }
 
-    //-------------------------------------------- GET ALL COUNT --------------------------------------------------/
+    //-------------------------------------------- GET ALL COUNT ------------------------------------------------------/
+    /**
+     * Function return count of all record in current model
+     * @return mixed
+     */
     public function GetAllCount()
     {
         return $this->db->count_all_results($this->cTableName);
     }
 
     //-------------------------------------------- GET ALL CATEGORIES --------------------------------------------------/
+    /**
+     * Function return all of news categories
+     * @return mixed - array with categories
+     */
     public function GetAllCategories()
     {
         return $this->db->get("categories")->result_array();

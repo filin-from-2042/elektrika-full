@@ -30,7 +30,7 @@ class News_Model extends CBaseModel
      * @param string $cArchiveDate - date pattern, like '2014-09'
      * @return mixed - array with limited news rows
      */
-    public function GetLimitNewsEx($nStart, $nLimit, $nCategoryID = 0, $cArchiveDate = '')
+    public function GetLimitNewsEx($nStart, $nLimit, $nCategoryID = 0, $cArchiveDate = '', $cOrder = 'ASC')
     {
         if($nCategoryID)
         {
@@ -48,6 +48,7 @@ class News_Model extends CBaseModel
         $this->db->select('news.*');
         $this->db->from($this->cTableName);
         $this->db->limit($nLimit, $nStart);
+        $this->db->order_by('id',$cOrder);
 
         $aResult = $this->db->get()->result_array();
         foreach($aResult as &$aRow)
@@ -111,4 +112,25 @@ class News_Model extends CBaseModel
     {
         return $this->db->order_by('archive_date','ASC')->get('archives')->result_array();
     }
+
+    //---------------------------------------- GET LAST COMMENTS -------------------------------------------------------/
+    public function GetLastComments()
+    {
+        // TODO : find solution for query
+        $oRes = $this->db->query('  SELECT t_c.comments_content,
+                                           t_c.comments_author,
+                                           t_n.id AS news_id,
+                                           t_n.news_title,
+                                           t_a.id AS archive_id,
+                                           t_a.archive_name
+                                    FROM el_comments AS t_c
+                                      INNER JOIN el_news AS t_n
+                                        ON t_c.comments_news_id = t_n.id
+                                      LEFT JOIN el_archives AS t_a
+                                        ON SUBSTR(t_n.news_create_date,1,7) = t_a.archive_date
+                                       LIMIT 0,4');
+
+        return $oRes->result_array();
+    }
+
 }

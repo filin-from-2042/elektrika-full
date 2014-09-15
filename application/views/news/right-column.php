@@ -55,23 +55,25 @@
         </div>
         <div class="content-container clearfix">
             <?php
-            $nArchiveCounter = 1;
-            echo '<div class="col-md-6 col-sm-6  col-xs-6"><ul>';
-            foreach($aArchives as $aArchive)
-            {
-                if($nArchiveCounter > 6)
-                {
-                    echo '</ul>
-                            </div>
-                            <div class="col-md-6  col-sm-6  col-xs-6 ">
-                                <ul>';
-                    $nArchiveCounter = 1;
-                }
 
-                echo '<li><a href="'. site_url("news/archives") . '/' . $aArchive["id"] . '">'. $aArchive["archive_name"] .'</a></li>';
-                $nArchiveCounter++;
-            }
-            echo '</ul></div>';
+                $nArchiveCounter = 1;
+                echo '<div class="col-md-6 col-sm-6  col-xs-6"><ul>';
+                foreach($aArchives as $aArchive)
+                {
+                    if($nArchiveCounter > 6)
+                    {
+                        echo '</ul>
+                                </div>
+                                <div class="col-md-6  col-sm-6  col-xs-6 ">
+                                    <ul>';
+                        $nArchiveCounter = 1;
+                    }
+
+                    echo '<li><a href="'. site_url("news/archives") . '/' . $aArchive["id"] . '">'. $aArchive["archive_name"] .'</a></li>';
+                    $nArchiveCounter++;
+                }
+                echo '</ul></div>';
+
             ?>
 
         </div>
@@ -86,60 +88,40 @@
         <div class="content-activity">
             <div class="tab-content">
                 <div class="tab-pane active" id="comments">
-                    <div class="comment-container">
-                        <div class="comment-text">
-                            <span class="nic">Nuok</span> says:
-                                                        <span class="text">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisicing elit, sed do eiusmod
-                                                            tempor incididunt ut labore et dolore.
-                                                        </span>
-                        </div>
-                        <div class="comment-info">
-                            <a class="topic" href="#">January 2010 </a> in <a class="theme" href="#">How to make a good site</a>
-                        </div>
-                    </div>
-                    <div class="comment-container">
-                        <div class="comment-text">
-                            <span class="nic">Nuok</span> says:
-                                                        <span class="text">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisicing elit, sed do eiusmod
-                                                            tempor incididunt ut labore et dolore.
-                                                        </span>
-                        </div>
-                        <div class="comment-info">
-                            <a class="topic" href="#">January 2010 </a> in <a class="theme" href="#">How to make a good site</a>
-                        </div>
-                    </div>
-                    <div class="comment-container">
-                        <div class="comment-text">
-                            <span class="nic">Nuok</span> says:
-                                                        <span class="text">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisicing elit, sed do eiusmod
-                                                            tempor incididunt ut labore et dolore.
-                                                        </span>
-                        </div>
-                        <div class="comment-info">
-                            <a class="topic" href="#">January 2010 </a> in <a class="theme" href="#">How to make a good site</a>
-                        </div>
-                    </div>
-                    <div class="comment-container">
-                        <div class="comment-text">
-                            <span class="nic">Nuok</span> says:
-                                                        <span class="text">
-                                                            Lorem ipsum dolor sit amet,
-                                                            consectetur adipisicing elit, sed do eiusmod
-                                                            tempor incididunt ut labore et dolore.
-                                                        </span>
-                        </div>
-                        <div class="comment-info">
-                            <a class="topic" href="#">January 2010 </a> in <a class="theme" href="#">How to make a good site</a>
-                        </div>
-                    </div>
+                    <?php
+                        foreach($aLastComments as $aComment)
+                        {
+                            echo " <div class=\"comment-container\">
+                                    <div class=\"comment-text\">
+                                        <span class=\"nic\"> $aComment[comments_author]</span> says:
+                                                                    <span class=\"text\">
+                                                                        $aComment[comments_content]
+                                                                    </span>
+                                    </div>
+                                    <div class=\"comment-info\">
+                                        <a class=\"topic\" href=\"" . site_url('news/archives/'.$aComment['archive_id']) . "\">$aComment[archive_name] </a> in <a class=\"theme\" href=\"" . site_url('news/singlenews/'.$aComment['news_id']) . "\">$aComment[news_title]</a>
+                                    </div>
+                                </div>";
+                        }
+                    ?>
                 </div>
-                <div class="tab-pane" id="posts">posts</div>
+                <div class="tab-pane" id="posts">
+                    <?php
+                        foreach($aLastNews as $aNews)
+                        {
+                            echo " <div class=\"comment-container\">
+                                        <div class=\"comment-text\">
+                                            <span class=\"text\">
+                                                $aNews[news_content]
+                                            </span>
+                                        </div>
+                                        <div class=\"comment-info\">
+                                            <a class=\"theme\" href=\"" . site_url('news/singlenews/'.$aComment['news_id']) . "\">$aComment[news_title]</a>
+                                        </div>
+                                    </div>";
+                        }
+                    ?>
+                </div>
             </div>
         </div>
     </div>

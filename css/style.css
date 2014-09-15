@@ -859,7 +859,8 @@ header .dropdown-menu > li#arrow-sub {
     background: linear-gradient(to bottom, #494f57, #2b3037);
     color:#ebecec;
 }
-.blog-columns .blog-activity .content-activity #comments{
+.blog-columns .blog-activity .content-activity #comments,
+.blog-columns .blog-activity .content-activity #posts{
     padding: 20px 30px;
     border-top:1px solid #414852;
     border-bottom: 1px solid #22262c;

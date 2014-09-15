@@ -106,6 +106,10 @@ class News extends CBaseController
         $this->data->aCategories = $this->news_model->GetAllCategories();
         // All archives for right column
         $this->data->aArchives = $this->news_model->GetAllArchives();
+        // Last comment for right column
+        $this->data->aLastComments = $this->news_model->GetLastComments();
+        $this->data->aLastNews = $this->news_model->GetLimitNewsEx(0,2,false,'','DESC');
+
         $this->load->view('main/index.php');
     }
 }
