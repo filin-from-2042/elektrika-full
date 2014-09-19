@@ -22,5 +22,11 @@ class CPageController extends CBaseController
         $this->cTitle = $this->data->pages_title;
         $this->cDescription = $this->data->pages_description;
         $this->cKeywords = $this->data->pages_keywords;
+
+
+        // Get short preview text for full page
+        $aFullServices = $this->Page_model->GetPageContent('services', 'general');
+        // Bottom short preview text in column for full page
+        $this->data->aPreviewText = $this->Page_model->GetContentByDelimiter( $aFullServices[0]["pages_text"], '<!--TabDelimiter-->' );
     }
 }

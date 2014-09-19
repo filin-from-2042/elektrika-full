@@ -111,7 +111,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('CBaseModel','news_model');
+$autoload['model'] = array('CBaseModel');
 
 
 /* End of file autoload.php */

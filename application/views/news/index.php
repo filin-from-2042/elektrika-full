@@ -44,7 +44,7 @@
                                     <p>'. $aNews["news_content"] .'</p>
                                 </div>
                                 <div class="col-md-12 post-bottom-panel">
-                                    <a href="#">
+                                    <a href="' . site_url('/news/singlenews/'.$aNews["id"]) . '">
                                         <button class="btn btn-default readmore" type="button">
                                             <span class="more">Read More</span>
                                         </button>
@@ -65,7 +65,7 @@
         </div>
         <div class="col-md-4">
             <?php
-                require "right-column.php";
+                $this->load->view("news/right-column.php");
             ?>
         </div>
     </div>

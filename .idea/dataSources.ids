@@ -13,6 +13,19 @@
       <column name="archive_date" sqlType="VARCHAR" length="7" precision="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
+    <table name="el_articles" schema="" catalog="elektrika-db" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="article_title" sqlType="VARCHAR" length="128" precision="0" nullable="false" jdbcType="12"/>
+      <column name="article_description" sqlType="VARCHAR" length="128" precision="0" nullable="false" jdbcType="12"/>
+      <column name="article_keywords" sqlType="VARCHAR" length="128" precision="0" nullable="false" jdbcType="12"/>
+      <column name="article_content" sqlType="TEXT" length="65535" precision="0" nullable="false" jdbcType="-1"/>
+      <column name="article_tags" sqlType="TEXT" length="65535" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="article_create_date" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="article_update_date" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="article_author" sqlType="VARCHAR" length="128" precision="0" nullable="false" jdbcType="12"/>
+      <column name="article_status" sqlType="ENUM" length="7" precision="0" nullable="true" jdbcType="1" def="J2VuYWJsZSc="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
     <table name="el_categories" schema="" catalog="elektrika-db" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="categories_name" sqlType="VARCHAR" length="50" precision="0" nullable="false" jdbcType="12"/>
@@ -25,10 +38,14 @@
       <column name="comments_create_time" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
       <column name="comments_author" sqlType="VARCHAR" length="128" precision="0" nullable="false" jdbcType="12"/>
       <column name="comments_email" sqlType="VARCHAR" length="128" precision="0" nullable="false" jdbcType="12"/>
-      <column name="comments_status" sqlType="ENUM" length="7" precision="0" nullable="true" jdbcType="1" def="J2VuYWJsZSc="/>
-      <column name="comments_article_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="comments_status" sqlType="ENUM" length="7" precision="0" nullable="true" jdbcType="1" def="J0VOQUJMRSc="/>
+      <column name="comments_news_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="comments_parent_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="true" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <foreign-key name="FK_comment_post" columns="comments_article_id" ref-table="el_news" ref-schema="" ref-catalog="elektrika-db" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="el_comments_ibfk_1" columns="comments_parent_id" ref-table="el_comments" ref-schema="" ref-catalog="elektrika-db" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="el_comments_ibfk_2" columns="comments_news_id" ref-table="el_news" ref-schema="" ref-catalog="elektrika-db" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="el_comments_ibfk_1" table="el_comments" schema="" catalog="elektrika-db" columns="comments_parent_id"/>
+      <index name="fk_parent_id" unique="false" columns="comments_news_id"/>
     </table>
     <table name="el_news" schema="" catalog="elektrika-db" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -43,7 +60,7 @@
       <column name="news_status" sqlType="CHAR" length="7" precision="0" nullable="true" jdbcType="1"/>
       <column name="news_type" sqlType="VARCHAR" length="100" precision="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <exported-key name="FK_comment_post" table="el_comments" schema="" catalog="elektrika-db" columns="comments_article_id"/>
+      <exported-key name="el_comments_ibfk_2" table="el_comments" schema="" catalog="elektrika-db" columns="comments_news_id"/>
       <exported-key name="el_news2categories_ibfk_1" table="el_news2categories" schema="" catalog="elektrika-db" columns="news_id"/>
     </table>
     <table name="el_news2categories" schema="" catalog="elektrika-db" type="TABLE">

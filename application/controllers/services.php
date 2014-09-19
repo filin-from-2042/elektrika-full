@@ -19,8 +19,9 @@ class Services extends CPageController
 
     public function index()
     {
-        // Get preview text
+        // Get short preview text
         $aFullServices = $this->Page_model->GetPageContent('services', 'general');
+        // Bottom short preview text in column
         $this->data->aPreviewText = $this->Page_model->GetContentByDelimiter( $aFullServices[0]["pages_text"], '<!--TabDelimiter-->' );
 
         // Render preview pages text on tabs

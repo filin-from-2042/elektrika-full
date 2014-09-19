@@ -108,4 +108,12 @@ class CBaseModel extends CI_Model
     {
         return $this->db->get("categories")->result_array();
     }
+
+    //---------------------------------------- GET DETAIL BY ID --------------------------------------------------------/
+    public function GetDetailPage($id)
+    {
+        $this->db->where('id',$id);
+
+        return $this->db->get($this->cTableName)->result_array();
+    }
 }

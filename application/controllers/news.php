@@ -19,6 +19,7 @@ class News extends CBaseController
         //$this->load->model("news_model");
         // Initialize pagination
         $this->load->library('pagination');
+        $this->load->model("news_model");
 
         // Initialize pagination config
         $this->config->load("news_pagination");
@@ -32,6 +33,15 @@ class News extends CBaseController
         $this->aPaginationConfig["next_tag_open"] = $this->config->item('next_tag_open');
         $this->aPaginationConfig["next_tag_close"] = $this->config->item('next_tag_close');
         $this->aPaginationConfig["next_link"] = $this->config->item('next_link');
+
+        // All categories for right column
+        $this->data->aCategories = $this->news_model->GetAllCategories();
+        // All archives for right column
+        $this->data->aArchives = $this->news_model->GetAllArchives();
+        // Last comment for right column
+        $this->data->aLastComments = $this->news_model->GetLastComments();
+        // Last news for right column
+        $this->data->aLastNews = $this->news_model->GetLimitNewsEx(0,2,false,'','DESC');
     }
 
     public function index($nStart = 0)
@@ -84,15 +94,23 @@ class News extends CBaseController
         $this->RenderGeneralData();
 
     }
+
     public function singlenews($cNewsId)
     {
-        if( isset($cNewsId) && !empty($cNewsId) )
-        {
+        $this->cViewDIR = "singlenews";
+        $nNewsId = intval($cNewsId);
 
+        if( isset($nNewsId) && !empty($nNewsId) )
+        {
+           $this->data->aFullPage = $this->news_model->GetDetailPage($nNewsId);
+
+            $this->data->aAllComments = $this->news_model->GetNewsComments($nNewsId);
+
+            $this->load->view('main/index.php');
         }
     }
 
-    //-------------------------------------------- RENDER WITH GENERAL DATA ----------------------------------------------------/
+    //-------------------------------------------- RENDER WITH GENERAL DATA --------------------------------------------/
 
     public function RenderGeneralData()
     {
@@ -102,14 +120,7 @@ class News extends CBaseController
             $aNews["news_categories"] = $this->news_model->GetCurrentCategories($aNews["id"]);
         }
 
-        // All categories for right column
-        $this->data->aCategories = $this->news_model->GetAllCategories();
-        // All archives for right column
-        $this->data->aArchives = $this->news_model->GetAllArchives();
-        // Last comment for right column
-        $this->data->aLastComments = $this->news_model->GetLastComments();
-        $this->data->aLastNews = $this->news_model->GetLimitNewsEx(0,2,false,'','DESC');
-
         $this->load->view('main/index.php');
     }
+
 }

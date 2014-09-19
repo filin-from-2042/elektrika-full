@@ -133,4 +133,19 @@ class News_Model extends CBaseModel
         return $oRes->result_array();
     }
 
+    //---------------------------------------- GET NEWS COMMENTS -------------------------------------------------------/
+    public function GetNewsComments($nNewsID)
+    {
+        $this->db->where(
+                         array(
+                                'comments_news_id'=>$nNewsID,
+                                'comments_status'=>'ENABLE',
+                               )
+                        );
+
+        $oResult = $this->db->get('comments');
+
+        return $oResult->result_array();
+    }
+
 }
