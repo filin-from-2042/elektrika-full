@@ -17,6 +17,12 @@ class Home extends CPageController
                                     'tab_3' => 'we_offer',
                                     'tab_4' => 'testimonials'
                                 );
+    public $aTabsID = array(
+                                'tab_1' =>  'who',
+                                'tab_2' =>  'why',
+                                'tab_3' =>  'can',
+                                'tab_4' =>  'test',
+                            );
     public function index()
     {
         $this->data->aTabs = array();
@@ -27,8 +33,25 @@ class Home extends CPageController
             // Separated full content
             $aPreview = $this->Page_model->GetContentByDelimiter($aTabData[0]["pages_text"], '<!--PreviewDelimiter-->' );
             // Add preview content to general array of home page
-            $this->data->aTabs[$cTab] = $aPreview["tab_1"];
+            $this->data->aTabs[$cTab]["preview_text"] = $aPreview["tab_1"];
+            $this->data->aTabs[$cTab]["page_id"] = $aTabData[0]["id"];
         }
+        $this->data->aTabsID = $this->aTabsID;
         $this->load->view('main/index.php');
+    }
+
+    public function fullpage($cHomePageID)
+    {
+        $this->cViewDIR = "singlepage";
+        $nHomePageID = intval($cHomePageID);
+
+        if( isset($nHomePageID) && !empty($nHomePageID) )
+        {
+            $this->data->aFullPageContent = $this->Page_model->GetDetailPage($nHomePageID);
+
+            $this->cTitle = $this->data->aFullPageContent[0]["pages_title"];
+
+            $this->load->view('main/index.php');
+        }
     }
 }

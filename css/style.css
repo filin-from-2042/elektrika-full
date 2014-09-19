@@ -71,6 +71,9 @@ header .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a{
 	font-weight:bold;
     text-transform: uppercase;
 }
+header .navbar-inverse .navbar-header a#logo{
+    padding-top: 0;
+}
 header .dropdown-menu > li#arrow-sub {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
     left: 69px;
@@ -151,6 +154,9 @@ header .dropdown-menu > li#arrow-sub {
  .short-info  .tab-content>.tab-pane .col-md-4 .img-responsive {
 	display:inline-block;
  }
+.short-info  .tab-content>.tab-pane > .row:first-child{
+    margin: 0;
+}
  
  .short-info  .buttons-full-info{
 	margin-top:20px;
