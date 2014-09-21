@@ -16,12 +16,12 @@
                 <div class="col-md-6 col-sm-8">
                     <a href="<?=site_url( 'about/fullpage/' . $aGeneralPage["id"])?>">
                         <button type="button" class="btn btn-default">
-                            <span class="more">Read More</span>
+                            <span class="more">Читать далее</span>
                         </button>
                     </a>
                     <a href="#" >
                         <button type="button" class="btn btn-info">
-                            <span class="follow">Follow Us</span>
+                            <span class="follow">Следуй за нами</span>
                         </button>
                     </a>
                     <a href="#">
@@ -33,7 +33,7 @@
                 <div class="col-md-6 col-sm-4">
                     <a href="#" class="pull-right">
                         <button type="button" class="btn btn-default">
-                            <span class="get">Get in touch</span>
+                            <span class="get">Свяжитесь с нами</span>
                         </button>
                     </a>
                 </div>

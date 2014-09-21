@@ -7,9 +7,7 @@
  */
 
 $config['company_email'] = 'tricolor-nsk@mail.ru';
-$config['company_office'] = 'office';
-$config['company_phone'] = 'phone';
-$config['company_fax'] = 'fax';
-$config['company_copyright'] = 'Copyright © 2010-2011 BrandMedia. All rights reserved. Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit. Nullam elit turpis, semper sed consequat a, malesuada
-                                 vel neque.';
+$config['company_office'] = 'г. Новомосковск, ул. Садовского д.34';
+$config['company_phone'] = '8(48762) 6-37-64';
+$config['company_fax'] = '8(48762) 6-37-64';
+$config['company_copyright'] = 'Alexey Konov. All Rights Reserved :*';

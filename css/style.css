@@ -430,6 +430,10 @@ header .dropdown-menu > li#arrow-sub {
     padding-right: 0;
 }
 
+.short-text{
+    color: white;
+}
+
 /******************************Footer*********************/
 
 .footer ul{

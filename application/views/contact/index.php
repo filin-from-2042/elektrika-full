@@ -7,8 +7,8 @@
             <div class="main-column col-md-8 col-sm-8">
                 <div class="short-text">
                     <div class="short-text header">
-                        <span class="short-text title">We are online 24 hours</span>
-                        <small class="short-text subtitle">This is a Subtittle</small>
+                        <span class="short-text title">Мы находимся</span>
+                        <small class="short-text subtitle">Наши магазины находятся по следующим адресам</small>
                     </div>
                     <div class="short-text">
                         <p>
@@ -18,8 +18,8 @@
                 </div>
                 <div class="form-contact-container">
                     <div class="form-contact header">
-                        <span class="form-contact title">Email us</span>
-                        <small class="form-contact subtitle">This is a Subtittle</small>
+                        <span class="form-contact title">Форма обратной связи</span>
+                        <small class="form-contact subtitle">Вы можете задать вопрос заполнив поля ниже</small>
                     </div>
                     <form class="form-contact">
                         <div class="row inline-inputs">
@@ -29,18 +29,20 @@
                             </div>
                             <div class="col-md-6">
                                 <input class="form-control" type="text" id="contactEmail" placeholder="Email"/><span class="required">*</span>
-                                <input class="form-control" type="text" id="contactWebsite" placeholder="Сайт"/><span class="required">*</span>
+<!--                                <input class="form-control" type="text" id="contactWebsite" placeholder="Сайт"/><span class="required">*</span>-->
+                                 <input class="form-control" type="text" id="contactSubject" placeholder="Тема"/><span class="required">*</span>
+
                             </div>
                         </div>
                         <div class="row block-inputs">
                             <div class="col-md-12">
-                                <input class="form-control" type="text" id="contactSubject" placeholder="Тема"/><span class="required">*</span>
+<!--                                <input class="form-control" type="text" id="contactSubject" placeholder="Тема"/><span class="required">*</span>-->
                                 <textarea placeholder="Текст письма" rows="6" id="contactMessage" class="form-control"></textarea><span class="required">*</span>
                             </div>
                         </div>
                         <div class="row btn-container">
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-danger">Send</button>
+                                <button type="submit" class="btn btn-danger">Отправить</button>
                             </div>
                         </div>
                     </form>
@@ -57,28 +59,28 @@
                     </div>
                 </div>
                 <div class="contact-info-container">
-                    <div class="contact-info title">Contact info</div>
+                    <div class="contact-info title">Контактная информация</div>
                     <div class="contact-info email">
                         <span class="email-title">Email:</span><span class="email-text"><?=mailto($this->config->item('company_email'));?></span>
                     </div>
                     <div class="contact-info office">
-                        <span class="office-title">Office:</span><span class="office-text"><?=$this->config->item('company_office');?></span>
+                        <span class="office-title">Адрес:</span><span class="office-text"><?=$this->config->item('company_office');?></span>
                     </div>
                     <div class="contact-info phone">
-                        <span class="phone-title">Phone:</span><span class="phone-text"><?=$this->config->item('company_phone');?></span>
+                        <span class="phone-title">Телефон:</span><span class="phone-text"><?=$this->config->item('company_phone');?></span>
                     </div>
                     <div class="contact-info fax">
-                        <span class="fax-title">Fax:</span><span class="fax-text"><?=$this->config->item('company_fax');?></span>
+                        <span class="fax-title">Факс:</span><span class="fax-text"><?=$this->config->item('company_fax');?></span>
                     </div>
                     <div class="contact-info social-buttons">
                         <a href="#">
                             <button type="button" class="btn btn-info">
-                                <span class="follow">Follow Us</span>
+                                <span class="follow">Следуй за нами</span>
                             </button>
                         </a>
                         <a href="#">
                             <button type="button" class="btn btn-primary">
-                                <span class="facebook">Facebook</span>
+                                <span class="facebook">Фейсбук</span>
                             </button>
                         </a>
                     </div>
