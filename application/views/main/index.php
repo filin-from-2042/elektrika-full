@@ -28,13 +28,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a id="logo" href="#" class="navbar-brand"><img src="/images/logo-el.png"></a>
+                <a id="logo" href="<?=site_url('/home')?>" class="navbar-brand"><img src="/images/logo-el.png"></a>
             </div>
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
                     <li><?= anchor('home', '<img src="/images/home.png">')?></li>
                     <li><?= anchor('about','О Компании')?></li>
-                    <li><?= anchor('services','Услуги')?></a></li>
+                    <li><?= anchor('services','Акции')?></a></li>
                     <li class="dropdown">
                         <?= anchor('','Новости<span class="caret"></span>',array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'))?>
                         <ul  class="dropdown-menu" role="menu">
@@ -67,7 +67,7 @@
                         <li><?= anchor('home','Главная')?></li>
                         <li><?= anchor('about','О компании')?></li>
                         <li><?= anchor('news','Новости')?></li>
-                        <li><?= anchor('services','Услуги')?></li>
+                        <li><?= anchor('services','Акции')?></li>
                         <li><?= anchor('contact','Контакты')?></li>
                     </ul>
                 </div>
@@ -104,7 +104,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 copy-text">
                     <img src="/images/image-footer.png"/>
                     <div class="col-lg-8 col-md-8">
-                        <p class="title-copyright">BrandMedia &trade;</p>
+                        <p class="title-copyright">Электрика &trade;</p>
                         <p class="copyright"><?=$this->config->item('company_copyright')?></p>
                         <p class="bottom-links">
                             <?= anchor('home','Terms & Conditions')?>&nbsp;&#124;&nbsp;<?= anchor('home','Privacy')?>&nbsp;&#124;&nbsp;<?= anchor('home','Contact Us')?>

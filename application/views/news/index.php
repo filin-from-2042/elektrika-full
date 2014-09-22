@@ -46,14 +46,14 @@
                                 <div class="col-md-12 post-bottom-panel">
                                     <a href="' . site_url('/news/singlenews/'.$aNews["id"]) . '">
                                         <button class="btn btn-default readmore" type="button">
-                                            <span class="more">Read More</span>
+                                            <span class="more">Читать полностью</span>
                                         </button>
                                     </a>
-                                    <a href="#">
+                                    <!--<a href="#">
                                         <button class="btn btn-default share-this" type="button">
                                             <span class="share">Share this <span class="glyphicon glyphicon-heart"></span></span>
                                         </button>
-                                    </a>
+                                    </a>-->
                                 </div>
                             </div>';
                     }

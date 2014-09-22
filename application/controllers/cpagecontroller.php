@@ -20,6 +20,7 @@ class CPageController extends CBaseController
         $this->data->aCategories = $this->Page_model->GetAllCategories();
 
         $this->cTitle = $this->data->pages_title;
+        $this->cSubTitle = $this->data->pages_subtitle;
         $this->cDescription = $this->data->pages_description;
         $this->cKeywords = $this->data->pages_keywords;
 

@@ -37,9 +37,9 @@
                         <a id="like-facebook" class="repost-icon col-md-3" href="#"> Like It Facebook</a>
                     </div>
                     <div class="comment-panel clearfix">
-                        <a href="#" class="pull-right">
+                        <a href="#InputName" class="pull-right">
                             <button class="btn btn-default add-comment" type="button">
-                                <span class="add">Add comment</span>
+                                <span class="add">Комментировать</span>
                             </button>
                         </a>
                         <span class="title">Comments</span>

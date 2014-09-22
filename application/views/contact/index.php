@@ -73,7 +73,7 @@
                         <span class="fax-title">Факс:</span><span class="fax-text"><?=$this->config->item('company_fax');?></span>
                     </div>
                     <div class="contact-info social-buttons">
-                        <a href="#">
+                        <!--<a href="#">
                             <button type="button" class="btn btn-info">
                                 <span class="follow">Следуй за нами</span>
                             </button>
@@ -82,7 +82,7 @@
                             <button type="button" class="btn btn-primary">
                                 <span class="facebook">Фейсбук</span>
                             </button>
-                        </a>
+                        </a>-->
                     </div>
                 </div>
             </div>

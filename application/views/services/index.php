@@ -18,27 +18,27 @@
                 <div class="col-md-6 col-sm-9">
                     <a href="#">
                         <button type="button" class="btn btn-default readmore">
-                            <span class="more">Read More</span>
+                            <span class="more">Читать полностью</span>
                         </button>
                     </a>
-                    <a href="#" class="hidden-xs">
-                        <button type="button" class="btn btn-default get-support">
-                            <span class="get-support">Get Support</span>
-                        </button>
-                    </a>
-                    <a href="#" class="hidden-xs">
-                        <button type="button" class="btn btn-default examples">
-                            <span class="examples">Examples</span>
-                        </button>
-                    </a>
+<!--                    <a href="#" class="hidden-xs">-->
+<!--                        <button type="button" class="btn btn-default get-support">-->
+<!--                            <span class="get-support">Get Support</span>-->
+<!--                        </button>-->
+<!--                    </a>-->
+<!--                    <a href="#" class="hidden-xs">-->
+<!--                        <button type="button" class="btn btn-default examples">-->
+<!--                            <span class="examples">Examples</span>-->
+<!--                        </button>-->
+<!--                    </a>-->
                 </div>
-                <div class="col-md-2 col-md-offset-4 col-sm-3">
-                    <a href="#" class="hidden-xs">
-                        <button type="button" class="btn btn-default get">
-                            <span class="get">Get in touch</span>
-                        </button>
-                    </a>
-                </div>
+<!--                <div class="col-md-2 col-md-offset-4 col-sm-3">-->
+<!--                    <a href="#" class="hidden-xs">-->
+<!--                        <button type="button" class="btn btn-default get">-->
+<!--                            <span class="get">Get in touch</span>-->
+<!--                        </button>-->
+<!--                    </a>-->
+<!--                </div>-->
             </div>
         </div>
     </div>
@@ -58,27 +58,27 @@
                 <div class="col-md-6 col-sm-9">
                     <a href="#">
                         <button type="button" class="btn btn-default readmore">
-                            <span class="more">Read More</span>
+                            <span class="more">Читать полностью</span>
                         </button>
                     </a>
-                    <a href="#" class="hidden-xs">
-                        <button type="button" class="btn btn-default get-support">
-                            <span class="get-support">Get Support</span>
-                        </button>
-                    </a>
-                    <a href="#" class="hidden-xs">
-                        <button type="button" class="btn btn-default examples">
-                            <span class="examples">Examples</span>
-                        </button>
-                    </a>
+<!--                    <a href="#" class="hidden-xs">-->
+<!--                        <button type="button" class="btn btn-default get-support">-->
+<!--                            <span class="get-support">Get Support</span>-->
+<!--                        </button>-->
+<!--                    </a>-->
+<!--                    <a href="#" class="hidden-xs">-->
+<!--                        <button type="button" class="btn btn-default examples">-->
+<!--                            <span class="examples">Examples</span>-->
+<!--                        </button>-->
+<!--                    </a>-->
                 </div>
-                <div class="col-md-2 col-md-offset-4 col-sm-3">
-                    <a href="#" class="hidden-xs">
-                        <button type="button" class="btn btn-default get">
-                            <span class="get">Get in touch</span>
-                        </button>
-                    </a>
-                </div>
+<!--                <div class="col-md-2 col-md-offset-4 col-sm-3">-->
+<!--                    <a href="#" class="hidden-xs">-->
+<!--                        <button type="button" class="btn btn-default get">-->
+<!--                            <span class="get">Get in touch</span>-->
+<!--                        </button>-->
+<!--                    </a>-->
+<!--                </div>-->
             </div>
         </div>
     </div>
@@ -98,27 +98,27 @@
                 <div class="col-md-6 col-sm-9">
                     <a href="#">
                         <button type="button" class="btn btn-default readmore">
-                            <span class="more">Read More</span>
+                            <span class="more">Читать полностью</span>
                         </button>
                     </a>
-                    <a href="#" class="hidden-xs">
-                        <button type="button" class="btn btn-default get-support">
-                            <span class="get-support">Get Support</span>
-                        </button>
-                    </a>
-                    <a href="#" class="hidden-xs">
-                        <button type="button" class="btn btn-default examples">
-                            <span class="examples">Examples</span>
-                        </button>
-                    </a>
+<!--                    <a href="#" class="hidden-xs">-->
+<!--                        <button type="button" class="btn btn-default get-support">-->
+<!--                            <span class="get-support">Get Support</span>-->
+<!--                        </button>-->
+<!--                    </a>-->
+<!--                    <a href="#" class="hidden-xs">-->
+<!--                        <button type="button" class="btn btn-default examples">-->
+<!--                            <span class="examples">Examples</span>-->
+<!--                        </button>-->
+<!--                    </a>-->
                 </div>
-                <div class="col-md-2 col-md-offset-4 col-sm-3">
-                    <a href="#" class="hidden-xs">
-                        <button type="button" class="btn btn-default get">
-                            <span class="get">Get in touch</span>
-                        </button>
-                    </a>
-                </div>
+<!--                <div class="col-md-2 col-md-offset-4 col-sm-3">-->
+<!--                    <a href="#" class="hidden-xs">-->
+<!--                        <button type="button" class="btn btn-default get">-->
+<!--                            <span class="get">Get in touch</span>-->
+<!--                        </button>-->
+<!--                    </a>-->
+<!--                </div>-->
             </div>
         </div>
     </div>

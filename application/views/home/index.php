@@ -6,10 +6,10 @@
         <nav class="navbar navbar-default">
             <div class="container">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#who" data-toggle="tab">Who we are <br><span class="sub-text">Something about us</span></a></li>
-                    <li><a href="#why" data-toggle="tab">Why hire us <br><span class="sub-text">Look at how we work</span></a></li>
-                    <li><a href="#can" data-toggle="tab">Whe can offer <br><span class="sub-text">The best services</span></a></li>
-                    <li><a href="#test"data-toggle="tab">Testimonials <br><span class="sub-text">Customers testimonials</span></a></li>
+                    <li class="active"><a href="#who" data-toggle="tab">Кто мы<br><span class="sub-text">Немного о нас</span></a></li>
+                    <li><a href="#why" data-toggle="tab">Почему мы<br><span class="sub-text">Наши преимущества</span></a></li>
+                    <li><a href="#can" data-toggle="tab">Мы предлагаем <br><span class="sub-text">Товары магазина</span></a></li>
+                    <li><a href="#test"data-toggle="tab">Отзывы<br><span class="sub-text">Отзывы покупателей</span></a></li>
                 </ul>
             </div>
         </nav>
@@ -21,7 +21,7 @@
                     <div class="tab-pane <?=($cTabKey == 'tab_1')?'active':''?>" id="<?=$aTabsID[$cTabKey];?>">
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <?=$cTabContent["preview_text"];?>
+                                <?=$cTabContent["preview_text"];?><br>. . .
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <img src="/images/image-about.png" alt="image about us" class="img-responsive">
@@ -31,10 +31,10 @@
                             <div class="col-md-6 col-sm-8">
                                 <a href="<?=site_url('home/fullpage/' . $cTabContent["page_id"])?>">
                                     <button type="button" class="btn btn-default">
-                                        <span class="more">Read More</span>
+                                        <span class="more">Читать полностью</span>
                                     </button>
                                 </a>
-                                <a href="#" >
+                               <!-- <a href="#" >
                                     <button type="button" class="btn btn-info">
                                         <span class="follow">Follow Us</span>
                                     </button>
@@ -43,7 +43,7 @@
                                     <button type="button" class="btn btn-primary">
                                         <span class="facebook">Facebook</span>
                                     </button>
-                                </a>
+                                </a>-->
                             </div>
                             <div class="col-md-6 col-sm-4">
                                 <a href="#" class="pull-right">
