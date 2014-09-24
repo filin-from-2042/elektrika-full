@@ -1,42 +1,35 @@
 <div class="slider">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <?
+            // Counter
+            $i=0;
+            if ($aImagesCarousel!=false)
+            {
+                foreach ($aImagesCarousel as $Image)
+                {
+                    echo '<li data-target="#myCarousel" data-slide-to="' . $i . '"'. ($i==0?' class="active" ':'') .'></li>';
+                    $i++;
+                }
+            }
+            ?>
         </ol>
         <div class="container slider-wrap">
             <div class="carousel-inner">
-                <div class="item active">
-                    <img src="/images/image-slider.png" alt="First slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Example headline.</h1>
-                            <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="/images/image-slider.png" alt="Second slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Another example headline.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="/images/image-slider.png" alt="Third slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>One more for good measure.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-                        </div>
-                    </div>
-                </div>
+                <?
+                // Counter
+                $i=1;
+                if ($aImagesCarousel!=false)
+                {
+                    foreach ($aImagesCarousel as $Image)
+                    {
+                        echo '<div class="item '. ( ( $i == 1 ) ? 'active' : '' ) .'">';
+                            echo '<img src="' . base_url($Image['src']) . '">';
+                        echo '</div>';
+                        $i++;
+                    }
+                }
+                ?>
             </div>
         </div>
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>

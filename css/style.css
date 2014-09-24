@@ -1,7 +1,12 @@
 
 /***************************Main*****************************************/
+@font-face{
+    font-family: 'CuprumFFU';
+    src:url('../fonts/CuprumFFU.otf');
+}
 body{
     min-width: 400px;
+    font-family: 'CuprumFFU';
 }
 .slider
 {

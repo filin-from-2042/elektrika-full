@@ -23,6 +23,50 @@ class Home extends CPageController
                                 'tab_3' =>  'can',
                                 'tab_4' =>  'test',
                             );
+
+    public $aImagesCarousel = array(
+                                    array(
+                                        'src' =>  '/images/carousel/image-elfront.png',
+                                        'alt'   =>  'Магазин "Электрика"'
+                                        ),
+                                    array(
+                                        'src' =>  '/images/carousel/image-elinside.png',
+                                        'alt'   =>  'Торговый зал'
+                                        ),
+                                    array(
+                                        'src' =>  'images/carousel/image-elinside2.png',
+                                        'alt'   =>  'Торговый зал'
+                                        ),
+                                    array(
+                                        'src' =>  '/images/carousel/image-elinside3.png',
+                                        'alt'   =>  'Торговый зал'
+                                        ),
+                                    array(
+                                        'src' =>  '/images/carousel/image-elinside4.png',
+                                        'alt'   =>  'Торговый зал'
+                                        ),
+                                    array(
+                                        'src' =>  '/images/carousel/image-elinside5.png',
+                                        'alt'   =>  'Торговый зал'
+                                        ),
+                                    array(
+                                        'src' =>  '/images/carousel/image-elinside7.png',
+                                        'alt'   =>  'Торговый зал'
+                                        ),
+                                    array(
+                                        'src' =>  '/images/carousel/image-elinside8.png',
+                                        'alt'   =>  'Торговый зал'
+                                        ),
+                                    array(
+                                        'src' =>  '/images/carousel/image-ellogo.png',
+                                        'alt'   =>  'Магазин "Электрика"'
+                                    ),
+                                    array(
+                                        'src' =>  '/images/carousel/image-profront.png',
+                                        'alt'   =>  'Магазин "Инструмент"'
+                                    ),
+
+                                );
     public function index()
     {
         $this->data->aTabs = array();
@@ -37,6 +81,7 @@ class Home extends CPageController
             $this->data->aTabs[$cTab]["page_id"] = $aTabData[0]["id"];
         }
         $this->data->aTabsID = $this->aTabsID;
+        $this->data->aImagesCarousel = $this->aImagesCarousel;
         $this->load->view('main/index.php');
     }
 
