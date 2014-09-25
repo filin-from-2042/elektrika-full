@@ -838,6 +838,7 @@ header .dropdown-menu > li#arrow-sub {
 }
 .blog-columns .right-column .section-container > .title-container > span.title{
     margin-left: 10px;
+    font-family: 'a_AvantelntBold';
 }
 .blog-columns .right-column .section-container > .content-container{
     padding: 20px 15px;
