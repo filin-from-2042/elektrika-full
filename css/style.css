@@ -4,9 +4,14 @@
     font-family: 'CuprumFFU';
     src:url('../fonts/CuprumFFU.otf');
 }
+@font-face{
+    font-family: 'a_AvantelntBold';
+    src:url('../fonts/a_Avantelnt-Bold.ttf');
+}
 body{
     min-width: 400px;
     font-family: 'CuprumFFU';
+    font-size: 15px;
 }
 .slider
 {
@@ -45,6 +50,7 @@ header .navbar{
 	border:none;
 	margin:0;
 	border-radius:0;
+    font-family: 'a_AvantelntBold';
 }
 header .navbar .container{
 	padding: 19px 10px;
@@ -137,6 +143,7 @@ header .dropdown-menu > li#arrow-sub {
     font-weight: bold;
 	padding:10px 25px;
 	color:#fff;
+     font-family: 'a_AvantelntBold';
  }
  .short-info .nav li.active a,
  .short-info .nav li.active{
@@ -148,6 +155,7 @@ header .dropdown-menu > li#arrow-sub {
 	text-transform:none;
 	font-size: 12px;
 	color:#6f7380;
+    font-family: 'CuprumFFU';
  }
  
  .short-info .row{
@@ -161,6 +169,10 @@ header .dropdown-menu > li#arrow-sub {
  }
 .short-info  .tab-content>.tab-pane > .row:first-child{
     margin: 0;
+}
+.short-info .tab-pane .row:first-child{
+    height: 260px;
+    overflow: hidden;
 }
  
  .short-info  .buttons-full-info{
@@ -300,6 +312,7 @@ header .dropdown-menu > li#arrow-sub {
 }
 .tabs-images .info-window .text-uppercase{
 	margin-bottom: 20px;
+    font-family: 'a_AvantelntBold';
 }
 .tabs-images .info-window .block-icon{
 	padding-left: 60px;
@@ -396,6 +409,7 @@ header .dropdown-menu > li#arrow-sub {
 .mail-panel .mail-icon{
     background: url("../images/icon-mail.png") no-repeat 18px 50%, linear-gradient(to bottom, #88909c, #6c727a) repeat ;
     padding-left: 65px;
+    font-family: 'a_AvantelntBold';
 }
 .mail-panel .content-panel{
     background: linear-gradient(to top, #33363a, #41454a 50%, #464a50 100%);
@@ -523,6 +537,8 @@ header .dropdown-menu > li#arrow-sub {
     font-size: 18px;
     padding:10px 25px 10px 15px;
     color:#fff;
+    font-family: 'a_AvantelntBold';
+
 }
 .top-title-panel .panel .sub-text{
     font-style:italic;
@@ -1050,6 +1066,7 @@ form.form-contact .btn-danger{
     border: none;
     border-top:1px solid #dd8a64;
     border-left:1px solid #dd8a64;
+    font-family: 'a_AvantelntBold';
 }
 .blog-columns form.add-comment-form .btn-danger:hover,
 form.form-contact .btn-danger:hover{
@@ -1076,6 +1093,7 @@ form.form-contact .btn-container{
 .short-text.title,
 .form-contact.title{
     text-transform: uppercase;
+    font-family: 'a_AvantelntBold';
 }
 .short-text > p{
     color: #67747f;
