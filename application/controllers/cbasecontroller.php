@@ -21,6 +21,8 @@ class CBaseController extends CI_Controller
     public $cKeywords ='Лампочки, розетки, батарейки';
     // Object with full data of page
     public $data;
+    // JS files for include
+    public $cJsFiles = array();
 
     public function __construct()
     {

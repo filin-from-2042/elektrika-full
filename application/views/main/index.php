@@ -15,7 +15,16 @@
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 
 <link href="/css/style.css" rel="stylesheet">
+<?
+    if($this->cJsFiles)
+    {
+        foreach($this->cJsFiles as $cJsFile)
+        {
+           echo  '<script type="text/javascript" src="' . base_url('/js/' . $cJsFile) . '"></script>';
 
+        }
+    }
+?>
 </head>
 <body>
 <header>

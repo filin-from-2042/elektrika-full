@@ -24,6 +24,7 @@ class Home extends CPageController
                                 'tab_4' =>  'test',
                             );
 
+
     public $aImagesCarousel = array(
                                     array(
                                         'src' =>  '/images/carousel/image-elfront.png',
@@ -67,6 +68,11 @@ class Home extends CPageController
                                     ),
 
                                 );
+    public function __construct()
+    {
+        parent::__construct();
+        $this->cJsFiles[] = 'home.js';
+    }
     public function index()
     {
         $this->data->aTabs = array();
