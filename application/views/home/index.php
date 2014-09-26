@@ -24,7 +24,7 @@
                                 <?=$cTabContent["preview_text"];?><br>. . .
                             </div>
                             <div class="col-md-4 col-sm-4">
-                                <img src="/images/image-about.png" alt="image about us" class="img-responsive">
+                                <img src="<?=base_url('/images/'.$cTabContent["pages_preview_image"])?>" alt="image about us" class="img-responsive">
                             </div>
                         </div>
                         <div class="row buttons-full-info hidden-xs">
@@ -46,11 +46,11 @@
                                 </a>-->
                             </div>
                             <div class="col-md-6 col-sm-4">
-                                <a href="#" class="pull-right">
-                                    <button type="button" class="btn btn-default">
-                                        <span class="get">Get in touch</span>
-                                    </button>
-                                </a>
+<!--                                <a href="#" class="pull-right">-->
+<!--                                    <button type="button" class="btn btn-default">-->
+<!--                                        <span class="get">Get in touch</span>-->
+<!--                                    </button>-->
+<!--                                </a>-->
                             </div>
                         </div>
                     </div>

@@ -19,23 +19,23 @@
                             <span class="more">Читать далее</span>
                         </button>
                     </a>
-                    <a href="#" >
-                        <button type="button" class="btn btn-info">
-                            <span class="follow">Следуй за нами</span>
-                        </button>
-                    </a>
-                    <a href="#">
-                        <button type="button" class="btn btn-primary">
-                            <span class="facebook">Facebook</span>
-                        </button>
-                    </a>
+<!--                    <a href="#" >-->
+<!--                        <button type="button" class="btn btn-info">-->
+<!--                            <span class="follow">Следуй за нами</span>-->
+<!--                        </button>-->
+<!--                    </a>-->
+<!--                    <a href="#">-->
+<!--                        <button type="button" class="btn btn-primary">-->
+<!--                            <span class="facebook">Facebook</span>-->
+<!--                        </button>-->
+<!--                    </a>-->
                 </div>
                 <div class="col-md-6 col-sm-4">
-                    <a href="#" class="pull-right">
-                        <button type="button" class="btn btn-default">
-                            <span class="get">Свяжитесь с нами</span>
-                        </button>
-                    </a>
+<!--                    <a href="#" class="pull-right">-->
+<!--                        <button type="button" class="btn btn-default">-->
+<!--                            <span class="get">Свяжитесь с нами</span>-->
+<!--                        </button>-->
+<!--                    </a>-->
                 </div>
             </div>
         </div>

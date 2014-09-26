@@ -79,6 +79,7 @@ class Home extends CPageController
             // Add preview content to general array of home page
             $this->data->aTabs[$cTab]["preview_text"] = $aPreview["tab_1"];
             $this->data->aTabs[$cTab]["page_id"] = $aTabData[0]["id"];
+            $this->data->aTabs[$cTab]["pages_preview_image"] = $aTabData[0]["pages_preview_image"];
         }
         $this->data->aTabsID = $this->aTabsID;
         $this->data->aImagesCarousel = $this->aImagesCarousel;
