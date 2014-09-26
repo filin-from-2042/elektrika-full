@@ -93,7 +93,7 @@
                         {
                             echo " <div class=\"comment-container\">
                                     <div class=\"comment-text\">
-                                        <span class=\"nic\"> $aComment[comments_author]</span> says:
+                                        <span class=\"nic\"> $aComment[comments_author]</span> говорит:
                                                                     <span class=\"text\">
                                                                         $aComment[comments_content]
                                                                     </span>

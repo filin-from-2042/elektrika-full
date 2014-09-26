@@ -46,25 +46,25 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <p>
-                    We are able to create anything on something real even dreams
+                    "Электрика"  - всегда низкие цены
                 </p>
             </div>
         </div>
         <div class="columns clearfix">
             <div class="col-md-4 col-sm-4">
                 <div>
-                    <a id="people" href="#">Creative People Working</a>
+                    <a id="people" href="#">На рынке продаж с 1998г</a>
                 </div>
                 <p><?=$aTabs["tab_1"]?></p>
                 <a href="<?=site_url('about/fullpage/'.$aFullTabsContent[$aPagesToTabs["tab_1"]]["id"])?>">
-                    <button class="btn btn-default visible-xs" type="button">
-                        <span class="more">Read More</span>
-                    </button>
+<!--                    <button class="btn btn-default visible-xs" type="button">-->
+<!--                        <span class="more">Read More</span>-->
+<!--                    </button>-->
                 </a>
             </div>
             <div class="col-md-4 col-sm-4">
                 <div>
-                    <a id="professionals" href="#">We are Professionals</a>
+                    <a id="professionals" href="#">Профессионалы своего дела</a>
                 </div>
                 <p><?=$aTabs["tab_2"]?></p>
                 <a href="<?=site_url('about/fullpage/'.$aFullTabsContent[$aPagesToTabs["tab_2"]]["id"])?>">
@@ -75,7 +75,7 @@
             </div>
             <div class="col-md-4 col-sm-4">
                 <div>
-                    <a id="quality" href="#">Quality & Beautiful Work</a>
+                    <a id="quality" href="#">Постоянное обновление ассортимента</a>
                 </div>
                 <p><?=$aTabs["tab_3"]?></p>
                 <a href="<?=site_url('about/fullpage/'.$aFullTabsContent[$aPagesToTabs["tab_3"]]["id"])?>">

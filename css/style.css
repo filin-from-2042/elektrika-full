@@ -79,7 +79,7 @@ header .navbar-right .dropdown-menu{
 	top: 110%;
 }
 header .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a{
-	font-weight:bold;
+	/*font-weight:bold;*/
     text-transform: uppercase;
 }
 header .navbar-inverse .navbar-header a#logo{
@@ -140,7 +140,7 @@ header .dropdown-menu > li#arrow-sub {
  .short-info .nav li > a{
 	text-transform:uppercase;
 	font-size: 16px;
-    font-weight: bold;
+    /*font-weight: bold;*/
 	padding:10px 25px;
 	color:#fff;
      font-family: 'a_AvantelntBold';
@@ -307,7 +307,7 @@ header .dropdown-menu > li#arrow-sub {
     width: 100%;
 	box-shadow: 0 13px 20px -10px #000;
 	padding: 10px 15px;
-	font-weight:bold;
+	/*font-weight:bold;*/
 	
 }
 .tabs-images .info-window .text-uppercase{
@@ -390,6 +390,9 @@ header .dropdown-menu > li#arrow-sub {
 .tabs-images .btn .getajob{
 	background: url("../images/button-getajob.png") no-repeat 100% 0;
 }
+.btn{
+    letter-spacing: 1px;
+}
 
 /***********************mail-panel***********************************/
 
@@ -417,7 +420,7 @@ header .dropdown-menu > li#arrow-sub {
     padding:15px 0;
 }
 .mail-panel .panel-body p{
-    font-weight: bold;
+    /*font-weight: bold;*/
     margin:0;
     line-height: 34px;
 }
@@ -1267,6 +1270,7 @@ div.form-contact-container{
 	#logo{
 		float:none;
 	}
+
 	.tabs-images  #video-link,
 	.tabs-images  #phone-link,
 	.tabs-images  #jobs-link{
