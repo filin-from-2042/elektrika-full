@@ -34,7 +34,7 @@
                 <ul class="nav navbar-nav">
                     <li><?= anchor('home', '<img src="/images/home.png">')?></li>
                     <li><?= anchor('about','О Компании')?></li>
-                    <li><?= anchor('services','Акции')?></a></li>
+                    <li><?= anchor('actions','Акции')?></a></li>
                     <li class="dropdown">
                         <?= anchor('','Новости<span class="caret"></span>',array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'))?>
                         <ul  class="dropdown-menu" role="menu">
@@ -67,7 +67,7 @@
                         <li><?= anchor('home','Главная')?></li>
                         <li><?= anchor('about','О компании')?></li>
                         <li><?= anchor('news','Новости')?></li>
-                        <li><?= anchor('services','Акции')?></li>
+                        <li><?= anchor('actions','Акции')?></li>
                         <li><?= anchor('contact','Контакты')?></li>
                     </ul>
                 </div>

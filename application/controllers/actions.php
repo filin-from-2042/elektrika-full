@@ -7,9 +7,9 @@
  */
 
 include "cpagecontroller.php";
-class Services extends CPageController
+class Actions extends CPageController
 {
-    public $cPageName = 'Services';
+    public $cPageName = 'Actions';
 
     public $aPagesToTabs = array(
                                     'tab_1' => 'web_design',
@@ -20,26 +20,36 @@ class Services extends CPageController
     public function index()
     {
         // Get short preview text
-        $aFullServices = $this->Page_model->GetPageContent('services', 'general');
+        $aFullServices = $this->Page_model->GetPageContent('actions', 'general');
         // Bottom short preview text in column
         $this->data->aPreviewText = $this->Page_model->GetContentByDelimiter( $aFullServices[0]["pages_text"], '<!--TabDelimiter-->' );
+
+        $this->data->aFullPage = array();
 
         // Render preview pages text on tabs
         foreach($this->aPagesToTabs as $cKey => $cValue)
         {
+            $aPage = $this->Page_model->GetPageContent($cValue, 'actions');
             // All content of current page
-            $cTabContent = $this->Page_model->GetPageContent($cValue, 'services');
-            // Preview separated text
-            $aPreview = $this->Page_model->GetContentByDelimiter( $cTabContent[0]["pages_text"], '<!--PreviewDelimiter-->' );
-            // Add text to general array
-            $this->data->aTabs[$cKey] = $aPreview["tab_1"];
+            $this->data->aFullPages[] = $aPage[0];
         }
 
         $this->load->view("main/index.php");
     }
 
-    public function fullInfo()
+    public function fullInfo( $cActionPageID )
     {
-        echo '1';
+        $this->cViewDIR = "singlepage";
+        $nActionPageID = intval($cActionPageID);
+
+        if( isset($nActionPageID) && !empty($nActionPageID) )
+        {
+            $this->data->aFullPageContent = $this->Page_model->GetDetailPage( $nActionPageID );
+
+            $this->cTitle = $this->data->aFullPageContent[0]["pages_title"];
+
+            $this->load->view('main/index.php');
+        }
+
     }
 }

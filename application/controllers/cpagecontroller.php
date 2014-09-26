@@ -26,7 +26,7 @@ class CPageController extends CBaseController
 
 
         // Get short preview text for full page
-        $aFullServices = $this->Page_model->GetPageContent('services', 'general');
+        $aFullServices = $this->Page_model->GetPageContent('actions', 'general');
         // Bottom short preview text in column for full page
         $this->data->aPreviewText = $this->Page_model->GetContentByDelimiter( $aFullServices[0]["pages_text"], '<!--TabDelimiter-->' );
     }
