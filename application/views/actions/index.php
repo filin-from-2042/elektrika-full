@@ -30,28 +30,28 @@
     <div class="container short-service-description">
         <div class="row">
             <div class="col-md-3">
-                <span class="title">Get a gift with each service</span>
+                <span class="title">Скидки постоянным клиентам</span>
                 <span class="short-service subtitle">This is a Subtittle</span>
                 <p class="short-service text">
                     <?=$aPreviewText["tab_1"]?>
                 </p>
             </div>
             <div class="col-md-3">
-                <span class="title">See how we work</span>
+                <span class="title">Индивидуальный подход</span>
                 <span class="short-service subtitle">This is a Subtittle</span>
                 <p class="short-service text">
                     <?=$aPreviewText["tab_2"]?>
                 </p>
             </div>
             <div class="col-md-3">
-                <span class="title">App Services</span>
+                <span class="title">Более 15 000 видов товаров в наличии</span>
                 <span class="short-service subtitle">This is a Subtittle</span>
                 <p class="short-service text">
                     <?=$aPreviewText["tab_3"]?>
                 </p>
             </div>
             <div class="col-md-3">
-                <span class="title">Special Services</span>
+                <span class="title">Низкие цены</span>
                 <span class="short-service subtitle">This is a Subtittle</span>
                 <p class="short-service text">
                     <?=$aPreviewText["tab_4"]?>

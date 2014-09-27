@@ -4,25 +4,25 @@
             <div class="col-md-3 col-sm-4 left-col">
                 <div class="info-window">
                     <div class="text-uppercase">
-                        Brandmedia tour
+                        Специальные предложения
                     </div>
                     <div class="block-icon">
-                        Watch now the video
-                        <div>Videotour</div>
+                        Акции и скидки на продукцию
+                        <div>Акции</div>
                     </div>
                 </div>
                 <div>
                     <a href="#" id="video-link">
-                        Brandmedia Tour Video
+                        Наши акции
                     </a>
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et neque molestie mattis eu vitae lectus.
+                    Узнайте об акциях, проводимых в сети магазинов "Электрика" и "Мир Профи".
                 </p>
                 <div class="btn">
-                    <a href="#" class="">
+                    <a href="<?=site_url('actions')?>" class="">
                         <button type="button" class="btn btn-default">
-                            <span class="gototour">Go to tour</span>
+                            <span class="gototour">Не пропустить акцию</span>
                         </button>
                     </a>
                 </div>
@@ -30,25 +30,25 @@
             <div class="col-md-3 col-md-offset-1 col-sm-4 mid-col">
                 <div class="info-window">
                     <div class="text-uppercase">
-                        Brandmedia apps
+                        Благотворительность
                     </div>
                     <div class="block-icon">
-                        Avaliable on the Apple
+                        Помощь братьям нашим меньшим
                         <div>App Store</div>
                     </div>
                 </div>
                 <div>
                     <a href="#" id="phone-link">
-                        App Media Applications
+                        Поможем вместе
                     </a>
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et neque molestie mattis eu vitae lectus.
+                    "Электрика" активно поддерживает сообщество помощи домашним животным
                 </p>
                 <div class="btn">
                     <a href="#" class="">
                         <button type="button" class="btn btn-default">
-                            <span class="appstore">App store</span>
+                            <span class="gototour">Страница сообщества</span>
                         </button>
                     </a>
                 </div>
@@ -56,25 +56,25 @@
             <div class="col-md-3 col-md-offset-1 col-sm-4 right-col">
                 <div class="info-window">
                     <div class="text-uppercase">
-                        Brandmedia jobs
+                        Требуются
                     </div>
                     <div class="block-icon">
-                        Find a Freelancer
-                        <div>Job Board</div>
+                        "Электрика" ищет сотрудников
+                        <div>Вакансии</div>
                     </div>
                 </div>
                 <div>
                     <a href="#" id="jobs-link">
-                        Professional Jobs
+                        Стабильная работа
                     </a>
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et turpis et neque molestie mattis eu vitae lectus.
+                    Ознакомится с доской доступных вакансий вы можете по ссылке ниже
                 </p>
                 <div class="btn">
                     <a href="#" class="">
                         <button type="button" class="btn btn-default">
-                            <span class="getajob">Get a job</span>
+                            <span class="getajob">Получить работу</span>
                         </button>
                     </a>
                 </div>

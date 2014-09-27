@@ -40,7 +40,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a id="logo" href="<?=site_url('/home')?>" class="navbar-brand"><img src="/images/logo-el.png"></a>
+                <a  id="logo" href="<?=site_url('/home')?>" class="navbar-brand"><img style="width: 300px;" src="/images/logo-el.png"></a>
             </div>
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
@@ -73,7 +73,7 @@
     <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">
+                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
                     <span class="title-menu">Навигация</span>
                     <ul>
                         <li><?= anchor('home','Главная')?></li>
@@ -83,7 +83,7 @@
                         <li><?= anchor('contact','Контакты')?></li>
                     </ul>
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">
+                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
                     <span class="title-menu">Новости</span>
                     <ul>
                         <li><?= anchor('home','App Media')?></li>
@@ -93,7 +93,7 @@
                         <li><?= anchor('home','Jobs')?></li>
                         <li><?= anchor('home','Networks')?></li>
                     </ul></div>
-                <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">
+                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
                     <span class="title-menu">Доска вакансий</span>
                     <ul>
                         <li><?= anchor('home','Animation')?></li>
@@ -103,16 +103,17 @@
                         <li><?= anchor('home','Marketing')?></li>
                         <li><?= anchor('home','Web Design')?></li>
                     </ul></div>
-                <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">
-                    <span class="title-menu">Connect</span>
-                    <ul>
-                        <li><?= anchor('home','Twitter')?></li>
-                        <li><?= anchor('home','Facebook')?></li>
-                        <li><?= anchor('home','Youtube')?></li>
-                        <li><?= anchor('home','Flickr')?></li>
-                        <li><?= anchor('home','Vimeo')?></li>
-                        <li><?= anchor('home','Tumblr')?></li>
-                    </ul></div>
+<!--                <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">-->
+<!--                    <span class="title-menu">Connect</span>-->
+<!--                    <ul>-->
+<!--                        <li>--><?//= anchor('home','Twitter')?><!--</li>-->
+<!--                        <li>--><?//= anchor('home','Facebook')?><!--</li>-->
+<!--                        <li>--><?//= anchor('home','Youtube')?><!--</li>-->
+<!--                        <li>--><?//= anchor('home','Flickr')?><!--</li>-->
+<!--                        <li>--><?//= anchor('home','Vimeo')?><!--</li>-->
+<!--                        <li>--><?//= anchor('home','Tumblr')?><!--</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 copy-text">
                     <img src="/images/image-footer.png"/>
                     <div class="col-lg-8 col-md-8">
