@@ -10,9 +10,9 @@
                         <div class="post-title clearfix">
                             <div class="col-md-9">
                                 <h2><?=$aFullPage[0]["news_title"]?></h2>
-                                <small>Posted by <span class="author"><?=$aFullPage[0]["news_author"]?></span> on <span
-                                        class="post-date"><?=$aFullPage[0]["news_create_date"]?></span> | Categories:<span class="post-categories"> Tutorials, Networks</span>
-                                </small>
+<!--                                <small>Posted by <span class="author">--><?//=$aFullPage[0]["news_author"]?><!--</span> on <span-->
+<!--                                        class="post-date">--><?//=$aFullPage[0]["news_create_date"]?><!--</span> | Категории:<span class="post-categories"> Tutorials, Networks</span>-->
+<!--                                </small>-->
                             </div>
                             <div class="col-md-3 col-md-3 text-right">
                                 <button class="btn btn-default" type="button">
@@ -42,8 +42,8 @@
                                 <span class="add">Комментировать</span>
                             </button>
                         </a>
-                        <span class="title">Comments</span>
-                        <small class="subtitle">This is a subtitle</small>
+                        <span class="title">Комментарий</span>
+                        <small class="subtitle">Вы можете оставить свой комментарий ниже</small>
                     </div>
                     <div class="comments-container clearfix">
                         <?php
@@ -78,31 +78,31 @@
                     </div>
                     <div class="add-comment-container">
                         <div class="add-comment header">
-                            <span class="add-comment title">Add your comment</span>
-                            <small class="add-comment subtitle">This is a Subtittle</small>
+                            <span class="add-comment title">Добавьте комментарий</span>
+<!--                            <small class="add-comment subtitle">This is a Subtittle</small>-->
                         </div>
                         <form class="add-comment-form clearfix">
                             <div class="row input-container">
                                 <div class="col-md-5 left-group">
                                     <div class="add-comment-form name">
-                                        <input type="email" class="form-control" id="InputName" placeholder="Name">
+                                        <input type="text" class="form-control" id="InputName" placeholder="Имя">
                                         <span class="required">*</span>
                                     </div>
                                     <div class="add-comment-form email">
-                                        <input type="email" class="form-control" id="InputEmail" placeholder="Enter (Will not be publish)">
+                                        <input type="email" class="form-control" id="InputEmail" placeholder="Email (не будет опубликован)" >
                                         <span class="required">*</span>
                                     </div>
-                                    <div class="add-comment-form website">
-                                        <input type="email" class="form-control" id="InputWebsite" placeholder="Website">
-                                        <span class="required">*</span>
-                                    </div>
+<!--                                    <div class="add-comment-form website">-->
+<!--                                        <input type="email" class="form-control" id="InputWebsite" placeholder="Website">-->
+<!--                                        <span class="required">*</span>-->
+<!--                                    </div>-->
                                 </div>
                                 <div class="col-md-7 right-group">
-                                    <textarea class="form-control" id="Message" rows="6" placeholder="Message"></textarea>
+                                    <textarea class="form-control" id="Message" rows="6" placeholder="Сообщение"></textarea>
                                 </div>
                             </div>
                             <div class="row btn-container">
-                                <button class="btn btn-danger" type="submit">Send</button></div>
+                                <button class="btn btn-danger" type="submit">Отправить</button></div>
                         </form>
                     </div>
                 </div>

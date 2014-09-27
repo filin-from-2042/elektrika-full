@@ -20,16 +20,16 @@
                         echo '<div class="post-preview clearfix">
                                 <div class="post-title clearfix">
                                     <div class="col-md-9">
-                                        <h2>'. $aNews["news_title"] .'</h2>
-                                        <small>Posted by <span class="author">'. $aNews["news_author"] .'</span> on
-                                        <span class="post-date">'. $aNews["news_create_date"] .'</span> | Categories:
+                                        <h2>'. $aNews["news_title"] .'</h2>';
+//                                        echo '<small>Posted by <span class="author">'. $aNews["news_author"] .'</span> on
+//                                        <span class="post-date">'. $aNews["news_create_date"] .'</span> | Categories:
+//
+//                                        <span class="post-categories">
+//                                        ' . $cCurrentCategories . '
+//
+//                                         </span></small>
 
-                                        <span class="post-categories">
-                                        ' . $cCurrentCategories . '
-
-                                         </span></small>
-
-                                    </div>
+                                    echo '</div>
                                     <div class="col-md-3 col-md-3 text-right">
                                         <button class="btn btn-default" type="button">
                                             <span class="glyphicon glyphicon-comment"></span>
