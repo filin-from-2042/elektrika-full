@@ -77,14 +77,22 @@
     <table name="el_pages" schema="" catalog="elektrika-db" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="pages_title" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="pages_subtitle" sqlType="VARCHAR" length="50" precision="0" nullable="false" jdbcType="12"/>
       <column name="pages_description" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="pages_keywords" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="pages_text" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="false" jdbcType="-1"/>
+      <column name="pages_preview_text" sqlType="TEXT" length="65535" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="pages_preview_image" sqlType="VARCHAR" length="100" precision="0" nullable="true" jdbcType="12"/>
       <column name="pages_create_date" sqlType="TIMESTAMP" length="19" precision="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
       <column name="page_name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="page_type" sqlType="CHAR" length="15" precision="0" nullable="false" jdbcType="1"/>
       <primary-key name="PRIMARY" columns="id"/>
       <index name="unique_page_name" unique="true" columns="page_name"/>
+    </table>
+    <table name="el_subscribers" schema="" catalog="elektrika-db" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="e-mail" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
   </data-source>
 </component>

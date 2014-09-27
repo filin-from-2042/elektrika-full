@@ -15,6 +15,9 @@
 <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 
 <link href="/css/style.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/general.js"></script>
 <?
     if($this->cJsFiles)
     {
@@ -126,7 +129,5 @@
     </div>
 </div>
 
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -71,7 +71,7 @@ class Home extends CPageController
     public function __construct()
     {
         parent::__construct();
-        $this->cJsFiles[] = 'home.js';
+       // $this->cJsFiles[] = 'home.js';
     }
     public function index()
     {
