@@ -28,4 +28,24 @@ class Interface_Model extends CI_Model
 
         return TRUE;
     }
+
+    //---------------------------------------- ADD COMMENT ------------------------------------------------------------/
+    public function addComment($aData, $nParentComment = null)
+    {
+        $aInputData = array(
+                                'comments_news_id'  =>  $aData["news_id"],
+                                'comments_content'  =>  $aData["comment_text"],
+                                'comments_author'  =>  $aData["author_name"],
+                                'comments_email'  =>  $aData["author_email"],
+                            );
+        if( !empty($nParentComment) )
+            $aInputData['comments_parent_id'] = $nParentComment;
+
+        $this->db->insert('comments',$aInputData );
+
+        $aInputData['comments_create_time'] = date('Y-m-d H:i:s');
+        $aInputData['id'] = $this->db->insert_id();
+
+        return $aInputData;
+    }
 }

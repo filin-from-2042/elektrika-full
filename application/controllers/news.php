@@ -16,7 +16,7 @@ class News extends CBaseController
     {
         parent::__construct();
 
-        //$this->load->model("news_model");
+        $this->cJsFiles[] = 'news.js';
         // Initialize pagination
         $this->load->library('pagination');
         $this->load->model("news_model");

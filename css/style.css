@@ -999,8 +999,12 @@ body #overlay{
     padding: 20px;
     position: relative;
 }
+.comments-container .sub-comment{
+    margin-top: 20px;
+    margin-left: 20px;
+}
 .blog-columns .comments-container .comment-text p{
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
 }
 .blog-columns .comments-container  .comment-text button{
     background: linear-gradient(to bottom, #4d84a4 0%, #497d9d 50%, #447494 100%);
@@ -1008,9 +1012,9 @@ body #overlay{
     border-left: 1px solid #62a3bf;
     border-top: 1px solid #62a3bf;
     padding: 4px 12px;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+    /*position: absolute;*/
+    /*bottom: 20px;*/
+    /*right: 20px;*/
 }
 .blog-columns .single-comment .avatar-container{
     text-align: center;
@@ -1080,6 +1084,9 @@ form.form-contact .btn-danger{
     border-top:1px solid #dd8a64;
     border-left:1px solid #dd8a64;
     font-family: 'a_AvantelntBold';
+}
+form.add-comment-form  button.btn.btn-danger.add_exist_button {
+    margin-right: 20px;
 }
 .blog-columns form.add-comment-form .btn-danger:hover,
 form.form-contact .btn-danger:hover{

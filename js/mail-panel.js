@@ -23,7 +23,7 @@ function mail_panel_ActionSubscribe()
                                                 // Input value
                                                 var cSubscribeMail = $('#subscribe_input_mail').val();
                                                 // Overlay background
-                                                $('body').append('<div id="overlay"></div>')
+                                                $('body').append('<div id="overlay"></div>');
 
                                                 $.post(mail_panel_interface,
                                                         {

@@ -30,12 +30,12 @@
                             </p>
                         </div>
                     </div>
-                    <div class="repost-panel clearfix">
+                   <!-- <div class="repost-panel clearfix">
                         <a id="twitter-repost" class="repost-icon col-md-3" href="#">Retweet this post</a>
                         <a id="bookmark-delicious" class="repost-icon col-md-3" href="#">Bookmark in Delicious</a>
                         <a id="save-digg" class="repost-icon col-md-3" href="#">Save in Digg</a>
                         <a id="like-facebook" class="repost-icon col-md-3" href="#"> Like It Facebook</a>
-                    </div>
+                    </div>-->
                     <div class="comment-panel clearfix">
                         <a href="#InputName" class="pull-right">
                             <button class="btn btn-default add-comment" type="button">
@@ -47,10 +47,12 @@
                     </div>
                     <div class="comments-container clearfix">
                         <?php
+                            // TODO: refactor!!! to much 'foreach'
                             foreach($aAllComments as $aSingleComment)
                             {
+                                $bHasChildren = false;
                                 if($aSingleComment["comments_parent_id"] != null) continue;
-                                echo '<div class="single-comment">
+                                echo '<div class="single-comment clearfix">
                                             <div class="col-md-3 avatar-container">
                                                 <div>
                                                     <img class="avatar image" src="' . base_url('images/icon-comment-avatar.png') . '" alt="" width="85" height="85"/>
@@ -65,14 +67,25 @@
                                             <div class="col-md-9 text">
                                                 <div class="comment-text clearfix">
                                                     <p>' . $aSingleComment["comments_content"] . '</p>
-                                                    <button type="button" class="btn btn-info pull-right">Reply</button>
+                                                    <button type="button" class="btn btn-info pull-right answer_button" comment-id="' . $aSingleComment["id"] . '">Ответить</button>
                                                 </div>';
-                                    echo '<div class="comment-text answer clearfix">';
-                                                RenderCommentAnswer($aSingleComment["id"], $aAllComments);
-                                       echo '</div>';
-                                            echo '</div>';
-                                echo '</div>';
 
+                                foreach($aAllComments as $aCheckComment)
+                                {
+                                    if($aCheckComment["comments_parent_id"] == $aSingleComment["id"])
+                                    $bHasChildren = true;
+                                }
+
+                                if($bHasChildren ===true )
+                                {
+                                            echo '<div class="comment-text answer clearfix">';
+
+                                                        RenderCommentAnswer($aSingleComment["id"], $aAllComments);
+                                             echo '</div>';
+                                }
+
+                                        echo '</div>';
+                                echo '</div>';
                             }
                         ?>
                     </div>
@@ -81,15 +94,16 @@
                             <span class="add-comment title">Добавьте комментарий</span>
 <!--                            <small class="add-comment subtitle">This is a Subtittle</small>-->
                         </div>
-                        <form class="add-comment-form clearfix">
+                        <form class="add-comment-form clearfix" action="<?=site_url('news/addcomment/')?>">
+                            <input type="hidden" name="news_id" value="<?=$aFullPage[0]["id"]?>">
                             <div class="row input-container">
                                 <div class="col-md-5 left-group">
                                     <div class="add-comment-form name">
-                                        <input type="text" class="form-control" id="InputName" placeholder="Имя">
+                                        <input type="text" class="form-control" id="InputName" placeholder="Имя" required="required" name="author_name">
                                         <span class="required">*</span>
                                     </div>
                                     <div class="add-comment-form email">
-                                        <input type="email" class="form-control" id="InputEmail" placeholder="Email (не будет опубликован)" >
+                                        <input type="email" class="form-control" id="InputEmail" placeholder="Email (не будет опубликован)" name="author_email">
                                         <span class="required">*</span>
                                     </div>
 <!--                                    <div class="add-comment-form website">-->
@@ -98,11 +112,11 @@
 <!--                                    </div>-->
                                 </div>
                                 <div class="col-md-7 right-group">
-                                    <textarea class="form-control" id="Message" rows="6" placeholder="Сообщение"></textarea>
+                                    <textarea class="form-control" id="Message" rows="6" placeholder="Сообщение" required="required" name="comment_text"></textarea>
                                 </div>
                             </div>
                             <div class="row btn-container">
-                                <button class="btn btn-danger" type="submit">Отправить</button></div>
+                                <button class="btn btn-danger add_new_button" type="submit">Добавить</button></div>
                         </form>
                     </div>
                 </div>

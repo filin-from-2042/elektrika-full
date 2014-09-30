@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 27 2014 г., 23:33
+-- Время создания: Сен 30 2014 г., 23:01
 -- Версия сервера: 5.5.37-log
 -- Версия PHP: 5.3.28
 
@@ -123,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `el_comments` (
   PRIMARY KEY (`id`),
   KEY `comments_parent_id` (`comments_parent_id`),
   KEY `fk_parent_id` (`comments_news_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=82 ;
 
 --
 -- Дамп данных таблицы `el_comments`
@@ -138,7 +138,13 @@ INSERT INTO `el_comments` (`id`, `comments_content`, `comments_create_time`, `co
 (10, 'Тестовый коммент к статье 2\r\nТестовый коммент к статье 2\r\nТестовый коммент к статье 2\r\nТестовый коммент к статье 2\r\nТестовый коммент к статье 2\r\nТестовый коммент к статье 2', '2014-09-15 17:49:04', 'admin', 'admin@admin.ru', 'ENABLE', 2, NULL),
 (11, 'Тестовый коммент к статье 3 Sub\r\nТестовый коммент к статье 3 Sub\r\nТестовый коммент к статье 3 Sub\r\nТестовый коммент к статье 3 Sub\r\nТестовый коммент к статье 3 Sub\r\nТестовый коммент к статье 3 Sub\r\nТестовый коммент к статье 3 Sub', '2014-09-15 17:49:04', 'admin', 'admin@admin.ru', 'ENABLE', 3, 3),
 (12, 'Тестовый коммент к статье 4 Sub\r\nТестовый коммент к статье 4 Sub\r\nТестовый коммент к статье 4 Sub\r\nТестовый коммент к статье 4 Sub\r\nТестовый коммент к статье 4 Sub\r\nТестовый коммент к статье 4 Sub\r\nТестовый коммент к статье 4 Sub', '2014-09-15 17:49:04', 'admin', 'admin@admin.ru', 'ENABLE', 4, 4),
-(13, 'Тестовый коммент к статье 2 Sub\r\nТестовый коммент к статье 2 Sub\r\nТестовый коммент к статье 2 Sub\r\nТестовый коммент к статье 2 Sub\r\nТестовый коммент к статье 2 Sub\r\nТестовый коммент к статье 2 Sub\r\nТестовый коммент к статье 2 Sub', '2014-09-15 17:49:04', 'admin', 'admin@admin.ru', 'ENABLE', 2, 10);
+(13, 'Тестовый коммент к статье 2 Sub\r\nТестовый коммент к статье 2 Sub\r\nТестовый коммент к статье 2 Sub\r\nТестовый коммент к статье 2 Sub\r\nТестовый коммент к статье 2 Sub\r\nТестовый коммент к статье 2 Sub\r\nТестовый коммент к статье 2 Sub', '2014-09-15 17:49:04', 'admin', 'admin@admin.ru', 'ENABLE', 2, 10),
+(14, 'Тестовый коммент к статье 1 Sub Sub\r\nТестовый коммент к статье 1 Sub Sub\r\nТестовый коммент к статье 1 Sub Sub\r\nТестовый коммент к статье 1 Sub Sub\r\nТестовый коммент к статье 1 Sub Sub\r\n', '2014-09-28 06:46:43', '', '', 'ENABLE', 1, 7),
+(77, 'asdsad', '2014-09-30 18:44:22', 'sddsd', 'sd@sdasd', 'ENABLE', 1, 7),
+(78, 'asdas', '2014-09-30 18:44:35', 'asdsd', 'sad@adasd', 'ENABLE', 1, NULL),
+(79, 'asdas', '2014-09-30 18:44:42', 'asdsd', 'sad@adasd', 'ENABLE', 1, 78),
+(80, 'asdas', '2014-09-30 18:44:47', 'asdsd', 'sad@adasd', 'ENABLE', 1, 79),
+(81, 'asdas', '2014-09-30 18:44:52', 'asdsd', 'sad@adasd', 'ENABLE', 1, 78);
 
 -- --------------------------------------------------------
 
@@ -260,7 +266,7 @@ CREATE TABLE IF NOT EXISTS `el_subscribers` (
   `email` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 --
 -- Дамп данных таблицы `el_subscribers`
@@ -275,6 +281,7 @@ INSERT INTO `el_subscribers` (`id`, `email`) VALUES
 (21, '''asd@mail.com'''),
 (22, '''asddds@mail.com'''),
 (23, '''asddsds@mail.com'''),
+(26, '''linansk@inbox.ru'''),
 (25, '''ssadd@aas.ru'''),
 (24, '''ssdd@aas.ru''');
 
