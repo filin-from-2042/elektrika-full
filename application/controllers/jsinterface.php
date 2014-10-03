@@ -37,7 +37,7 @@ class JsInterface extends CI_Controller
     public function news_add_comment()
     {
         $aData = '';
-        if($_POST["data"] = '' ) return false;
+        if($_POST["data"] == '' ) return false;
         if( isset($_POST["answer_id"]) ) $nParentComment = intval( $_POST["answer_id"] );
         foreach($_POST["data"] as $cKey => &$aInput)
         {
@@ -50,5 +50,27 @@ class JsInterface extends CI_Controller
         $aResult = $this->interface_model->addComment( $aData, ( (isset($nParentComment)) ?  $nParentComment : '' ) );
 
         echo json_encode($aResult);
+    }
+
+    //---------------------------------------- ADD NEW REVIEW ---------------------------------------------------------/
+    public function reviews_add_comment()
+    {
+        $aData = '';
+        if($_POST["data"] == '' ) return false;
+        foreach($_POST["data"] as $cKey => &$aInput)
+        {
+            $aInput["name"] = htmlspecialchars( strip_tags( $aInput["name"] ) );
+            $aInput["value"] = htmlspecialchars( strip_tags( $aInput["value"] ) );
+
+            $aData[$aInput["name"]] = $aInput["value"];
+        }
+
+        $res = $this->interface_model->addReview( $aData );
+
+        if( $res === true )
+            echo 'OK';
+        else
+            echo $res;
+
     }
 }

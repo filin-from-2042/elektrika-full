@@ -97,6 +97,16 @@ class Home extends CPageController
         $this->cViewDIR = "singlepage";
         $nHomePageID = intval($cHomePageID);
 
+        // For reviews
+        if( $nHomePageID == 11 )
+        {
+            $this->cViewDIR = 'reviews';
+            $this->cJsFiles[] = 'reviews.js';
+            // Initializing of page
+            $this->load->model('Reviews_model');
+            $this->data->aReviews = $this->Reviews_model->GetAllReviews();
+        }
+
         if( isset($nHomePageID) && !empty($nHomePageID) )
         {
             $this->data->aFullPageContent = $this->Page_model->GetDetailPage($nHomePageID);

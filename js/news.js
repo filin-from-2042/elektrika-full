@@ -56,7 +56,7 @@ function news_FormSubmit()
                                         event.preventDefault();
                                         // ID of comment, for which will be add current comment
                                         var nAnswerID = $(this).find('button.add_exist_button').attr('parent-answer-id');
-                                        // Add loading bacground
+                                        // Add loading background
                                         $('body').append('<div id="overlay"></div>');
 
                                         $.post(news_interface,

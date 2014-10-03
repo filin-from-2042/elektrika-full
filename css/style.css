@@ -1057,14 +1057,19 @@ body #overlay{
     display: inline-block;
     width: 95%;
 }
-.blog-columns form.add-comment-form .left-group input,
-.blog-columns form.add-comment-form .right-group textarea,
+.blog-columns form.add-comment-form  input,
+.blog-columns form.add-comment-form textarea,
 .form-contact input,
 .form-contact textarea{
     border:none;
     border-bottom: 1px solid #34383d;
     border-right: 1px solid #34383d;
     background-color: #0d0d0e;
+}
+.reviews-form textarea,
+.reviews-form.add-comment-form .left-group input#InputName{
+    width: 96%;
+    display: inline-block;
 }
 .blog-columns form.add-comment-form input::-moz-placeholder,
 .blog-columns form.add-comment-form textarea::-moz-placeholder{
@@ -1258,6 +1263,13 @@ div.form-contact-container{
     border: none;
 }
 
+/******************************* REVIEWS **********************************/
+.reviews_preview .preview_image{
+    padding: 15px 25px;
+}
+.reviews_preview{
+    padding: 10px 20px;
+}
 /******************************Resolutions options******************/
 /************* COL-LG- ***************************************/
 @media (min-width: 1200px){
@@ -1297,6 +1309,10 @@ div.form-contact-container{
     }
     .blog-columns form.add-comment-form .left-group input{
         width: 90%;
+    }
+    .reviews-form textarea,
+    .add-comment-form.reviews-form .left-group input#InputName{
+        width: 98%;
     }
     .blog-columns .comments-container .comment-text{
         padding-bottom: 40px;

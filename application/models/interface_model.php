@@ -48,4 +48,21 @@ class Interface_Model extends CI_Model
 
         return $aInputData;
     }
+
+    //---------------------------------------- ADD REVIEW ------------------------------------------------------------/
+    public function addReview($aData)
+    {
+        $aInputData = array(
+                            'reviews_content'  =>  $aData["review_text"],
+                            'reviews_author'  =>  $aData["author_name"],
+                        );
+
+        $this->db->insert('reviews',$aInputData );
+
+        $aInputData['reviews_create_time'] = date('Y-m-d H:i:s');
+        $aInputData['id'] = $this->db->insert_id();
+
+        return TRUE;
+
+    }
 }

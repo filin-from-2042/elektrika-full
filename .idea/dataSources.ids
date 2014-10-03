@@ -91,8 +91,9 @@
     </table>
     <table name="el_subscribers" schema="" catalog="elektrika-db" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="e-mail" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
+      <index name="email" unique="true" columns="email"/>
     </table>
   </data-source>
 </component>

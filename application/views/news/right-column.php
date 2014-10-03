@@ -1,7 +1,7 @@
 <div class="right-column">
-    <div class="btn-group rss-btns">
-        <button type="button" class="btn btn-default">Subscribe via RSS</button>
-        <button type="button" class="btn btn-default icon-rss-btn"><span class="icon-rss"></span></button>
+    <<div class="btn-group rss-btns">
+<!--        <button type="button" class="btn btn-default">Subscribe via RSS</button>-->
+<!--        <button type="button" class="btn btn-default icon-rss-btn"><span class="icon-rss"></span></button>-->
     </div>
     <div class="side-mail-wrap">
         <form role="form" class="form-inline side-mail-form clearfix" >
@@ -14,14 +14,14 @@
             </div>
         </form>
     </div>
-    <div class="counters-container clearfix">
+    <!--<div class="counters-container clearfix">
         <div class="col-md-6  col-sm-6  col-xs-6  feed">
             <span id="feed-icon"></span><span class="count">12564</span><span class="text">Readers</span>
         </div>
         <div class="col-md-6  col-sm-6  col-xs-6 twitter">
             <span id="twitter-icon"></span><span class="count">12568</span><span class="text">Followers</span>
         </div>
-    </div>
+    </div>-->
     <div class="section-container categories-container">
         <div class="title-container">
             <span class="title">Categories</span>
