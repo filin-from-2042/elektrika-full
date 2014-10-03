@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Сен 30 2014 г., 23:01
+-- Время создания: Окт 04 2014 г., 00:10
 -- Версия сервера: 5.5.37-log
 -- Версия PHP: 5.3.28
 
@@ -28,7 +28,6 @@ USE `elektrika-db`;
 -- Структура таблицы `el_archives`
 --
 
-DROP TABLE IF EXISTS `el_archives`;
 CREATE TABLE IF NOT EXISTS `el_archives` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `archive_name` varchar(100) NOT NULL,
@@ -60,7 +59,6 @@ INSERT INTO `el_archives` (`id`, `archive_name`, `archive_date`) VALUES
 -- Структура таблицы `el_articles`
 --
 
-DROP TABLE IF EXISTS `el_articles`;
 CREATE TABLE IF NOT EXISTS `el_articles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `article_title` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
@@ -81,7 +79,6 @@ CREATE TABLE IF NOT EXISTS `el_articles` (
 -- Структура таблицы `el_categories`
 --
 
-DROP TABLE IF EXISTS `el_categories`;
 CREATE TABLE IF NOT EXISTS `el_categories` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `categories_name` varchar(50) NOT NULL,
@@ -110,7 +107,6 @@ INSERT INTO `el_categories` (`id`, `categories_name`) VALUES
 -- Структура таблицы `el_comments`
 --
 
-DROP TABLE IF EXISTS `el_comments`;
 CREATE TABLE IF NOT EXISTS `el_comments` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `comments_content` text COLLATE utf8_unicode_ci NOT NULL,
@@ -123,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `el_comments` (
   PRIMARY KEY (`id`),
   KEY `comments_parent_id` (`comments_parent_id`),
   KEY `fk_parent_id` (`comments_news_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=82 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=91 ;
 
 --
 -- Дамп данных таблицы `el_comments`
@@ -144,7 +140,8 @@ INSERT INTO `el_comments` (`id`, `comments_content`, `comments_create_time`, `co
 (78, 'asdas', '2014-09-30 18:44:35', 'asdsd', 'sad@adasd', 'ENABLE', 1, NULL),
 (79, 'asdas', '2014-09-30 18:44:42', 'asdsd', 'sad@adasd', 'ENABLE', 1, 78),
 (80, 'asdas', '2014-09-30 18:44:47', 'asdsd', 'sad@adasd', 'ENABLE', 1, 79),
-(81, 'asdas', '2014-09-30 18:44:52', 'asdsd', 'sad@adasd', 'ENABLE', 1, 78);
+(81, 'asdas', '2014-09-30 18:44:52', 'asdsd', 'sad@adasd', 'ENABLE', 1, 78),
+(90, 'asdasd', '2014-10-03 16:47:19', 'asd', 'asd@asdas', 'ENABLE', 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -152,7 +149,6 @@ INSERT INTO `el_comments` (`id`, `comments_content`, `comments_create_time`, `co
 -- Структура таблицы `el_news`
 --
 
-DROP TABLE IF EXISTS `el_news`;
 CREATE TABLE IF NOT EXISTS `el_news` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `news_title` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -185,7 +181,6 @@ INSERT INTO `el_news` (`id`, `news_title`, `news_description`, `news_keywords`, 
 -- Структура таблицы `el_news2categories`
 --
 
-DROP TABLE IF EXISTS `el_news2categories`;
 CREATE TABLE IF NOT EXISTS `el_news2categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `news_id` int(11) NOT NULL,
@@ -216,7 +211,6 @@ INSERT INTO `el_news2categories` (`id`, `news_id`, `category_id`) VALUES
 -- Структура таблицы `el_pages`
 --
 
-DROP TABLE IF EXISTS `el_pages`;
 CREATE TABLE IF NOT EXISTS `el_pages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `pages_title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -242,10 +236,10 @@ INSERT INTO `el_pages` (`id`, `pages_title`, `pages_subtitle`, `pages_descriptio
 (3, 'О Нас', 'Информация о компании', 'Магазин электро - товаров в Новомосковске', 'Розетки, лампочки, кабель', 'Наша профессия – электричество и все, что с ним связано. В 1992 году мы пришли на рынок электротоваров, и за прошедшее время сумели стать на нем одним из ведущих игроков с безупречной деловой репутацией. Сегодня главные направления деятельности нашей компании – это продажа электротехнического оборудования. Тесные партнёрские связи с компаниями-разработчиками позволяют нам быть в курсе всех новых идей и тенденций в электротехнической области. Мы предлагаем нашим клиентам только качественную продукцию отечественных и зарубежных производителей, хорошо зарекомендовавшую себя на отечественном рынке. Мы ценим и уважаем наших клиентов, поэтому основными принципами нашей работы являются качество, надежность и профессионализм.<!--TabDelimiter-->\nСегодня мы предлагаем широкий ассортимент электротехнической продукции и оборудования различной сложности - от провода и крепежа до инверторов и стабилизаторов. В нашем каталоге товаров продукция более ста производителей; мы следим за новинками на рынке электротоваров и постоянно пополняем свой ассортимент. У нас вы можете приобрести как штучный или погонный товар (например, купить кабель, лампочки, провод с ответвительными коробами или автоматические выключатели для дома), так и подобрать полный комплект установочного электротехнического оборудования для крупного промышленного предприятия\nДля нас нет мелочей; мы с одинаковым вниманием относимся и к большим, и к маленьким заказам. Если выбранного вами товара не окажется в магазине, мы в кратчайшие сроки доставим его.\nОптовым покупателям мы предлагаем специальные цены и доставку товара со склада в тот же день. Мы надеемся на долгосрочное сотрудничество со всеми нашими партнерами и клиентами, поэтому разрабатываем гибкую ценовую политику, а также используем в своей работе систему бонусов и скидок.\nЕсли вы еще не определились с выбором, наши консультанты помогут вам и подберут весь комплект необходимого оборудования с учетом ваших потребностей и финансовых возможностей.\nОбращайтесь к нам! Все, что касается электричества – предмет компетенции наших сотрудников. Ответим на любой ваш вопрос и поможем принять правильное решение. Помните, что правильный выбор электрооборудования поможет вам избежать больших неприятностей.\nКачество и безопасность – вот то, что мы гарантируем любому пользователю нашей продукции и услуг.\nС уважением, “Электрика”\n\n', NULL, NULL, '0000-00-00 00:00:00', 'about', 'GENERAL'),
 (4, 'Контакты', 'Контактная информация компании', 'Контакты "Электрики"', 'Лампочки, розетки, батарейки', '<a href="http://elektrika/images/logo-el.png"><img class="alignnone size-full wp-image-5" src="http://elektrika/images/logo-el.png" alt="logo-el" width="320" height="79" /></a>\r\n&nbsp;\r\n<div style="width:45%; float:left;">\r\n<div>г. Новомосковск, ул. Садовского д.34</div>\r\n&nbsp;\r\n<div>телефон: 8 (48762) 6-07-11, 8 (48762) 6-37-64</div>\r\n&nbsp;\r\n<div>часы работы: 10:00-19:00</div>\r\n&nbsp;\r\n<div>без выходных</div>\r\n&nbsp;\r\n</div>\r\n<div style="width:45%; float:left;">\r\n<div>г. Новомосковск, ул. Мира д.34б</div>\r\n&nbsp;\r\n<div>телефон: 8 (48762) 4-06-07</div>\r\n&nbsp;\r\n<div>часы работы: 09:00-16:00</div>\r\n&nbsp;\r\n<div>понедельник выходной</div>\r\n</div>\r\n<div style="clear:both"></div> \r\n<a href="http://elektrika/images/logo-inst.png"><img class="alignnone size-full wp-image-6" src="http://elektrika/images/logo-inst.png" alt="logo-inst" width="320" height="84" /></a>\r\n&nbsp;\r\n<div>г. Новомосковск, ул. Садовского д.38</div>\r\n&nbsp;\r\n<div>телефон: 8 (48762) 6-07-11, 8 (48762) 6-37-64</div>\r\n&nbsp;\r\n<div>часы работы: 10:00-19:00</div>\r\n&nbsp;\r\n<div>без выходных</div>\r\n\r\n', NULL, NULL, '0000-00-00 00:00:00', 'contact', 'GENERAL'),
 (6, 'Подробно о нас', 'Подробная информация', 'Магазин электро - товаров в Новомосковске', 'Розетки, лампочки, кабель', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.Morbi ac metus nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Quisque eget est venenatis quam ultrices lobortis eget AT lacus.Mauris tempor justo vel egestas fermentum. Vivamus eu ipsum ligula.Pellentesque et posuere neque. Vivamus a velit sem.Nullam sed urna AT augue fringilla ultrices.Nunc vitae diam a lectus congue cursus IN eget nulla.Ut tincidunt auctor dui, non convallis neque consectetur vel.Fusce laoreet felis a nisl laoreet posuere.Nulla facilisi.<!--PreviewDelimiter--> Lorem ipsum dolor sit amet, consectetur adipiscing elit.Morbi ac metus nulla.Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Quisque eget est venenatis quam ultrices lobortis eget AT lacus.Mauris tempor justo vel egestas fermentum. Vivamus eu ipsum ligula.Pellentesque et posuere neque. Vivamus a velit sem.Nullam sed urna AT augue fringilla ultrices.Nunc vitae diam a lectus congue cursus IN eget nulla.Ut tincidunt auctor dui, non convallis neque consectetur vel.Fusce laoreet felis a nisl laoreet posuere.Nulla facilisi.\r\n              ', NULL, NULL, '0000-00-00 00:00:00', 'about-full', 'about'),
-(8, 'Кто мы', 'Краткая информация', 'Краткая информация о "Электрика"', 'Розетки, лампочки, кабель', 'Наша профессия – электричество и все, что с ним связано. В 1992 году мы пришли на рынок электротоваров, и за прошедшее время сумели стать на нем одним из ведущих игроков с безупречной деловой репутацией. Сегодня главные направления деятельности нашей компании – это продажа электротехнического оборудования. Тесные партнёрские связи с компаниями-разработчиками позволяют нам быть в курсе всех новых идей и тенденций в электротехнической области. Мы предлагаем нашим клиентам только качественную продукцию отечественных и зарубежных производителей, хорошо зарекомендовавшую себя на отечественном рынке. Мы ценим и уважаем наших клиентов, поэтому основными принципами нашей работы являются качество, надежность и профессионализм.<!--PreviewDelimiter-->\r\nСегодня мы предлагаем широкий ассортимент электротехнической продукции и оборудования различной сложности - от провода и крепежа до инверторов и стабилизаторов. В нашем каталоге товаров продукция более ста производителей; мы следим за новинками на рынке электротоваров и постоянно пополняем свой ассортимент. У нас вы можете приобрести как штучный или погонный товар (например, купить кабель, лампочки, провод с ответвительными коробами или автоматические выключатели для дома), так и подобрать полный комплект установочного электротехнического оборудования для крупного промышленного предприятия\r\nДля нас нет мелочей; мы с одинаковым вниманием относимся и к большим, и к маленьким заказам. Если выбранного вами товара не окажется в магазине, мы в кратчайшие сроки доставим его.\r\nОптовым покупателям мы предлагаем специальные цены и доставку товара со склада в тот же день. Мы надеемся на долгосрочное сотрудничество со всеми нашими партнерами и клиентами, поэтому разрабатываем гибкую ценовую политику, а также используем в своей работе систему бонусов и скидок.\r\nЕсли вы еще не определились с выбором, наши консультанты помогут вам и подберут весь комплект необходимого оборудования с учетом ваших потребностей и финансовых возможностей.\r\nОбращайтесь к нам! Все, что касается электричества – предмет компетенции наших сотрудников. Ответим на любой ваш вопрос и поможем принять правильное решение. Помните, что правильный выбор электрооборудования поможет вам избежать больших неприятностей.\r\nКачество и безопасность – вот то, что мы гарантируем любому пользователю нашей продукции и услуг.\r\nС уважением, “Электрика”\r\n\r\n', NULL, 'image-about.png', '0000-00-00 00:00:00', 'who_we', 'home'),
-(9, 'Почему Мы', 'Преимущества компании', 'Преимущества "Электрика"', 'Розетки, лампочки, кабель', '<ul>\r\n<li>СВОБОДА ВЫБОРА<br>\r\nБольшой выбор оборудования представлен такими известными производителями, как: «Legrand», «ABB», «Osram», «Philips», «Schneider Electric», «Devi», «Lival» и другие. Это проверенные производители, известные высоким качеством своего оборудования в России и Европе.</li>\r\n<li>ШИРОКИЕ ВОЗМОЖНОСТИ ПРИМЕНЕНИЯ<br>\r\nВ нашем магазине Вы найдете электротехнические изделия для любой сферы их применения — от бытовых аквариумов до промышленных производств. Лампы, светильники и их комплектующие, автоматические выключатели, УЗО, щиты, боксы, электросчетчики, кабели, теплые полы и электромонтажные изделия, — всё это и многое другое только у нас!</li><!--PreviewDelimiter-->\r\n<li>ПРОФЕССИОНАЛЬНАЯ КОНСУЛЬТАЦИЯ И ПОМОЩЬ В ВЫБОРЕ<br>\r\nНаши менеджеры всегда помогут вам выбрать необходимую модель изделий, полностью подходящую под ваши требования к цене и качеству. Помимо основной информации, вы получаете профессиональную консультацию об эксплуатации товара, методах монтажа и возможностях установки. Наши эксперты ответят на все интересующие вас вопросы. Мы добросовестно относимся к нашей работе и ценим каждого клиента.</li>\r\n<li>ВЫГОДНАЯ СИСТЕМА СКИДОК<br>\r\nВ нашем интернет-магазине предусмотрены выгодные системы распродаж и скидок, позволяющие каждому клиенту приобрести любой товар по доступным ценам.\r\nДальше производители</li>\r\n</ul>', NULL, 'image-about.png', '0000-00-00 00:00:00', 'why_us', 'home'),
-(10, 'Что мы предлагаем', 'Наша деятельность', 'Описание деятельности "Электрика"', 'Розетки, лампочки, кабель', '<p>«Электрика» – это успешная развивающая на рынке электротехнических изделий сеть розничных магазинов. Мы предлагает вам широкий ассортимент высококачественных электротоваров, которые отвечают всем вашим предпочтениям и нормам качества, по самым выгодным ценам. Индивидуальный подход к каждому клиенту оставит у вас только положительные эмоции из раза в раз.</p> \r\n<ul>\r\nМы предлагаем:\r\n	<ul>\r\n		Светотехника: \r\n		<li>Светодиодные лампы</li>\r\n		<li>Энергосберегающие лампы</li>\r\n		<li>Люминесцентные лампы</li>\r\n		<li>Галогенные лампы</li>\r\n		<li>Люстры</li>\r\n		<li>Бра</li>\r\n		<li>Точечные светильники</li>\r\n		<li>Настольные лампы</li>\r\n	</ul><!--PreviewDelimiter-->\r\n	<ul>\r\n		Электротехническая продукция:\r\n		<li>Вилки</li>\r\n		<li>Розетки</li>\r\n		<li>Выключатели</li>\r\n		<li>Удлинители</li>\r\n		<li>Сетевые фильтры</li>\r\n		<li>Колодки</li>\r\n	</ul>\r\n	<ul>\r\n		Кабельно-проводниковая продукция:\r\n		<li>Кабель силовой</li>\r\n		<li>Кабель связи</li>\r\n		<li>Провода и шнуры различного назначения</li>\r\n		<li>Провода для воздушных линий</li>\r\n		<li>Провода монтажные</li>\r\n	</ul>\r\n	<ul>\r\n		Низковольтная аппаратура:\r\n		<li>Автоматы</li>\r\n		<li>УЗО</li>\r\n		<li>Дифференциальные автоматы</li>\r\n		<li>ОПС (ограничители импульсных перенапряжений)</li>\r\n		<li>Контакторы, пускатели</li>\r\n	</ul>\r\n	<ul>\r\n		Сварочное оборудование:\r\n		<li>Инверторы, сварочные аппараты</li>\r\n		<li>Сварочные маски</li>\r\n		<li>Электроды, проволока для полуавтоматов</li>\r\n	</ul>\r\n	<ul>\r\n		Теплотехника:\r\n		<li>Радиаторы</li>\r\n		<li>Конвекторы</li>\r\n		<li>Тепловые пушки, тепловентиляторы</li>\r\n		<li>Тепловые завесы</li>\r\n		<li>Инфракрасные обогреватели</li>\r\n		<li>Теплый пол</li>\r\n		<li>Электрокотлы</li>\r\n		<li>водонагреватели</li>\r\n	</ul>\r\nи дальше производители\r\n</ul>', NULL, 'image-about.png', '0000-00-00 00:00:00', 'we_offer', 'home'),
-(11, 'Отзывы', 'Отзывы покупателей', 'Отзывы о "Электрика"', 'Розетки, лампочки, кабель', 'Suspendisse fringilla varius sagittis.Pellentesque nisi ligula, tincidunt quis sollicitudin a, ultrices vitae lorem.Vivamus auctor, orci sed aliquam suscipit, neque neque molestie lectus, sit amet porta mi odio vitae elit.Phasellus auctor volutpat sapien eu ornare.Nam auctor lacus felis, quis vehicula quam ultrices IN.Aliquam erat volutpat.Proin ultricies, sem ac aliquet gravida, nulla mi ornare ligula, sed tincidunt dui nisi et est.<!--PreviewDelimiter-->Suspendisse fringilla varius sagittis.Pellentesque nisi ligula, tincidunt quis sollicitudin a, ultrices vitae lorem.Vivamus auctor, orci sed aliquam suscipit, neque neque molestie lectus, sit amet porta mi odio vitae elit.Phasellus auctor volutpat sapien eu ornare.Nam auctor lacus felis, quis vehicula quam ultrices IN.Aliquam erat volutpat.Proin ultricies, sem ac aliquet gravida, nulla mi ornare ligula, sed tincidunt dui nisi et est.', NULL, 'image-about.png', '0000-00-00 00:00:00', 'testimonials', 'home'),
+(8, 'Кто мы', 'Краткая информация', 'Краткая информация о "Электрика"', 'Розетки, лампочки, кабель', 'Наша профессия – электричество и все, что с ним связано. В 1992 году мы пришли на рынок электротоваров, и за прошедшее время сумели стать на нем одним из ведущих игроков с безупречной деловой репутацией. Сегодня главные направления деятельности нашей компании – это продажа электротехнического оборудования. Тесные партнёрские связи с компаниями-разработчиками позволяют нам быть в курсе всех новых идей и тенденций в электротехнической области. Мы предлагаем нашим клиентам только качественную продукцию отечественных и зарубежных производителей, хорошо зарекомендовавшую себя на отечественном рынке. Мы ценим и уважаем наших клиентов, поэтому основными принципами нашей работы являются качество, надежность и профессионализм.<!--PreviewDelimiter-->\r\nСегодня мы предлагаем широкий ассортимент электротехнической продукции и оборудования различной сложности - от провода и крепежа до инверторов и стабилизаторов. В нашем каталоге товаров продукция более ста производителей; мы следим за новинками на рынке электротоваров и постоянно пополняем свой ассортимент. У нас вы можете приобрести как штучный или погонный товар (например, купить кабель, лампочки, провод с ответвительными коробами или автоматические выключатели для дома), так и подобрать полный комплект установочного электротехнического оборудования для крупного промышленного предприятия\r\nДля нас нет мелочей; мы с одинаковым вниманием относимся и к большим, и к маленьким заказам. Если выбранного вами товара не окажется в магазине, мы в кратчайшие сроки доставим его.\r\nОптовым покупателям мы предлагаем специальные цены и доставку товара со склада в тот же день. Мы надеемся на долгосрочное сотрудничество со всеми нашими партнерами и клиентами, поэтому разрабатываем гибкую ценовую политику, а также используем в своей работе систему бонусов и скидок.\r\nЕсли вы еще не определились с выбором, наши консультанты помогут вам и подберут весь комплект необходимого оборудования с учетом ваших потребностей и финансовых возможностей.\r\nОбращайтесь к нам! Все, что касается электричества – предмет компетенции наших сотрудников. Ответим на любой ваш вопрос и поможем принять правильное решение. Помните, что правильный выбор электрооборудования поможет вам избежать больших неприятностей.\r\nКачество и безопасность – вот то, что мы гарантируем любому пользователю нашей продукции и услуг.\r\nС уважением, “Электрика”\r\n\r\n', NULL, 'about_us.png', '0000-00-00 00:00:00', 'who_we', 'home'),
+(9, 'Почему Мы', 'Преимущества компании', 'Преимущества "Электрика"', 'Розетки, лампочки, кабель', '<ul>\r\n<li>СВОБОДА ВЫБОРА<br>\r\nБольшой выбор оборудования представлен такими известными производителями, как: «Legrand», «ABB», «Osram», «Philips», «Schneider Electric», «Devi», «Lival» и другие. Это проверенные производители, известные высоким качеством своего оборудования в России и Европе.</li>\r\n<li>ШИРОКИЕ ВОЗМОЖНОСТИ ПРИМЕНЕНИЯ<br>\r\nВ нашем магазине Вы найдете электротехнические изделия для любой сферы их применения — от бытовых аквариумов до промышленных производств. Лампы, светильники и их комплектующие, автоматические выключатели, УЗО, щиты, боксы, электросчетчики, кабели, теплые полы и электромонтажные изделия, — всё это и многое другое только у нас!</li><!--PreviewDelimiter-->\r\n<li>ПРОФЕССИОНАЛЬНАЯ КОНСУЛЬТАЦИЯ И ПОМОЩЬ В ВЫБОРЕ<br>\r\nНаши менеджеры всегда помогут вам выбрать необходимую модель изделий, полностью подходящую под ваши требования к цене и качеству. Помимо основной информации, вы получаете профессиональную консультацию об эксплуатации товара, методах монтажа и возможностях установки. Наши эксперты ответят на все интересующие вас вопросы. Мы добросовестно относимся к нашей работе и ценим каждого клиента.</li>\r\n<li>ВЫГОДНАЯ СИСТЕМА СКИДОК<br>\r\nВ нашем интернет-магазине предусмотрены выгодные системы распродаж и скидок, позволяющие каждому клиенту приобрести любой товар по доступным ценам.\r\nДальше производители</li>\r\n</ul>', NULL, 'why_we1.png', '0000-00-00 00:00:00', 'why_us', 'home'),
+(10, 'Что мы предлагаем', 'Наша деятельность', 'Описание деятельности "Электрика"', 'Розетки, лампочки, кабель', '<p>«Электрика» – это успешная развивающая на рынке электротехнических изделий сеть розничных магазинов. Мы предлагает вам широкий ассортимент высококачественных электротоваров, которые отвечают всем вашим предпочтениям и нормам качества, по самым выгодным ценам. Индивидуальный подход к каждому клиенту оставит у вас только положительные эмоции из раза в раз.</p> \r\n<ul>\r\nМы предлагаем:\r\n	<ul>\r\n		Светотехника: \r\n		<li>Светодиодные лампы</li>\r\n		<li>Энергосберегающие лампы</li>\r\n		<li>Люминесцентные лампы</li>\r\n		<li>Галогенные лампы</li>\r\n		<li>Люстры</li>\r\n		<li>Бра</li>\r\n		<li>Точечные светильники</li>\r\n		<li>Настольные лампы</li>\r\n	</ul><!--PreviewDelimiter-->\r\n	<ul>\r\n		Электротехническая продукция:\r\n		<li>Вилки</li>\r\n		<li>Розетки</li>\r\n		<li>Выключатели</li>\r\n		<li>Удлинители</li>\r\n		<li>Сетевые фильтры</li>\r\n		<li>Колодки</li>\r\n	</ul>\r\n	<ul>\r\n		Кабельно-проводниковая продукция:\r\n		<li>Кабель силовой</li>\r\n		<li>Кабель связи</li>\r\n		<li>Провода и шнуры различного назначения</li>\r\n		<li>Провода для воздушных линий</li>\r\n		<li>Провода монтажные</li>\r\n	</ul>\r\n	<ul>\r\n		Низковольтная аппаратура:\r\n		<li>Автоматы</li>\r\n		<li>УЗО</li>\r\n		<li>Дифференциальные автоматы</li>\r\n		<li>ОПС (ограничители импульсных перенапряжений)</li>\r\n		<li>Контакторы, пускатели</li>\r\n	</ul>\r\n	<ul>\r\n		Сварочное оборудование:\r\n		<li>Инверторы, сварочные аппараты</li>\r\n		<li>Сварочные маски</li>\r\n		<li>Электроды, проволока для полуавтоматов</li>\r\n	</ul>\r\n	<ul>\r\n		Теплотехника:\r\n		<li>Радиаторы</li>\r\n		<li>Конвекторы</li>\r\n		<li>Тепловые пушки, тепловентиляторы</li>\r\n		<li>Тепловые завесы</li>\r\n		<li>Инфракрасные обогреватели</li>\r\n		<li>Теплый пол</li>\r\n		<li>Электрокотлы</li>\r\n		<li>водонагреватели</li>\r\n	</ul>\r\nи дальше производители\r\n</ul>', NULL, 'we_offer.png', '0000-00-00 00:00:00', 'we_offer', 'home'),
+(11, 'Отзывы', 'Отзывы покупателей', 'Отзывы о "Электрика"', 'Розетки, лампочки, кабель', 'Suspendisse fringilla varius sagittis.Pellentesque nisi ligula, tincidunt quis sollicitudin a, ultrices vitae lorem.Vivamus auctor, orci sed aliquam suscipit, neque neque molestie lectus, sit amet porta mi odio vitae elit.Phasellus auctor volutpat sapien eu ornare.Nam auctor lacus felis, quis vehicula quam ultrices IN.Aliquam erat volutpat.Proin ultricies, sem ac aliquet gravida, nulla mi ornare ligula, sed tincidunt dui nisi et est.<!--PreviewDelimiter-->Suspendisse fringilla varius sagittis.Pellentesque nisi ligula, tincidunt quis sollicitudin a, ultrices vitae lorem.Vivamus auctor, orci sed aliquam suscipit, neque neque molestie lectus, sit amet porta mi odio vitae elit.Phasellus auctor volutpat sapien eu ornare.Nam auctor lacus felis, quis vehicula quam ultrices IN.Aliquam erat volutpat.Proin ultricies, sem ac aliquet gravida, nulla mi ornare ligula, sed tincidunt dui nisi et est.', NULL, 'otzivi.png', '0000-00-00 00:00:00', 'testimonials', 'home'),
 (12, 'Наши сотрудники', '', 'Сотрудники "Электрика"', 'Розетки, лампочки, кабель', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.IN rhoncus lobortis orci, sed vestibulum leo dapibus et.Fusce IN dolor velit, sit amet vehicula est.INTEGER elit sapien, varius IN tristique et, bibendum quis enim.Donec scelerisque ante neque, at pulvinar risus.Nullam semper sagittis magna, nec elementum neque facilisis et.Nulla ullamcorper tincidunt massa.', NULL, '', '0000-00-00 00:00:00', 'people_working', 'about'),
 (13, 'Мы профессионалы', '', 'Профессиональные услуги "Электрика"', 'Розетки, лампочки, кабель', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.IN rhoncus lobortis orci, sed vestibulum leo dapibus et.Fusce IN dolor velit, sit amet vehicula est.INTEGER elit sapien, varius IN tristique et, bibendum quis enim.Donec scelerisque ante neque, at pulvinar risus.Nullam semper sagittis magna, nec elementum neque facilisis et.Nulla ullamcorper tincidunt massa.', NULL, '', '0000-00-00 00:00:00', 'we_prof', 'about'),
 (14, 'Качество обслуживания', '', 'Качественное  обслуживание в магазине "Электрика"', 'Розетки, лампочки, кабель', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.IN rhoncus lobortis orci, sed vestibulum leo dapibus et.Fusce IN dolor velit, sit amet vehicula est.INTEGER elit sapien, varius IN tristique et, bibendum quis enim.Donec scelerisque ante neque, at pulvinar risus.Nullam semper sagittis magna, nec elementum neque facilisis et.Nulla ullamcorper tincidunt massa.', NULL, '', '0000-00-00 00:00:00', 'quality_work', 'about'),
@@ -257,10 +251,39 @@ INSERT INTO `el_pages` (`id`, `pages_title`, `pages_subtitle`, `pages_descriptio
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `el_reviews`
+--
+
+CREATE TABLE IF NOT EXISTS `el_reviews` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `reviews_content` longtext NOT NULL,
+  `reviews_create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `reviews_author` varchar(128) NOT NULL,
+  `reviews_status` char(7) DEFAULT 'DISABLE',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
+
+--
+-- Дамп данных таблицы `el_reviews`
+--
+
+INSERT INTO `el_reviews` (`id`, `reviews_content`, `reviews_create_time`, `reviews_author`, `reviews_status`) VALUES
+(1, 'Отзыв 1', '2014-10-01 18:49:42', 'admin', 'ENABLE'),
+(2, 'Отзыв 1', '2014-10-01 18:50:28', 'admin', 'ENABLE'),
+(30, 'asd', '2014-10-03 16:52:22', 'asda', 'ENABLE'),
+(31, 'asd', '2014-10-03 16:55:29', 'sad', 'DISABLE'),
+(32, 'asdasd', '2014-10-03 16:55:36', 'asdsd', 'DISABLE'),
+(33, 'asdasd', '2014-10-03 17:07:14', 'asdasd', 'DISABLE'),
+(34, 'asdasd', '2014-10-03 17:07:33', 'asdasd', 'DISABLE'),
+(35, 'фывфыв', '2014-10-03 17:08:05', 'фывфыв', 'DISABLE'),
+(36, 'фывфыв', '2014-10-03 17:09:06', 'фывыфв', 'DISABLE');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `el_subscribers`
 --
 
-DROP TABLE IF EXISTS `el_subscribers`;
 CREATE TABLE IF NOT EXISTS `el_subscribers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(100) NOT NULL,
