@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div>
-                    <a href="#" id="video-link">
+                    <a href="<?=site_url('actions')?>" id="video-link">
                         Наши акции
                     </a>
                 </div>
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div>
-                    <a href="#" id="phone-link">
+                    <a href="http://vk.com/nmskhelpanimals" target="_blank" id="phone-link">
                         Поможем вместе
                     </a>
                 </div>
@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <div>
-                    <a href="#" id="jobs-link">
+                    <a href="<?=site_url('job')?>" id="jobs-link">
                         Стабильная работа
                     </a>
                 </div>
@@ -72,7 +72,7 @@
                     Ознакомится с доской доступных вакансий вы можете по ссылке ниже
                 </p>
                 <div class="btn">
-                    <a href="#" class="">
+                    <a href="<?=site_url('job')?>" class="">
                         <button type="button" class="btn btn-default">
                             <span class="getajob">Получить работу</span>
                         </button>

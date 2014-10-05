@@ -11,10 +11,15 @@ class Actions extends CPageController
 {
     public $cPageName = 'Actions';
 
-    public $aPagesToTabs = array(
+    /*public $aPagesToTabs = array(
                                     'tab_1' => 'web_design',
                                     'tab_2' => 'marketing',
                                     'tab_3' => 'brand_design'
+                                );*/
+    public $aPagesToTabs = array(
+                                    'web_design',
+                                    'marketing',
+                                    'brand_design'
                                 );
 
     public function index()
@@ -27,7 +32,7 @@ class Actions extends CPageController
         $this->data->aFullPage = array();
 
         // Render preview pages text on tabs
-        foreach($this->aPagesToTabs as $cKey => $cValue)
+        foreach($this->aPagesToTabs as $cValue)
         {
             $aPage = $this->Page_model->GetPageContent($cValue, 'actions');
             // All content of current page

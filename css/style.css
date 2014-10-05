@@ -370,13 +370,19 @@ header .dropdown-menu > li#arrow-sub {
 .tabs-images .btn .btn:hover{
 	 background-color: #48505e;
 }
-.tabs-images .btn .btn{
-	background-color:#5e697b;
+.tabs-images .btn .btn,
+.tabs-images .btn .btn-default:visited{
+	/*background-color:#5e697b;*/
 	background-image: linear-gradient(to bottom, #5e697b 0px, #48505e 100%);
 	color:#fff;
 	border:none;
 	border-top:1px solid #8290a8;
 	padding: 6px 15px 6px 20px;
+}
+
+.tabs-images .btn .btn.btn-default:focus{
+    background-image:none;
+    background-color:#5e697b;
 }
 .tabs-images .btn span{
 	padding: 0 35px 0 0;

@@ -22,28 +22,28 @@ $this->load->view('main/top-title-panel.php');
                     <span class="title">Свобода выбора</span>
 <!--                    <span class="short-service subtitle">This is a Subtittle</span>-->
                     <p class="short-service text">
-                        <?=$aPreviewText["tab_1"]?>
+                        <?=$aPreviewActions["tab_1"]?>
                     </p>
                 </div>
                 <div class="col-md-3">
                     <span class="title">Широкие возможности применения</span>
 <!--                    <span class="short-service subtitle">This is a Subtittle</span>-->
                     <p class="short-service text">
-                        <?=$aPreviewText["tab_2"]?>
+                        <?=$aPreviewActions["tab_2"]?>
                     </p>
                 </div>
                 <div class="col-md-3">
                     <span class="title">Профессиональная консультация</span>
 <!--                    <span class="short-service subtitle">This is a Subtittle</span>-->
                     <p class="short-service text">
-                        <?=$aPreviewText["tab_3"]?>
+                        <?=$aPreviewActions["tab_3"]?>
                     </p>
                 </div>
                 <div class="col-md-3">
                     <span class="title">Выгодная система скидок</span>
 <!--                    <span class="short-service subtitle">This is a Subtittle</span>-->
                     <p class="short-service text">
-                        <?=$aPreviewText["tab_4"]?>
+                        <?=$aPreviewActions["tab_4"]?>
                     </p>
                 </div>
             </div>
