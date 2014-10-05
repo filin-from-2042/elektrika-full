@@ -3,17 +3,17 @@
 <!--        <button type="button" class="btn btn-default">Subscribe via RSS</button>-->
 <!--        <button type="button" class="btn btn-default icon-rss-btn"><span class="icon-rss"></span></button>-->
     </div>
-    <div class="side-mail-wrap">
-        <form role="form" class="form-inline side-mail-form clearfix" >
-            <div class="form-group  col-md-8 col-md-offset-2  col-sm-8 col-sm-offset-1 col-xs-8 col-xs-offset-1">
-                <label for="exampleInputEmail2" class="sr-only">Email</label>
-                <input type="email"  id="side-InputEmail" class="form-control" placeholder="You email address">
-            </div>
-            <div class="col-md-2 col-sm-2 col-xs-2">
-                <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-plus"></span></button>
-            </div>
-        </form>
-    </div>
+<!--    <div class="side-mail-wrap">-->
+<!--        <form role="form" class="form-inline side-mail-form clearfix" >-->
+<!--            <div class="form-group  col-md-8 col-md-offset-2  col-sm-8 col-sm-offset-1 col-xs-8 col-xs-offset-1">-->
+<!--                <label for="exampleInputEmail2" class="sr-only">Email</label>-->
+<!--                <input type="email"  id="side-InputEmail" class="form-control" placeholder="You email address">-->
+<!--            </div>-->
+<!--            <div class="col-md-2 col-sm-2 col-xs-2">-->
+<!--                <button type="button" class="btn btn-warning"><span class="glyphicon glyphicon-plus"></span></button>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
     <!--<div class="counters-container clearfix">
         <div class="col-md-6  col-sm-6  col-xs-6  feed">
             <span id="feed-icon"></span><span class="count">12564</span><span class="text">Readers</span>
