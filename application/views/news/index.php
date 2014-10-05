@@ -38,7 +38,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <img class="image-preview" src="'. base_url($aNews["news_preview_image"]) .'">
+                                    <img class="image-preview" src="'. base_url('/images/' . $aNews["news_preview_image"]) .'">
                                 </div>
                                 <div class="col-md-12 post-preview-text">
                                     <p>'. $aNews["news_content"] .'</p>
