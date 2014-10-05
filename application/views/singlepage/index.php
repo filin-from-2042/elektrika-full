@@ -6,7 +6,7 @@ $this->load->view('main/top-title-panel.php');
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="<?=base_url('/images/image-web-design.png')?>" alt="..." class="img-rounded">
+                        <img src="<?=base_url('/images/'.$aFullPageContent[0]["pages_preview_image"])?>" alt="..." class="img-responsive">
                     </div>
                     <div class="col-md-8">
                         <p>
@@ -19,29 +19,29 @@ $this->load->view('main/top-title-panel.php');
         <div class="container short-service-description">
             <div class="row">
                 <div class="col-md-3">
-                    <span class="title">Get a gift with each service</span>
-                    <span class="short-service subtitle">This is a Subtittle</span>
+                    <span class="title">Свобода выбора</span>
+<!--                    <span class="short-service subtitle">This is a Subtittle</span>-->
                     <p class="short-service text">
                         <?=$aPreviewText["tab_1"]?>
                     </p>
                 </div>
                 <div class="col-md-3">
-                    <span class="title">See how we work</span>
-                    <span class="short-service subtitle">This is a Subtittle</span>
+                    <span class="title">Широкие возможности применения</span>
+<!--                    <span class="short-service subtitle">This is a Subtittle</span>-->
                     <p class="short-service text">
                         <?=$aPreviewText["tab_2"]?>
                     </p>
                 </div>
                 <div class="col-md-3">
-                    <span class="title">App Services</span>
-                    <span class="short-service subtitle">This is a Subtittle</span>
+                    <span class="title">Профессиональная консультация</span>
+<!--                    <span class="short-service subtitle">This is a Subtittle</span>-->
                     <p class="short-service text">
                         <?=$aPreviewText["tab_3"]?>
                     </p>
                 </div>
                 <div class="col-md-3">
-                    <span class="title">Special Services</span>
-                    <span class="short-service subtitle">This is a Subtittle</span>
+                    <span class="title">Выгодная система скидок</span>
+<!--                    <span class="short-service subtitle">This is a Subtittle</span>-->
                     <p class="short-service text">
                         <?=$aPreviewText["tab_4"]?>
                     </p>

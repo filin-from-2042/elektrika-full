@@ -46,7 +46,7 @@
                     "Электрика" активно поддерживает сообщество помощи бездомным животным
                 </p>
                 <div class="btn">
-                    <a href="#" class="">
+                    <a href="http://vk.com/nmskhelpanimals" target="_blank" class="">
                         <button type="button" class="btn btn-default">
                             <span class="gototour">Страница сообщества</span>
                         </button>
