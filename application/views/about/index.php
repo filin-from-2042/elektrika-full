@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-sm-8">
-                    <?=$aGeneralPage["preview_text"]["tab_1"]?>
+                    <?=$aGeneralPage["preview_text"]?>
                 </div>
                 <div class="col-md-4 col-sm-4">
                     <img src="<?=base_url('images/' . $aGeneralPage["preview_image"])?>" alt="image about us" class="img-responsive">

@@ -45,7 +45,7 @@
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
                     <li><?= anchor('home', '<img src="/images/home.png">')?></li>
-                    <li><?= anchor('about','О Компании')?></li>
+                    <li><?= anchor('about','Партнерство')?></li>
                     <li><?= anchor('actions','Акции')?></a></li>
                     <li class="dropdown">
                         <?= anchor('','Новости<span class="caret"></span>',array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'))?>
