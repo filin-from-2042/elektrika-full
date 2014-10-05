@@ -120,7 +120,7 @@
                         <p class="title-copyright">Электрика &trade;</p>
                         <p class="copyright"><?=$this->config->item('company_copyright')?></p>
                         <p class="bottom-links">
-                            <?= anchor('home','Terms & Conditions')?>&nbsp;&#124;&nbsp;<?= anchor('home','Privacy')?>&nbsp;&#124;&nbsp;<?= anchor('home','Contact Us')?>
+                           <!-- <?= anchor('http://www.intelweb-nsk.ru/','Terms & Conditions')?>&nbsp;&#124;&nbsp;<?= anchor('http://www.intelweb-nsk.ru/','Privacy')?>&nbsp;&#124;&nbsp;--><?= anchor('http://www.intelweb-nsk.ru/kontakty/','Contact Us')?>
                         </p>
 
                     </div>
