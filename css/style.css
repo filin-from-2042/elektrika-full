@@ -456,6 +456,11 @@ header .dropdown-menu > li#arrow-sub {
 }
 .mail-panel .content-panel .col-md-7{
     padding-right: 0;
+    padding-left: 0;
+}
+.mail-panel .content-panel .col-md-5{
+    padding-right: 10px;
+    padding-left: 0;
 }
 body #overlay{
     background: #000 url('/images/animation_load.GIF') no-repeat 50% 50%;
@@ -703,6 +708,9 @@ body #overlay{
 .blog-columns .main-column .text-right .btn-default{
     padding:3px 12px;
     border-radius: 5px;
+}
+.blog-columns .main-column .text-right .btn-default:hover{
+    cursor: auto;
 }
 .blog-columns .main-column .post-preview .post-bottom-panel{
     background:linear-gradient(to bottom, #404851 0%,#363b43 50%,#2c3137 100%);

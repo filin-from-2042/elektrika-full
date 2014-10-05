@@ -118,6 +118,7 @@ class News extends CBaseController
         foreach($this->data->aAllNews as &$aNews)
         {
             $aNews["news_categories"] = $this->news_model->GetCurrentCategories($aNews["id"]);
+            $aNews["comments_count"] = $this->news_model->GetCommentsCount($aNews["id"]);
         }
 
         $this->load->view('main/index.php');
