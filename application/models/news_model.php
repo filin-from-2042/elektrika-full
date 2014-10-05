@@ -148,4 +148,19 @@ class News_Model extends CBaseModel
         return $oResult->result_array();
     }
 
+    //---------------------------------------- COMMENTS COUNT ----------------------------------------------------------/
+    public function GetCommentsCount( $nNewsID )
+    {
+        $this->db->where(
+                            array(
+                                'comments_news_id'    =>  $nNewsID,
+                            )
+                        );
+
+        $oResult = $this->db->get('comments');
+
+        return count($oResult->result_array());
+
+    }
+
 }

@@ -704,6 +704,9 @@ body #overlay{
     padding:3px 12px;
     border-radius: 5px;
 }
+.blog-columns .main-column .text-right .btn-default:hover{
+    cursor: auto;
+}
 .blog-columns .main-column .post-preview .post-bottom-panel{
     background:linear-gradient(to bottom, #404851 0%,#363b43 50%,#2c3137 100%);
     border-top:1px solid #535961;

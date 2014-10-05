@@ -33,7 +33,7 @@
                                     <div class="col-md-3 col-md-3 text-right">
                                         <button class="btn btn-default" type="button">
                                             <span class="glyphicon glyphicon-comment"></span>
-                                            <span class="post-numbers">175</span>
+                                            <span class="post-numbers">' . $aNews["comments_count"]. '</span>
                                         </button>
                                     </div>
                                 </div>
