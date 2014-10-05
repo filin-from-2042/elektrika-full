@@ -81,6 +81,7 @@
                         <li><?= anchor('news','Новости')?></li>
                         <li><?= anchor('actions','Акции')?></li>
                         <li><?= anchor('contact','Контакты')?></li>
+                        <li><?= anchor('job','Вакансии')?></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
@@ -94,15 +95,16 @@
                         <li><?= anchor('home','Networks')?></li>
                     </ul></div>
                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
-                    <span class="title-menu">Доска вакансий</span>
-                    <ul>
-                        <li><?= anchor('home','Animation')?></li>
-                        <li><?= anchor('home','Brand Identy')?></li>
-                        <li><?= anchor('home','Development')?></li>
-                        <li><?= anchor('home','Graphic Design')?></li>
-                        <li><?= anchor('home','Marketing')?></li>
-                        <li><?= anchor('home','Web Design')?></li>
-                    </ul></div>
+<!--                    <span class="title-menu">Доска вакансий</span>-->
+<!--                    <ul>-->
+<!--                        <li>--><?//= anchor('home','Animation')?><!--</li>-->
+<!--                        <li>--><?//= anchor('home','Brand Identy')?><!--</li>-->
+<!--                        <li>--><?//= anchor('home','Development')?><!--</li>-->
+<!--                        <li>--><?//= anchor('home','Graphic Design')?><!--</li>-->
+<!--                        <li>--><?//= anchor('home','Marketing')?><!--</li>-->
+<!--                        <li>--><?//= anchor('home','Web Design')?><!--</li>-->
+<!--                    </ul>-->
+                </div>
 <!--                <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">-->
 <!--                    <span class="title-menu">Connect</span>-->
 <!--                    <ul>-->
