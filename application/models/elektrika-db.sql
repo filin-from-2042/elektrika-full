@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Окт 05 2014 г., 16:10
+-- Время создания: Окт 05 2014 г., 19:28
 -- Версия сервера: 5.5.37-log
 -- Версия PHP: 5.3.28
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- База данных: `elektrika-db`
 --
+CREATE DATABASE IF NOT EXISTS `elektrika-db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `elektrika-db`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +28,7 @@ SET time_zone = "+00:00";
 -- Структура таблицы `el_archives`
 --
 
+DROP TABLE IF EXISTS `el_archives`;
 CREATE TABLE IF NOT EXISTS `el_archives` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `archive_name` varchar(100) NOT NULL,
@@ -57,6 +60,7 @@ INSERT INTO `el_archives` (`id`, `archive_name`, `archive_date`) VALUES
 -- Структура таблицы `el_articles`
 --
 
+DROP TABLE IF EXISTS `el_articles`;
 CREATE TABLE IF NOT EXISTS `el_articles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `article_title` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
@@ -77,6 +81,7 @@ CREATE TABLE IF NOT EXISTS `el_articles` (
 -- Структура таблицы `el_categories`
 --
 
+DROP TABLE IF EXISTS `el_categories`;
 CREATE TABLE IF NOT EXISTS `el_categories` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `categories_name` varchar(50) NOT NULL,
@@ -105,6 +110,7 @@ INSERT INTO `el_categories` (`id`, `categories_name`) VALUES
 -- Структура таблицы `el_comments`
 --
 
+DROP TABLE IF EXISTS `el_comments`;
 CREATE TABLE IF NOT EXISTS `el_comments` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `comments_content` text COLLATE utf8_unicode_ci NOT NULL,
@@ -147,6 +153,7 @@ INSERT INTO `el_comments` (`id`, `comments_content`, `comments_create_time`, `co
 -- Структура таблицы `el_news`
 --
 
+DROP TABLE IF EXISTS `el_news`;
 CREATE TABLE IF NOT EXISTS `el_news` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `news_title` varchar(128) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -179,6 +186,7 @@ INSERT INTO `el_news` (`id`, `news_title`, `news_description`, `news_keywords`, 
 -- Структура таблицы `el_news2categories`
 --
 
+DROP TABLE IF EXISTS `el_news2categories`;
 CREATE TABLE IF NOT EXISTS `el_news2categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `news_id` int(11) NOT NULL,
@@ -209,6 +217,7 @@ INSERT INTO `el_news2categories` (`id`, `news_id`, `category_id`) VALUES
 -- Структура таблицы `el_pages`
 --
 
+DROP TABLE IF EXISTS `el_pages`;
 CREATE TABLE IF NOT EXISTS `el_pages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `pages_title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -223,7 +232,7 @@ CREATE TABLE IF NOT EXISTS `el_pages` (
   `page_type` char(15) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_page_name` (`page_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
 
 --
 -- Дамп данных таблицы `el_pages`
@@ -244,7 +253,8 @@ INSERT INTO `el_pages` (`id`, `pages_title`, `pages_subtitle`, `pages_descriptio
 (15, 'Web_design', 'subtitle акции', 'Акции магазина "Электрика"', 'Розетки, лампочки, кабель', 'Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Maecenas gravida lacus non leo congue elementum.Praesent tincidunt lectus nec felis hendrerit id blandit ante consequat.Proin bibendum,\r\n   arcu eu lobortis egestas, massa leo ullamcorper dolor,\r\n   non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.<!--PreviewDelimiter--> Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Maecenas gravida lacus non leo congue elementum.Praesent tincidunt lectus nec felis hendrerit id blandit ante consequat.Proin bibendum,\r\n   arcu eu lobortis egestas, massa leo ullamcorper dolor,\r\n   non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.\r\n', 'Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Maecenas gravida lacus non leo congue elementum.Praesent tincidunt lectus nec felis hendrerit id blandit ante consequat.Proin bibendum,\r\n   arcu eu lobortis egestas, massa leo ullamcorper dolor,\r\n   non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.', 'image-web-design.png', '0000-00-00 00:00:00', 'web_design', 'actions'),
 (16, 'Marketing', 'subtitle акции', 'Акции магазина "Электрика"', 'Розетки, лампочки, кабель', 'Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Maecenas gravida lacus non leo congue elementum.Praesent tincidunt lectus nec felis hendrerit id blandit ante consequat.Proin bibendum,\r\n   arcu eu lobortis egestas, massa leo ullamcorper dolor,\r\n   non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.<!--PreviewDelimiter--> Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Maecenas gravida lacus non leo congue elementum.Praesent tincidunt lectus nec felis hendrerit id blandit ante consequat.Proin bibendum,\r\n   arcu eu lobortis egestas, massa leo ullamcorper dolor,\r\n   non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.\r\n', 'Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Maecenas gravida lacus non leo congue elementum.Praesent tincidunt lectus nec felis hendrerit id blandit ante consequat.Proin bibendum,\r\n   arcu eu lobortis egestas, massa leo ullamcorper dolor,\r\n   non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.', 'image-web-design.png', '0000-00-00 00:00:00', 'marketing', 'actions'),
 (17, 'Brand design', 'subtitle акции', 'Акции магазина "Электрика"', 'Розетки, лампочки, кабель', 'Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Maecenas gravida lacus non leo congue elementum.Praesent tincidunt lectus nec felis hendrerit id blandit ante consequat.Proin bibendum,\r\n   arcu eu lobortis egestas, massa leo ullamcorper dolor,\r\n   non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.\r\n<!--PreviewDelimiter-->Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Maecenas gravida lacus non leo congue elementum.Praesent tincidunt lectus nec felis hendrerit id blandit ante consequat.Proin bibendum,\r\n   arcu eu lobortis egestas, massa leo ullamcorper dolor,\r\n   non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.', 'Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Lorem ipsum dolor sit amet,\r\n   consectetur adipiscing elit.Donec nisl felis, lobortis ac vulputate et,\r\n   cursus eget tellus.Donec IN ipsum nec tellus malesuada sodales non ac sem.Aliquam erat volutpat.Proin IN velit nec tellus egestas auctor et eget nulla.Maecenas gravida lacus non leo congue elementum.Praesent tincidunt lectus nec felis hendrerit id blandit ante consequat.Proin bibendum,\r\n   arcu eu lobortis egestas, massa leo ullamcorper dolor,\r\n   non ullamcorper neque magna quis diam.Praesent interdum neque id nulla accumsan euismod.Curabitur sit amet ornare purus.Aliquam erat volutpat.', 'image-web-design.png', '0000-00-00 00:00:00', 'brand_design', 'actions'),
-(18, 'Наши акции', 'subtitle главной акций', 'Акции магазина "Электрика"', 'Розетки, лампочки, кабель', 'Большой выбор оборудования представлен такими известными производителями, как: «Legrand», «ABB», «Osram», «Philips», «Schneider Electric», «Devi», «Lival» и другие. Это проверенные производители, известные высоким качеством своего оборудования в России и Европе.\r\n<!--TabDelimiter-->\r\nЛампы, светильники и их комплектующие, автоматические выключатели, УЗО, щиты, боксы, электросчетчики, кабели, теплые полы и электромонтажные изделия, — всё это и многое другое только у нас!\r\n<!--TabDelimiter--> Наши менеджеры всегда помогут вам выбрать необходимую модель изделий, полностью подходящую под ваши требования к цене и качеству. Наши эксперты ответят на все интересующие вас вопросы.\r\n<!--TabDelimiter-->В нашем интернет-магазине предусмотрены выгодные системы распродаж и скидок, позволяющие каждому клиенту приобрести любой товар по доступным ценам. ', NULL, NULL, '0000-00-00 00:00:00', 'actions', 'GENERAL');
+(18, 'Наши акции', 'subtitle главной акций', 'Акции магазина "Электрика"', 'Розетки, лампочки, кабель', 'Большой выбор оборудования представлен такими известными производителями, как: «Legrand», «ABB», «Osram», «Philips», «Schneider Electric», «Devi», «Lival» и другие. Это проверенные производители, известные высоким качеством своего оборудования в России и Европе.\r\n<!--TabDelimiter-->\r\nЛампы, светильники и их комплектующие, автоматические выключатели, УЗО, щиты, боксы, электросчетчики, кабели, теплые полы и электромонтажные изделия, — всё это и многое другое только у нас!\r\n<!--TabDelimiter--> Наши менеджеры всегда помогут вам выбрать необходимую модель изделий, полностью подходящую под ваши требования к цене и качеству. Наши эксперты ответят на все интересующие вас вопросы.\r\n<!--TabDelimiter-->В нашем интернет-магазине предусмотрены выгодные системы распродаж и скидок, позволяющие каждому клиенту приобрести любой товар по доступным ценам. ', NULL, NULL, '0000-00-00 00:00:00', 'actions', 'GENERAL'),
+(19, 'Вакансии', 'subtitle главной вакансий', 'Вакансии магазина "Электрика"', 'Розетки, лампочки, кабель', 'Большой выбор оборудования представлен такими известными производителями, как: «Legrand», «ABB», «Osram», «Philips», «Schneider Electric», «Devi», «Lival» и другие. Это проверенные производители, известные высоким качеством своего оборудования в России и Европе.\r\n<!--TabDelimiter-->\r\nЛампы, светильники и их комплектующие, автоматические выключатели, УЗО, щиты, боксы, электросчетчики, кабели, теплые полы и электромонтажные изделия, — всё это и многое другое только у нас!\r\n<!--TabDelimiter--> Наши менеджеры всегда помогут вам выбрать необходимую модель изделий, полностью подходящую под ваши требования к цене и качеству. Наши эксперты ответят на все интересующие вас вопросы.\r\n<!--TabDelimiter-->В нашем интернет-магазине предусмотрены выгодные системы распродаж и скидок, позволяющие каждому клиенту приобрести любой товар по доступным ценам. ', NULL, NULL, '0000-00-00 00:00:00', 'job', 'GENERAL');
 
 -- --------------------------------------------------------
 
@@ -252,6 +262,7 @@ INSERT INTO `el_pages` (`id`, `pages_title`, `pages_subtitle`, `pages_descriptio
 -- Структура таблицы `el_reviews`
 --
 
+DROP TABLE IF EXISTS `el_reviews`;
 CREATE TABLE IF NOT EXISTS `el_reviews` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `reviews_content` longtext NOT NULL,
@@ -259,7 +270,7 @@ CREATE TABLE IF NOT EXISTS `el_reviews` (
   `reviews_author` varchar(128) NOT NULL,
   `reviews_status` char(7) DEFAULT 'DISABLE',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=38 ;
 
 --
 -- Дамп данных таблицы `el_reviews`
@@ -274,7 +285,8 @@ INSERT INTO `el_reviews` (`id`, `reviews_content`, `reviews_create_time`, `revie
 (33, 'asdasd', '2014-10-03 17:07:14', 'asdasd', 'DISABLE'),
 (34, 'asdasd', '2014-10-03 17:07:33', 'asdasd', 'DISABLE'),
 (35, 'фывфыв', '2014-10-03 17:08:05', 'фывфыв', 'DISABLE'),
-(36, 'фывфыв', '2014-10-03 17:09:06', 'фывыфв', 'DISABLE');
+(36, 'фывфыв', '2014-10-03 17:09:06', 'фывыфв', 'DISABLE'),
+(37, 'zxc', '2014-10-05 13:44:01', 'zxc', 'DISABLE');
 
 -- --------------------------------------------------------
 
@@ -282,6 +294,7 @@ INSERT INTO `el_reviews` (`id`, `reviews_content`, `reviews_create_time`, `revie
 -- Структура таблицы `el_subscribers`
 --
 
+DROP TABLE IF EXISTS `el_subscribers`;
 CREATE TABLE IF NOT EXISTS `el_subscribers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(100) NOT NULL,
