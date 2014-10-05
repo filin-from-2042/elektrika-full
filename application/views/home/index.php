@@ -21,7 +21,7 @@
                     <div class="tab-pane <?=($cTabKey == 'tab_1')?'active':''?>" id="<?=$aTabsID[$cTabKey];?>">
                         <div class="row">
                             <div class="col-md-8 col-sm-8">
-                                <?=$cTabContent["preview_text"];?><br>. . .
+                                <?=$cTabContent["pages_preview_text"];?><br>. . .
                             </div>
                             <div class="col-md-4 col-sm-4">
                                 <img src="<?=base_url('/images/'.$cTabContent["pages_preview_image"])?>" alt="image about us" class="img-responsive">
@@ -34,16 +34,6 @@
                                         <span class="more">Читать полностью</span>
                                     </button>
                                 </a>
-                               <!-- <a href="#" >
-                                    <button type="button" class="btn btn-info">
-                                        <span class="follow">Follow Us</span>
-                                    </button>
-                                </a>
-                                <a href="#">
-                                    <button type="button" class="btn btn-primary">
-                                        <span class="facebook">Facebook</span>
-                                    </button>
-                                </a>-->
                             </div>
                             <div class="col-md-6 col-sm-4">
 <!--                                <a href="#" class="pull-right">-->

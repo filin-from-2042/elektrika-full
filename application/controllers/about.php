@@ -20,7 +20,9 @@ class About extends CPageController
     {
         // Get preview text
         $aFullAbout = $this->Page_model->GetPageContent('about-full', 'about');
-        $this->data->aGeneralPage["PreviewText"] = $this->Page_model->GetContentByDelimiter( $aFullAbout[0]["pages_text"], '<!--PreviewDelimiter-->' );
+        //$this->data->aGeneralPage["PreviewText"] = $this->Page_model->GetContentByDelimiter( $aFullAbout[0]["pages_text"], '<!--PreviewDelimiter-->' );
+        $this->data->aGeneralPage["preview_text"] = $aFullAbout[0]["pages_preview_text"];
+        $this->data->aGeneralPage["preview_image"] = $aFullAbout[0]["pages_preview_image"];
         $this->data->aGeneralPage["id"] = $aFullAbout[0]["id"];
 
         $this->data->aTabs = array();
@@ -33,7 +35,7 @@ class About extends CPageController
             // Preview separated text
             $aPreview = $this->Page_model->GetContentByDelimiter( $cTabContent[0]["pages_text"], '<!--PreviewDelimiter-->' );
             // Add text to general array
-            $this->data->aTabs[$cKey] = $aPreview["tab_1"];
+            $this->data->aTabs[$cKey] = $cTabContent[0]["pages_preview_text"];
             $this->data->aFullTabsContent[$cTabContent[0]["page_name"]] = $cTabContent[0];
         }
 

@@ -17,6 +17,7 @@ class Home extends CPageController
                                     'tab_3' => 'we_offer',
                                     'tab_4' => 'testimonials'
                                 );
+    // IDs for js tabs
     public $aTabsID = array(
                                 'tab_1' =>  'who',
                                 'tab_2' =>  'why',
@@ -80,10 +81,8 @@ class Home extends CPageController
         {
             // Full content of home page
             $aTabData = $this->Page_model->GetPageContent($cPageName, 'home');
-            // Separated full content
-            $aPreview = $this->Page_model->GetContentByDelimiter($aTabData[0]["pages_text"], '<!--PreviewDelimiter-->' );
             // Add preview content to general array of home page
-            $this->data->aTabs[$cTab]["preview_text"] = $aPreview["tab_1"];
+            $this->data->aTabs[$cTab]["pages_preview_text"] = $aTabData[0]["pages_preview_text"];
             $this->data->aTabs[$cTab]["page_id"] = $aTabData[0]["id"];
             $this->data->aTabs[$cTab]["pages_preview_image"] = $aTabData[0]["pages_preview_image"];
         }

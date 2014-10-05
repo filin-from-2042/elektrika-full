@@ -1491,4 +1491,7 @@ div.form-contact-container{
          border-bottom: 1px solid #121215;
          /*padding: 30px 0;*/
      }
+    .short-info .tab-pane .row:first-child {
+        height: auto;
+    }
 }
