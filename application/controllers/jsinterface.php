@@ -14,6 +14,7 @@ class JsInterface extends CI_Controller
     {
         parent::__construct();
         $this->load->model('interface_model');
+        $this->load->helper('gen_functions');
     }
 //---------------------------------------- SUBSCRIBING ON ACTIONS MAIL -------------------------------------------------/
     public function mail_panel_subscribe()
@@ -55,15 +56,8 @@ class JsInterface extends CI_Controller
     //---------------------------------------- ADD NEW REVIEW ---------------------------------------------------------/
     public function reviews_add_comment()
     {
-        $aData = '';
-        if($_POST["data"] == '' ) return false;
-        foreach($_POST["data"] as $cKey => &$aInput)
-        {
-            $aInput["name"] = htmlspecialchars( strip_tags( $aInput["name"] ) );
-            $aInput["value"] = htmlspecialchars( strip_tags( $aInput["value"] ) );
-
-            $aData[$aInput["name"]] = $aInput["value"];
-        }
+        if( !empty($_POST["data"]) )
+            $aData = FormatFormData( $_POST["data"] );
 
         $res = $this->interface_model->addReview( $aData );
 
@@ -73,4 +67,34 @@ class JsInterface extends CI_Controller
             echo $res;
 
     }
+
+    //---------------------------------------- CONTACT FORM ------------------------------------------------------------/
+    public function contact_question()
+    {
+        if( !$_POST["contact_data"] ) return false;
+        $aContact = FormatFormData( $_POST["contact_data"] );
+
+        // Load library
+        $this->load->library('email');
+
+        $cMessage = "Имя отправителя: " . $aContact["contact_name"] . "\n".
+                    "Телефон отправителя: " . $aContact["contact_phone"] . "\n".
+                    "E-mail отправителя: " . $aContact["email"] . "\n".
+                    "Содержание письма: " . $aContact["message"];
+
+        $this->email->from('your@your-site.com', 'Elektrika');
+        $this->email->to('filin2042@yandex.ru');
+        $this->email->subject($aContact["subject"]);
+        $this->email->message( $cMessage );
+        if( !$this->email->send() )
+        {
+            // Debug info
+            echo $this->email->print_debugger();
+        }
+        else
+            echo 'OK';
+
+    }
+
+
 }

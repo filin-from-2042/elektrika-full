@@ -13,6 +13,7 @@ class Contact extends CPageController
 
     public function index()
     {
+        $this->cJsFiles[] = 'contact.js';
         $this->load->view('main/index.php');
     }
 }

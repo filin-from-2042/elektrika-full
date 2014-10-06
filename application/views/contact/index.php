@@ -24,20 +24,20 @@
                     <form class="form-contact">
                         <div class="row inline-inputs">
                             <div class="col-md-6">
-                                <input class="form-control required" type="text" id="contactName" placeholder="Имя"/><span class="required">*</span>
-                                <input class="form-control" type="text" id="contactPhone" placeholder="Телефон"/><span class="required">*</span>
+                                <input class="form-control required" type="text" id="contactName" placeholder="Имя" required="required" name="contact_name"/><span class="required">*</span>
+                                <input class="form-control" type="text" id="contactPhone" placeholder="Телефон" required="required" name="contact_phone"/><span class="required">*</span>
                             </div>
                             <div class="col-md-6">
-                                <input class="form-control" type="text" id="contactEmail" placeholder="Email"/><span class="required">*</span>
+                                <input class="form-control" type="text" id="contactEmail" placeholder="Email" required="required" name="email"/><span class="required">*</span>
 <!--                                <input class="form-control" type="text" id="contactWebsite" placeholder="Сайт"/><span class="required">*</span>-->
-                                 <input class="form-control" type="text" id="contactSubject" placeholder="Тема"/><span class="required">*</span>
+                                 <input class="form-control" type="text" id="contactSubject" placeholder="Тема" required="required" name="subject"/><span class="required">*</span>
 
                             </div>
                         </div>
                         <div class="row block-inputs">
                             <div class="col-md-12">
 <!--                                <input class="form-control" type="text" id="contactSubject" placeholder="Тема"/><span class="required">*</span>-->
-                                <textarea placeholder="Текст письма" rows="6" id="contactMessage" class="form-control"></textarea><span class="required">*</span>
+                                <textarea placeholder="Текст письма" rows="6" id="contactMessage" class="form-control" required="required" name="message"></textarea><span class="required">*</span>
                             </div>
                         </div>
                         <div class="row btn-container">
@@ -46,6 +46,21 @@
                             </div>
                         </div>
                     </form>
+                    <div class="modal fade" id="contact_modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                    <p class="modal-title"></p>
+                                </div>
+                                <div class="modal-body">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default btn-danger" data-dismiss="modal">Закрыть</button>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
                 </div>
             </div>
             <div class="blocks-column col-md-4 col-sm-4">
@@ -71,18 +86,6 @@
                     </div>
                     <div class="contact-info fax">
                         <span class="fax-title">Факс:</span><span class="fax-text"><?=$this->config->item('company_fax');?></span>
-                    </div>
-                    <div class="contact-info social-buttons">
-                        <!--<a href="#">
-                            <button type="button" class="btn btn-info">
-                                <span class="follow">Следуй за нами</span>
-                            </button>
-                        </a>
-                        <a href="#">
-                            <button type="button" class="btn btn-primary">
-                                <span class="facebook">Фейсбук</span>
-                            </button>
-                        </a>-->
                     </div>
                 </div>
             </div>

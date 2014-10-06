@@ -1266,7 +1266,8 @@ div.form-contact-container{
 .modal .modal-footer{
     text-align: center;
 }
-.modal .modal-body{
+.modal .modal-body,
+.modal .modal-body p{
     text-align: center;
 }
 .modal .modal-footer .btn-danger {
