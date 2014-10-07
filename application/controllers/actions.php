@@ -10,17 +10,16 @@ include "cpagecontroller.php";
 class Actions extends CPageController
 {
     public $cPageName = 'actions';
+    // Name of view for rendering. Defined according existing actions
+    public $cSingleAction = '';
 
+    // Actions names for rendering
     /*public $aPagesToTabs = array(
-                                    'tab_1' => 'web_design',
-                                    'tab_2' => 'marketing',
-                                    'tab_3' => 'brand_design'
-                                );*/
-    public $aPagesToTabs = array(
                                     'web_design',
                                     'marketing',
                                     'brand_design'
-                                );
+                                );*/
+    public $aPagesToTabs = array();
 
     public function index()
     {
@@ -35,9 +34,18 @@ class Actions extends CPageController
         foreach($this->aPagesToTabs as $cValue)
         {
             $aPage = $this->Page_model->GetPageContent($cValue, 'actions');
-            // All content of current page
-            $this->data->aFullPages[] = $aPage[0];
+            if( $aPage )
+            {
+                // All content of current page
+                $this->data->aFullPage[] = $aPage[0];
+            }
         }
+
+        //Setting job view
+        if( !empty($this->data->aFullPage) )
+            $this->cSingleAction ="single_action";
+        else
+            $this->cSingleAction ="none";
 
         $this->load->view("main/index.php");
     }

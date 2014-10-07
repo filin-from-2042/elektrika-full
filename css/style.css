@@ -1285,6 +1285,11 @@ div.form-contact-container{
 .reviews_preview{
     padding: 10px 20px;
 }
+
+/***************************** GENERAL ADDITIONS ******************************/
+.none-content p{
+    text-align: center;
+}
 /******************************Resolutions options******************/
 /************* COL-LG- ***************************************/
 @media (min-width: 1200px){
