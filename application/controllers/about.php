@@ -8,7 +8,7 @@
 include "cpagecontroller.php";
 class About extends CPageController
 {
-    public $cPageName = 'About';
+    public $cPageName = 'about';
 
     public $aPagesToTabs = array(
                                     'tab_1' => 'people_working',

@@ -9,7 +9,7 @@
 include "cpagecontroller.php";
 class Actions extends CPageController
 {
-    public $cPageName = 'Actions';
+    public $cPageName = 'actions';
 
     /*public $aPagesToTabs = array(
                                     'tab_1' => 'web_design',

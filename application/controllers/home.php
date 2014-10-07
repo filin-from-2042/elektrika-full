@@ -9,7 +9,7 @@ include "cpagecontroller.php";
 
 class Home extends CPageController
 {
-    public $cPageName = 'Home';
+    public $cPageName = 'home';
 
     public $aPagesToTabs = array(
                                     'tab_1' => 'who_we',
