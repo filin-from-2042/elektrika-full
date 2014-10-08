@@ -11,10 +11,10 @@
 
 <title><?=$this->cTitle?></title>
 
-<link href="/css/bootstrap.min.css" rel="stylesheet">
-<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="<?=base_url('css/bootstrap.min.css')?>" rel="stylesheet">
+<link href="<?=base_url('css/bootstrap-theme.min.css')?>" rel="stylesheet">
 
-<link href="/css/style.css" rel="stylesheet">
+<link href="<?=base_url('css/style.css')?>" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/general.js"></script>
