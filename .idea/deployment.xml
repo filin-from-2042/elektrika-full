@@ -7,6 +7,10 @@
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
+          <excludedPaths>
+            <excludedPath path="/application/config/config.php" />
+            <excludedPath path="/.htaccess" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
