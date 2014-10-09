@@ -51,7 +51,7 @@
                         <?= anchor('','Новости<span class="caret"></span>',array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'))?>
                         <ul  class="dropdown-menu" role="menu">
                             <li id="arrow-sub" class="hidden-xs"><img src="/images/arrow-sub.png"></li>
-                            <li><a href="<?=site_url('news')?>">All</a></li>
+                            <li><a href="<?=site_url('news')?>">Все новости</a></li>
                             <?php
                                 foreach($this->data->aCategories as $aCategory)
                                 {
@@ -87,12 +87,11 @@
                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
                     <span class="title-menu">Новости</span>
                     <ul>
-                        <li><?= anchor('home','App Media')?></li>
-                        <li><?= anchor('home','Branding')?></li>
-                        <li><?= anchor('home','Case studio')?></li>
-                        <li><?= anchor('home','Devices')?></li>
-                        <li><?= anchor('home','Jobs')?></li>
-                        <li><?= anchor('home','Networks')?></li>
+                        <li><?= anchor('news/categories/1','Освещение')?></li>
+                        <li><?= anchor('news/categories/2','Электромонтаж')?></li>
+                        <li><?= anchor('news/categories/3','Электроустановочные изделия')?></li>
+                        <li><?= anchor('news/categories/4','Кабели')?></li>
+                        <li><?= anchor('news/categories/5','Компании')?></li>
                     </ul></div>
                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
 <!--                    <span class="title-menu">Доска вакансий</span>-->
