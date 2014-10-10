@@ -40,11 +40,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a  id="logo" href="<?=site_url('/home')?>" class="navbar-brand"><img style="width: 300px;" src="/images/logo-el.png"></a>
+                <a  id="logo" href="<?=site_url('/')?>" class="navbar-brand"><img style="width: 300px;" src="/images/logo-el.png"></a>
             </div>
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><?= anchor('home', '<img src="/images/home.png">')?></li>
+                    <li><?= anchor('/', '<img src="/images/home.png">')?></li>
                     <li><?= anchor('about','Партнерство')?></li>
                     <li><?= anchor('actions','Акции')?></a></li>
                     <li class="dropdown">
@@ -76,7 +76,7 @@
                 <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
                     <span class="title-menu">Навигация</span>
                     <ul>
-                        <li><?= anchor('home','Главная')?></li>
+                        <li><?= anchor('','Главная')?></li>
                         <li><?= anchor('about','О компании')?></li>
                         <li><?= anchor('news','Новости')?></li>
                         <li><?= anchor('actions','Акции')?></li>
