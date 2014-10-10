@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://elektrika';
+$config['base_url']	= 'http://elektrika-full';
 
 /*
 |--------------------------------------------------------------------------
