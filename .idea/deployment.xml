@@ -10,6 +10,7 @@
           <excludedPaths>
             <excludedPath path="/application/config/config.php" />
             <excludedPath path="/.htaccess" />
+            <excludedPath path="/application/config/database.php" />
           </excludedPaths>
         </serverdata>
       </paths>
