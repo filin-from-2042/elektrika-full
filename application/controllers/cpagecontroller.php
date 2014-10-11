@@ -30,6 +30,6 @@ class CPageController extends CBaseController
         // Bottom short preview text in column for full page
         $this->data->aPreviewActions = $this->Page_model->GetContentByDelimiter( $aFullServices[0]["pages_text"], '<!--TabDelimiter-->' );
 
-        $this->cJsFiles[] = 'mail-panel.js';
+        $this->cJsFiles[] = base_url('/js/mail-panel.js');
     }
 }

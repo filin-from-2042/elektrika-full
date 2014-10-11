@@ -23,7 +23,7 @@
     {
         foreach($this->cJsFiles as $cJsFile)
         {
-           echo  '<script type="text/javascript" src="' . base_url('/js/' . $cJsFile) . '"></script>';
+           echo  '<script type="text/javascript" src="' . $cJsFile . '"></script>';
 
         }
     }

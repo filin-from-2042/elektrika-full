@@ -100,7 +100,7 @@ class Home extends CPageController
         if( $nHomePageID == 11 )
         {
             $this->cViewDIR = 'reviews';
-            $this->cJsFiles[] = 'reviews.js';
+            $this->cJsFiles[] = base_url('/js/reviews.js');
             // Initializing of page
             $this->load->model('Reviews_model');
             $this->data->aReviews = $this->Reviews_model->GetAllReviews();

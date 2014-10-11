@@ -65,12 +65,14 @@
             </div>
             <div class="blocks-column col-md-4 col-sm-4">
                 <div class="map-container hidden-xs">
-                    <div class="map-wrap">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2344.2406401941926!2d38.
-                        299147!3d54.01625299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41369c0d9f62c
-                        20f%3A0x55c4303bb1a588a6!2z0YPQuy4g0KHQsNC00L7QstGB0LrQvtCz0L4sIDM2LCDQndC-0LLQvtC80L7RgdC60
-                        L7QstGB0LosINCi0YPQu9GM0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDMwMTY1MA!5e0!3m2!1sru!2sru!4v1409942548122"
-                        height="300" frameborder="0" style="border:0"></iframe>
+<!--                    <div class="map-wrap">-->
+<!--                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2344.2406401941926!2d38.-->
+<!--                        299147!3d54.01625299999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41369c0d9f62c-->
+<!--                        20f%3A0x55c4303bb1a588a6!2z0YPQuy4g0KHQsNC00L7QstGB0LrQvtCz0L4sIDM2LCDQndC-0LLQvtC80L7RgdC60-->
+<!--                        L7QstGB0LosINCi0YPQu9GM0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDMwMTY1MA!5e0!3m2!1sru!2sru!4v1409942548122"-->
+<!--                        height="300" frameborder="0" style="border:0"></iframe>-->
+<!--                    </div>-->
+                    <div class="map-wrap" id="ya_map">
                     </div>
                 </div>
                 <div class="contact-info-container">

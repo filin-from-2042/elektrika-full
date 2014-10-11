@@ -1172,6 +1172,13 @@ div.form-contact-container{
     border-radius: 10px;
 
 }
+.map-container #ya_map{
+    display: inline-block;
+    border:10px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 300px;
+}
 .blocks-column .contact-info-container{
     margin:10px 0;
     border-radius: 10px;
