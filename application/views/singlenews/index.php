@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div>
-                            <img class="image-preview" src="<?=$aFullPage[0]["news_preview_image"]?>">
+                            <img class="image-preview" src="<?= base_url('/images/' . $aFullPage[0]["news_preview_image"])?>">
                         </div>
                         <div class="post-full-text">
                             <p>

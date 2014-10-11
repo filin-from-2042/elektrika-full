@@ -8,28 +8,28 @@
     <div class="container short-service-description">
         <div class="row">
             <div class="col-md-3">
-                <span class="title">Скидки постоянным клиентам</span>
+                <span class="title">Свобода выбора</span>
 <!--                <span class="short-service subtitle">This is a Subtittle</span>-->
                 <p class="short-service text">
                     <?=$aPreviewText["tab_1"]?>
                 </p>
             </div>
             <div class="col-md-3">
-                <span class="title">Индивидуальный подход</span>
+                <span class="title">Широкие возможности применения</span>
 <!--                <span class="short-service subtitle">This is a Subtittle</span>-->
                 <p class="short-service text">
                     <?=$aPreviewText["tab_2"]?>
                 </p>
             </div>
             <div class="col-md-3">
-                <span class="title">Более 15 000 видов товаров в наличии</span>
+                <span class="title">Профессиональная консультация</span>
 <!--                <span class="short-service subtitle">This is a Subtittle</span>-->
                 <p class="short-service text">
                     <?=$aPreviewText["tab_3"]?>
                 </p>
             </div>
             <div class="col-md-3">
-                <span class="title">Низкие цены</span>
+                <span class="title">Выгодная система скидок</span>
 <!--                <span class="short-service subtitle">This is a Subtittle</span>-->
                 <p class="short-service text">
                     <?=$aPreviewText["tab_4"]?>

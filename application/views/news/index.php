@@ -20,7 +20,9 @@
                         echo '<div class="post-preview clearfix">
                                 <div class="post-title clearfix">
                                     <div class="col-md-9">
-                                        <h2>'. $aNews["news_title"] .'</h2>
+                                        <a href="' . site_url('/news/singlenews/'.$aNews["id"]) . '">
+                                            <h2>'. $aNews["news_title"] .'</h2>
+                                         </a>
                                         <small>Posted by <span class="author">'. $aNews["news_author"] .'</span> on
                                         <span class="post-date">'. $aNews["news_create_date"] .'</span> | Categories:
 
@@ -38,7 +40,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <img class="image-preview" src="'. base_url('/images/' . $aNews["news_preview_image"]) .'">
+                                     <a href="' . site_url('/news/singlenews/'.$aNews["id"]) . '">
+                                        <img class="image-preview" src="'. base_url('/images/' . $aNews["news_preview_image"]) .'">
+                                     </a>
                                 </div>
                                 <div class="col-md-12 post-preview-text">
                                     <p>'. $aNews["news_content"] .'</p>

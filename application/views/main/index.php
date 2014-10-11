@@ -116,7 +116,9 @@
 <!--                    </ul>-->
 <!--                </div>-->
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 copy-text">
-                    <img src="/images/image-footer.png"/>
+                    <a href="http://intelweb-nsk.ru">
+                        <img src="/images/image-footer.png"/>
+                    </a>
                     <div class="col-lg-8 col-md-8">
                         <p class="title-copyright">Электрика &trade;</p>
                         <p class="copyright"><?=$this->config->item('company_copyright')?></p>
