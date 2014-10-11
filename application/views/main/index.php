@@ -73,7 +73,7 @@
     <div class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                <div class="col-md-offset-1 col-lg-offset-2 col-lg-2 col-md-2 col-sm-3 col-xs-3">
                     <span class="title-menu">Навигация</span>
                     <ul>
                         <li><?= anchor('','Главная')?></li>
@@ -84,7 +84,7 @@
                         <li><?= anchor('job','Вакансии')?></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
+                <div class=" col-lg-2 col-md-2 col-sm-3 col-xs-3">
                     <span class="title-menu">Новости</span>
                     <ul>
                         <li><?= anchor('news/categories/1','Освещение')?></li>
@@ -92,30 +92,9 @@
                         <li><?= anchor('news/categories/3','Электроустановочные изделия')?></li>
                         <li><?= anchor('news/categories/4','Кабели')?></li>
                         <li><?= anchor('news/categories/5','Компании')?></li>
-                    </ul></div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-3">
-<!--                    <span class="title-menu">Доска вакансий</span>-->
-<!--                    <ul>-->
-<!--                        <li>--><?//= anchor('home','Animation')?><!--</li>-->
-<!--                        <li>--><?//= anchor('home','Brand Identy')?><!--</li>-->
-<!--                        <li>--><?//= anchor('home','Development')?><!--</li>-->
-<!--                        <li>--><?//= anchor('home','Graphic Design')?><!--</li>-->
-<!--                        <li>--><?//= anchor('home','Marketing')?><!--</li>-->
-<!--                        <li>--><?//= anchor('home','Web Design')?><!--</li>-->
-<!--                    </ul>-->
+                    </ul>
                 </div>
-<!--                <div class="col-lg-1 col-md-1 col-sm-3 col-xs-3">-->
-<!--                    <span class="title-menu">Connect</span>-->
-<!--                    <ul>-->
-<!--                        <li>--><?//= anchor('home','Twitter')?><!--</li>-->
-<!--                        <li>--><?//= anchor('home','Facebook')?><!--</li>-->
-<!--                        <li>--><?//= anchor('home','Youtube')?><!--</li>-->
-<!--                        <li>--><?//= anchor('home','Flickr')?><!--</li>-->
-<!--                        <li>--><?//= anchor('home','Vimeo')?><!--</li>-->
-<!--                        <li>--><?//= anchor('home','Tumblr')?><!--</li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 copy-text">
+                <div class="col-md-offset-1 col-lg-5 col-md-6 col-sm-6 col-xs-6 copy-text">
                     <a href="http://intelweb-nsk.ru">
                         <img src="/images/image-footer.png"/>
                     </a>
