@@ -28,43 +28,43 @@ class Home extends CPageController
 
     public $aImagesCarousel = array(
                                     array(
-                                        'src' =>  '/images/carousel/image-elfront.png',
+                                        'src' =>  '/images/carousel/image-elfront.jpg',
                                         'alt'   =>  'Магазин "Электрика"'
                                         ),
                                     array(
-                                        'src' =>  '/images/carousel/image-elinside.png',
+                                        'src' =>  '/images/carousel/image-elinside.jpg',
                                         'alt'   =>  'Торговый зал'
                                         ),
                                     array(
-                                        'src' =>  'images/carousel/image-elinside2.png',
+                                        'src' =>  'images/carousel/image-elinside2.jpg',
                                         'alt'   =>  'Торговый зал'
                                         ),
                                     array(
-                                        'src' =>  '/images/carousel/image-elinside3.png',
+                                        'src' =>  '/images/carousel/image-elinside3.jpg',
                                         'alt'   =>  'Торговый зал'
                                         ),
                                     array(
-                                        'src' =>  '/images/carousel/image-elinside4.png',
+                                        'src' =>  '/images/carousel/image-elinside4.jpg',
                                         'alt'   =>  'Торговый зал'
                                         ),
                                     array(
-                                        'src' =>  '/images/carousel/image-elinside5.png',
+                                        'src' =>  '/images/carousel/image-elinside5.jpg',
                                         'alt'   =>  'Торговый зал'
                                         ),
                                     array(
-                                        'src' =>  '/images/carousel/image-elinside7.png',
+                                        'src' =>  '/images/carousel/image-elinside7.jpg',
                                         'alt'   =>  'Торговый зал'
                                         ),
                                     array(
-                                        'src' =>  '/images/carousel/image-elinside8.png',
+                                        'src' =>  '/images/carousel/image-elinside8.jpg',
                                         'alt'   =>  'Торговый зал'
                                         ),
                                     array(
-                                        'src' =>  '/images/carousel/image-ellogo.png',
+                                        'src' =>  '/images/carousel/image-ellogo.jpg',
                                         'alt'   =>  'Магазин "Электрика"'
                                     ),
                                     array(
-                                        'src' =>  '/images/carousel/image-profront.png',
+                                        'src' =>  '/images/carousel/image-profront.jpg',
                                         'alt'   =>  'Магазин "Инструмент"'
                                     ),
 
