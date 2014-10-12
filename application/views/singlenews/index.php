@@ -9,33 +9,40 @@
                     <div class="post-full clearfix">
                         <div class="post-title clearfix">
                             <div class="col-md-9">
-                                <h2><?=$aFullPage[0]["news_title"]?></h2>
-<!--                                <small>Posted by <span class="author">--><?//=$aFullPage[0]["news_author"]?><!--</span> on <span-->
-<!--                                        class="post-date">--><?//=$aFullPage[0]["news_create_date"]?><!--</span> | Категории:<span class="post-categories"> Tutorials, Networks</span>-->
-<!--                                </small>-->
+                                <?php
+                                    // String with link on categories
+                                    $cCurrentCategories = '';
+                                    // Last array with category
+                                    $aLastCategory = end($aAllNews[0]["news_categories"]);
+                                    foreach($aAllNews[0]["news_categories"] as $aCategory)
+                                    {
+                                        $cCurrentCategories.='<a href="'.site_url('news/categories').'/'.$aCategory["id"].'">'.$aCategory["categories_name"].'</a>';
+                                        // If last don't concatenate
+                                        if($aCategory["id"] != $aLastCategory["id"]) $cCurrentCategories.=', ';
+                                    }
+                                ?>
+                                <h2><?=$aAllNews[0]["news_title"]?></h2>
+                                <small>Опубликовано <span class="post-date"><?=$aAllNews[0]["news_create_date"]?></span>
+                                    пользователем <span class="author"><?=$aAllNews[0]["news_author"]?></span>
+                                    | Категории: <span class="post-categories"><?=$cCurrentCategories?></span>
+                                </small>
                             </div>
                             <div class="col-md-3 col-md-3 text-right">
                                 <button class="btn btn-default" type="button">
                                     <span class="glyphicon glyphicon-comment"></span>
-                                    <span class="post-numbers">175</span>
+                                    <span class="post-numbers"><?=$aAllNews[0]["comments_count"]?></span>
                                 </button>
                             </div>
                         </div>
                         <div>
-                            <img class="image-preview" src="<?= base_url('/images/' . $aFullPage[0]["news_preview_image"])?>">
+                            <img class="image-preview" src="<?= base_url('/images/' . $aAllNews[0]["news_image"])?>">
                         </div>
                         <div class="post-full-text">
                             <p>
-                                <?=$aFullPage[0]["news_content"]?>
+                                <?=$aAllNews[0]["news_content"]?>
                             </p>
                         </div>
                     </div>
-                   <!-- <div class="repost-panel clearfix">
-                        <a id="twitter-repost" class="repost-icon col-md-3" href="#">Retweet this post</a>
-                        <a id="bookmark-delicious" class="repost-icon col-md-3" href="#">Bookmark in Delicious</a>
-                        <a id="save-digg" class="repost-icon col-md-3" href="#">Save in Digg</a>
-                        <a id="like-facebook" class="repost-icon col-md-3" href="#"> Like It Facebook</a>
-                    </div>-->
                     <div class="comment-panel clearfix">
                         <a href="#InputName" class="pull-right">
                             <button class="btn btn-default add-comment" type="button">
@@ -95,7 +102,7 @@
 <!--                            <small class="add-comment subtitle">This is a Subtittle</small>-->
                         </div>
                         <form class="add-comment-form clearfix" action="<?=site_url('news/addcomment/')?>">
-                            <input type="hidden" name="news_id" value="<?=$aFullPage[0]["id"]?>">
+                            <input type="hidden" name="news_id" value="<?=$aAllNews[0]["id"]?>">
                             <div class="row input-container">
                                 <div class="col-md-5 left-group">
                                     <div class="add-comment-form name">

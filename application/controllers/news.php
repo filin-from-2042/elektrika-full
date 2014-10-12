@@ -23,21 +23,24 @@ class News extends CBaseController
 
         // Initialize pagination config
         $this->config->load("news_pagination");
+
         // Initializing array with pagination config
-        $this->aPaginationConfig["per_page"] = $this->config->item('per_page');
-        $this->aPaginationConfig["full_tag_open"] = $this->config->item('full_tag_open');
-        $this->aPaginationConfig["full_tag_close"] = $this->config->item('full_tag_close');
-        $this->aPaginationConfig["prev_tag_open"] = $this->config->item('prev_tag_open');
-        $this->aPaginationConfig["prev_tag_close"] = $this->config->item('prev_tag_close');
-        $this->aPaginationConfig["prev_link"] = $this->config->item('prev_link');
-        $this->aPaginationConfig["next_tag_open"] = $this->config->item('next_tag_open');
-        $this->aPaginationConfig["next_tag_close"] = $this->config->item('next_tag_close');
-        $this->aPaginationConfig["next_link"] = $this->config->item('next_link');
+        $this->aPaginationConfig["per_page"]        = $this->config->item('per_page');
+        $this->aPaginationConfig["full_tag_open"]   = $this->config->item('full_tag_open');
+        $this->aPaginationConfig["full_tag_close"]  = $this->config->item('full_tag_close');
+        $this->aPaginationConfig["prev_tag_open"]   = $this->config->item('prev_tag_open');
+        $this->aPaginationConfig["prev_tag_close"]  = $this->config->item('prev_tag_close');
+        $this->aPaginationConfig["prev_link"]       = $this->config->item('prev_link');
+        $this->aPaginationConfig["next_tag_open"]   = $this->config->item('next_tag_open');
+        $this->aPaginationConfig["next_tag_close"]  = $this->config->item('next_tag_close');
+        $this->aPaginationConfig["next_link"]       = $this->config->item('next_link');
+        $this->aPaginationConfig["last_link"]       = $this->config->item('last_link');
+        $this->aPaginationConfig["first_link"]       = $this->config->item('first_link');
 
         // All categories for right column
         $this->data->aCategories = $this->news_model->GetAllCategories();
         // All archives for right column
-        $this->data->aArchives = $this->news_model->GetAllArchives();
+        $this->data->aArchives = $this->news_model->GetExistArchives();
         // Last comment for right column
         $this->data->aLastComments = $this->news_model->GetLastComments();
         // Last news for right column
@@ -102,17 +105,17 @@ class News extends CBaseController
 
         if( isset($nNewsId) && !empty($nNewsId) )
         {
-           $this->data->aFullPage = $this->news_model->GetDetailPage($nNewsId);
+            $this->data->aAllNews = $this->news_model->GetDetailPage($nNewsId);
 
             $this->data->aAllComments = $this->news_model->GetNewsComments($nNewsId);
 
-            $this->load->view('main/index.php');
+            $this->RenderGeneralData();
         }
     }
 
     //-------------------------------------------- RENDER WITH GENERAL DATA --------------------------------------------/
 
-    public function RenderGeneralData()
+    protected function RenderGeneralData()
     {
         // Adding categories for all news
         foreach($this->data->aAllNews as &$aNews)

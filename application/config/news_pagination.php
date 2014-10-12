@@ -15,3 +15,5 @@ $config['prev_link'] = 'На предыдущую';
 $config['next_tag_open'] = '<li class="next">';
 $config['next_tag_close'] = '</li>';
 $config['next_link'] = 'На следующую';
+$config['last_link'] = 'Последняя страница';
+$config['first_link'] = 'Первая страница';

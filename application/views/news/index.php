@@ -20,13 +20,10 @@
                         echo '<div class="post-preview clearfix">
                                 <div class="post-title clearfix">
                                     <div class="col-md-9">
-                                        <a href="' . site_url('/news/singlenews/'.$aNews["id"]) . '">
-                                            <h2>'. $aNews["news_title"] .'</h2>
-                                         </a>
-                                        <small>Posted by <span class="author">'. $aNews["news_author"] .'</span> on
-                                        <span class="post-date">'. $aNews["news_create_date"] .'</span> | Categories:
-
-                                        <span class="post-categories">
+                                            <h2><a href="' . site_url('/news/singlenews/'.$aNews["id"]) . '">'. $aNews["news_title"] .'</a></h2>
+                                        <small>Опубликовано <span class="post-date">'. $aNews["news_create_date"] .'</span>
+                                         пользователем <span class="author">'. $aNews["news_author"] .'</span>
+                                         | Категории: <span class="post-categories">
                                         ' . $cCurrentCategories . '
 
                                          </span></small>
@@ -40,12 +37,12 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                     <a href="' . site_url('/news/singlenews/'.$aNews["id"]) . '">
+                                     <a href="' . site_url('/news/singlenews/'.$aNews["id"]) . '" class="preview_link">
                                         <img class="image-preview" src="'. base_url('/images/' . $aNews["news_preview_image"]) .'">
                                      </a>
                                 </div>
                                 <div class="col-md-12 post-preview-text">
-                                    <p>'. $aNews["news_content"] .'</p>
+                                    <p>'. $aNews["news_preview_content"] .'</p>
                                 </div>
                                 <div class="col-md-12 post-bottom-panel">
                                     <a href="' . site_url('/news/singlenews/'.$aNews["id"]) . '">

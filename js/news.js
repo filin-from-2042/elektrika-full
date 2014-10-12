@@ -123,6 +123,10 @@ function news_FormSubmit()
 
                                                     $('.comments-container').append(domTextContainer);
                                                 }
+                                                // Count exists comments
+                                                var nCommentsCount = +$('.single-comment p').length;
+                                                // Refresh top count in title
+                                                $('.post-numbers').text(nCommentsCount)
 
                                                 $('#overlay').remove();
                                             }

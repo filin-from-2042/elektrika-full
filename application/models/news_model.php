@@ -112,6 +112,25 @@ class News_Model extends CBaseModel
     {
         return $this->db->order_by('archive_date','ASC')->get('archives')->result_array();
     }
+    //---------------------------------------- GET EXIST ARCHIVES --------------------------------------------------------/
+    public function GetExistArchives()
+    {
+        // All arcives
+        $aAllArch = $this->db->order_by('archive_date','ASC')->get('archives')->result_array();
+
+        $aExistArchives = array();
+        foreach($aAllArch as $aArch)
+        {
+            // Archive date from col 'archive_date(ex. 2014-09)'
+            $cArchiveDate = $this->news_model->GetArchiveDate($aArch["id"]);
+            $aArchiveNews = $this->db->like('news_create_date',$cArchiveDate,'after')->get($this->cTableName)->result_array();
+
+            if( $aArchiveNews )
+                $aExistArchives[] = $aArch;
+        }
+
+        return $aExistArchives;
+    }
 
     //---------------------------------------- GET LAST COMMENTS -------------------------------------------------------/
     public function GetLastComments()
