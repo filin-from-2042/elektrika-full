@@ -11,6 +11,9 @@
             <excludedPath path="/application/config/config.php" />
             <excludedPath path="/.htaccess" />
             <excludedPath path="/application/config/database.php" />
+            <excludedPath path="/_file-manager" />
+            <excludedPath path="/.tmb" />
+            <excludedPath path="/.quarantine" />
           </excludedPaths>
         </serverdata>
       </paths>

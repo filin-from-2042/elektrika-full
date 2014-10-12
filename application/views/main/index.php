@@ -77,7 +77,7 @@
                     <span class="title-menu">Навигация</span>
                     <ul>
                         <li><?= anchor('','Главная')?></li>
-                        <li><?= anchor('about','О компании')?></li>
+                        <li><?= anchor('about','Партнерство')?></li>
                         <li><?= anchor('news','Новости')?></li>
                         <li><?= anchor('actions','Акции')?></li>
                         <li><?= anchor('contact','Контакты')?></li>

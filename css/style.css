@@ -82,6 +82,9 @@ header .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a{
 	/*font-weight:bold;*/
     text-transform: uppercase;
 }
+header .navbar-inverse .navbar-header{
+    min-height: 70px;
+}
 header .navbar-inverse .navbar-header a#logo{
     padding-top: 0;
 }
@@ -605,6 +608,7 @@ body #overlay{
     min-width: 230px;
     text-decoration: none;
     width: 100%;
+    padding-right: 20px;
 }
 .columns-preview #people{
     background: url("../images/icon-people.png") no-repeat 100% 0 ;
