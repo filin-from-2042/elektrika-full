@@ -13,12 +13,12 @@ YMaps.jQuery(function () {
 
     // Создает метки магазинов
     var oStore34 = new YMaps.Placemark(new YMaps.GeoPoint(38.298307,54.016104));
-    var oStore36 = new YMaps.Placemark(new YMaps.GeoPoint(38.299142,54.016104));
+    var oStore36 = new YMaps.Placemark(new YMaps.GeoPoint(38.300076,54.016014));
     var oStoreUrv = new YMaps.Placemark(new YMaps.GeoPoint(38.262266,54.023478));
 
     // Добавляем имена меткам
     oStore34.name = '"Электрика", ул. Садовского д.34';
-    oStore36.name = '"Мир Профи", ул. Садовского д.36';
+    oStore36.name = '"Мир Профи", ул. Садовского д.38';
     oStoreUrv.name = '"Электрика", Новомосковск, ул. Мира д.34б';
 
     // Добавляет метку на карту

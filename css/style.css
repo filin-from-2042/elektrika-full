@@ -1149,9 +1149,11 @@ form.form-contact .btn-container{
     text-transform: uppercase;
     font-family: 'a_AvantelntBold';
 }
-.short-text > p{
-    color: #67747f;
-    margin: 35px 0;
+
+.short-text .elektrika-container,
+.short-text .profi_container{
+    padding-top: 40px;
+    text-align: center;
 }
 form.form-contact{
     margin: 20px 0;
@@ -1435,6 +1437,13 @@ div.form-contact-container{
     .single-service .row:first-child > div:first-child{
         text-align: center;
     }
+    .short-text p{
+        text-align: center;
+    }
+    .elektrika_content > div,
+    .profi_content > div{
+        padding-top: 20px;
+    }
 }
 /************* COL-XS- ***************************************/
 @media (max-width: 768px){
@@ -1529,5 +1538,12 @@ div.form-contact-container{
      }
     .short-info .tab-pane .row:first-child {
         height: auto;
+    }
+    .short-text p{
+        text-align: center;
+    }
+    .elektrika_content > div,
+    .profi_content > div{
+        padding-top: 20px;
     }
 }
