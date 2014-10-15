@@ -50,11 +50,6 @@
                                             <span class="more">Читать полностью</span>
                                         </button>
                                     </a>
-                                    <!--<a href="#">
-                                        <button class="btn btn-default share-this" type="button">
-                                            <span class="share">Share this <span class="glyphicon glyphicon-heart"></span></span>
-                                        </button>
-                                    </a>-->
                                 </div>
                             </div>';
                     }

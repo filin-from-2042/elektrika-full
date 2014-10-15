@@ -99,7 +99,6 @@
                     <div class="add-comment-container">
                         <div class="add-comment header">
                             <span class="add-comment title">Добавьте комментарий</span>
-<!--                            <small class="add-comment subtitle">This is a Subtittle</small>-->
                         </div>
                         <form class="add-comment-form clearfix" action="<?=site_url('news/addcomment/')?>">
                             <input type="hidden" name="news_id" value="<?=$aAllNews[0]["id"]?>">
@@ -113,10 +112,6 @@
                                         <input type="email" class="form-control" id="InputEmail" placeholder="Email (не будет опубликован)" name="author_email">
                                         <span class="required">*</span>
                                     </div>
-<!--                                    <div class="add-comment-form website">-->
-<!--                                        <input type="email" class="form-control" id="InputWebsite" placeholder="Website">-->
-<!--                                        <span class="required">*</span>-->
-<!--                                    </div>-->
                                 </div>
                                 <div class="col-md-7 right-group">
                                     <textarea class="form-control" id="Message" rows="6" placeholder="Сообщение" required="required" name="comment_text"></textarea>

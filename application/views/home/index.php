@@ -36,11 +36,6 @@
                                 </a>
                             </div>
                             <div class="col-md-6 col-sm-4">
-<!--                                <a href="#" class="pull-right">-->
-<!--                                    <button type="button" class="btn btn-default">-->
-<!--                                        <span class="get">Get in touch</span>-->
-<!--                                    </button>-->
-<!--                                </a>-->
                             </div>
                         </div>
                     </div>
