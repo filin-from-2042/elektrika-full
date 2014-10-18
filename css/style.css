@@ -99,7 +99,7 @@ header .navbar-inverse .navbar-header a#logo{
     padding-top: 0;
 }
 header .navbar-inverse .navbar-header a#logo > .icon{
-    background: url(../images/sprite_icon.png) no-repeat 3px -102px;
+    background: url(../images/sprite_icon.png) no-repeat 3px -101px;
     width: 300px;
     height: 67px;
 }
