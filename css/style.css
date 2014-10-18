@@ -618,6 +618,9 @@ body #overlay{
     float: left;
     padding-top: 30px;
 }
+a.link_logo{
+    float: left;
+}
 .footer .title-copyright,
 .footer .copyright,
 .footer .bottom-links a{

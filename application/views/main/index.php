@@ -95,7 +95,7 @@
                     </ul>
                 </div>
                 <div class="col-md-offset-1 col-lg-5 col-md-6 col-sm-6 col-xs-6 copy-text">
-                    <a href="http://intelweb-nsk.ru">
+                    <a href="http://intelweb-nsk.ru" class="link_logo">
                         <span class="icon devel_logo"></span>
 <!--                        <img src="/images/image-footer.png"/>-->
                     </a>
