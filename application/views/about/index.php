@@ -27,19 +27,28 @@
         <div class="columns clearfix">
             <div class="col-md-4 col-sm-4">
                 <div>
-                    <span id="people" href="#">Для строительных компаний</span>
+                    <span id="people" href="#">
+                        <span class="icon about_people"></span>
+                        Для строительных компаний
+                    </span>
                 </div>
                 <p><?=$aTabs["tab_1"]?></p>
             </div>
             <div class="col-md-4 col-sm-4">
                 <div>
-                    <span id="professionals" href="#">Монтажным организациям</span>
+                    <span id="professionals" href="#">
+                        <span class="icon about_professionals"></span>
+                        Монтажным организациям
+                    </span>
                 </div>
                 <p><?=$aTabs["tab_2"]?></p>
             </div>
             <div class="col-md-4 col-sm-4">
                 <div>
-                    <span id="quality" href="#">Поставщикам</span>
+                    <span id="quality" href="#">
+                        <span class="icon about_quality"></span>
+                        Поставщикам
+                    </span>
                 </div>
                 <p><?=$aTabs["tab_3"]?></p>
             </div>

@@ -4,6 +4,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="mail-icon clearfix">
+                        <span class="icon mail-icon"></span>
                         <div class="col-md-11 content-panel clearfix">
                             <div class="col-md-7">
                                 <p>

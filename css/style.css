@@ -75,12 +75,22 @@ header .nav.navbar-nav .dropdown-menu > li>a {
 	padding:8px 35px;
 }
 header .navbar-right .dropdown-menu{
-	right: -35px;
+	/*right: -35px;*/
+	right: -130px;
 	top: 110%;
 }
 header .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a{
 	/*font-weight:bold;*/
     text-transform: uppercase;
+}
+.navbar-inverse .navbar-nav > li > a#home{
+    width: 52px;
+    height: 52px;
+}
+.navbar-inverse .navbar-nav > li > a#home > .icon{
+    display: inline-block;
+    background: url(../images/sprite_icon.png) no-repeat -102px 2px;
+    width: 20px;
 }
 header .navbar-inverse .navbar-header{
     min-height: 70px;
@@ -88,13 +98,23 @@ header .navbar-inverse .navbar-header{
 header .navbar-inverse .navbar-header a#logo{
     padding-top: 0;
 }
+header .navbar-inverse .navbar-header a#logo > .icon{
+    background: url(../images/sprite_icon.png) no-repeat 3px -102px;
+    width: 300px;
+    height: 67px;
+}
 header .dropdown-menu > li#arrow-sub {
     background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
     left: 69px;
     margin: 0;
     padding: 0;
     position: absolute;
-    top: -16px;
+    top: -15px;
+}
+header .dropdown-menu > li#arrow-sub .icon.arrow-sub{
+    background: url(../images/sprite_icon.png) no-repeat -27px -26px;
+    width: 20px;
+    height: 10px;
 }
 /****************************slider***************************/
 .slider #myCarousel {
@@ -278,6 +298,18 @@ header .dropdown-menu > li#arrow-sub {
 .single-service .buttons-container .btn-default.readmore .more{
     background-image: url("../images/button-read-more.png");
 }
+.blog-columns .main-column .post-preview .btn-default .icon.read_more{
+    background: url(../images/sprite_icon.png) no-repeat -123px -26px;
+    float: right;
+    width: 17px;
+    height: 16px;
+    margin-left: 30px;
+    margin-top: 2px;
+}
+.blog-columns .main-column .post-preview .btn-default.readmore .more{
+    padding: 0;
+    background: none;
+}
 .single-service .buttons-container .btn-default .get-support{
     background-image: url("../images/icon-get-support.png");
 }
@@ -332,13 +364,40 @@ header .dropdown-menu > li#arrow-sub {
 	background:radial-gradient(at top center, #7b8ea2, #566472);
 }
 .tabs-images .left-col>.info-window>.block-icon{
-	background: url("../images/icon-video.png") no-repeat scroll 0 5px;	
+	/*background: url("../images/icon-video.png") no-repeat scroll 0 5px;	*/
+}
+.block-icon{
+    position: relative;
+}
+.icon.actions_big{
+    position: absolute;
+    left: 1px;
+    top: 6px;
+    background: url(../images/sprite_icon.png) no-repeat 0px -48px;
+    width: 48px;
+    height: 44px;
+}
+.icon.animals_big{
+    position: absolute;
+    left: 1px;
+    top: 6px;
+    background: url(../images/sprite_icon.png) no-repeat -104px -48px;
+    width: 67px;
+    height: 53px;
+}
+.icon.job_big{
+    position: absolute;
+    left: 1px;
+    top: 6px;
+    background: url(../images/sprite_icon.png) no-repeat -54px -48px;
+    width: 45px;
+    height: 45px;
 }
 .tabs-images .mid-col>.info-window>.block-icon{
-	background: url("../images/icon-apps.png") no-repeat scroll 0 5px;	
+	/*background: url("../images/icon-apps.png") no-repeat scroll 0 5px;	*/
 }
 .tabs-images .right-col>.info-window>.block-icon{
-	background: url("../images/icon-jobs.png") no-repeat scroll 0 5px;	
+	/*background: url("../images/icon-jobs.png") no-repeat scroll 0 5px;	*/
 }
 
 
@@ -362,13 +421,31 @@ header .dropdown-menu > li#arrow-sub {
     width: 100%
 }
 .tabs-images  #video-link{
-	background:url(../images/text-video.png) no-repeat 100% 0;
+	/*background:url(../images/text-video.png) no-repeat 100% 0;*/
+}
+.icon{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+.icon.actions_small{
+    background: url(../images/sprite_icon.png) no-repeat -204px 2px;
+    float: right;
+}
+.icon.animals_small{
+    background: url(../images/sprite_icon.png) no-repeat -203px -27px;
+    float: right;
+}
+.icon.job_small{
+    background: url(../images/sprite_icon.png) no-repeat -53px 1px;
+    float: right;
+    width: 26px;
 }
 .tabs-images  #phone-link{
-	background:url(../images/text-apps.png) no-repeat 100% 0;
+	/*background:url(../images/text-apps.png) no-repeat 100% 0;*/
 }
 .tabs-images  #jobs-link{
-	background:url(../images/text-jobs.png) no-repeat 100% 0;
+	/*background:url(../images/text-jobs.png) no-repeat 100% 0;*/
 }
 .tabs-images .btn .btn:hover{
 	 background-color: #48505e;
@@ -391,13 +468,23 @@ header .dropdown-menu > li#arrow-sub {
 	padding: 0 35px 0 0;
 }
 .tabs-images .btn .gototour{
-	background: url("../images/button-gototour.png") no-repeat 100% 0;
+	/*background: url("../images/button-gototour.png") no-repeat 100% 0;*/
+}
+.icon.actions_gototour{
+    background: url(../images/sprite_icon.png) no-repeat -168px -24px;
+    float: right;
+    height: 16px;
+}
+.icon.job_getajob{
+    background: url(../images/sprite_icon.png) no-repeat -88px -24px;
+    float: right;
+    height: 16px;
 }
 .tabs-images .btn .appstore{
 	background: url("../images/button-appstore.png") no-repeat 100% 0;
 }
 .tabs-images .btn .getajob{
-	background: url("../images/button-getajob.png") no-repeat 100% 0;
+	/*background: url("../images/button-getajob.png") no-repeat 100% 0;*/
 }
 .btn{
     letter-spacing: 1px;
@@ -419,9 +506,22 @@ header .dropdown-menu > li#arrow-sub {
     border-radius: 0 3px 3px 0;
 }
 .mail-panel .mail-icon{
-    background: url("../images/icon-mail.png") no-repeat 18px 50%, linear-gradient(to bottom, #88909c, #6c727a) repeat ;
+    /*background: url("../images/icon-mail.png") no-repeat 18px 50%, linear-gradient(to bottom, #88909c, #6c727a) repeat ;*/
+    background: linear-gradient(to bottom, #88909c, #6c727a) repeat ;
     padding-left: 65px;
     font-family: 'a_AvantelntBold';
+}
+.mail-panel .mail-icon{
+    position: relative;
+}
+.mail-panel .icon.mail-icon{
+    background: url(../images/sprite_icon.png) no-repeat 0px 0px;
+    position: absolute;
+    top:20px;
+    left: 18px;
+    padding: 0;
+    width: 29px;
+    height: 20px;
 }
 .mail-panel .content-panel{
     background: linear-gradient(to top, #33363a, #41454a 50%, #464a50 100%);
@@ -510,6 +610,13 @@ body #overlay{
 .footer .col-md-6 img{
     float:left;
     padding-top:30px;
+}
+.icon.devel_logo{
+    background: url(../images/sprite_icon.png) no-repeat -228px 0px;
+    width: 140px;
+    height: 92px;
+    float: left;
+    padding-top: 30px;
 }
 .footer .title-copyright,
 .footer .copyright,
@@ -608,16 +715,29 @@ body #overlay{
     min-width: 230px;
     text-decoration: none;
     width: 100%;
-    padding-right: 20px;
+    /*padding-right: 20px;*/
 }
 .columns-preview #people{
-    background: url("../images/icon-people.png") no-repeat 100% 0 ;
+    /*background: url("../images/icon-people.png") no-repeat 100% 0 ;*/
+}
+.icon.about_people{
+    background: url(../images/sprite_icon.png) no-repeat -123px 2px;
+    float: right;
 }
 .columns-preview #professionals{
-    background: url("../images/icon-professionals.png") no-repeat 100% 0 ;
+    /*background: url("../images/icon-professionals.png") no-repeat 100% 0 ;*/
+}
+.icon.about_professionals{
+    background: url(../images/sprite_icon.png) no-repeat -172px 2px;
+    float: right;
+    width: 32px;
 }
 .columns-preview #quality{
-    background: url("../images/icon-quality.png") no-repeat 100% 0;
+    /*background: url("../images/icon-quality.png") no-repeat 100% 0;*/
+}
+.icon.about_quality{
+    background: url(../images/sprite_icon.png) no-repeat -28px 0px;
+    float: right;
 }
 .columns-preview .columns>div:nth-child(1){
     padding-right:40px;
@@ -1444,6 +1564,9 @@ div.form-contact-container{
     .profi_content > div{
         padding-top: 20px;
     }
+    .mail-panel .icon.mail-icon{
+        top:40px;
+    }
 }
 /************* COL-XS- ***************************************/
 @media (max-width: 768px){
@@ -1545,5 +1668,8 @@ div.form-contact-container{
     .elektrika_content > div,
     .profi_content > div{
         padding-top: 20px;
+    }
+    .mail-panel .icon.mail-icon{
+        top:45px;
     }
 }

@@ -47,7 +47,10 @@
                                 <div class="col-md-12 post-bottom-panel">
                                     <a href="' . site_url('/news/singlenews/'.$aNews["id"]) . '">
                                         <button class="btn btn-default readmore" type="button">
-                                            <span class="more">Читать полностью</span>
+                                            <span class="more">
+                                                <span class="icon read_more"></span>
+                                                Читать полностью
+                                            </span>
                                         </button>
                                     </a>
                                 </div>

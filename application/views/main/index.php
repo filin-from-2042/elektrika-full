@@ -40,17 +40,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a  id="logo" href="<?=site_url('/')?>" class="navbar-brand"><img style="width: 300px;" src="/images/logo-el.png"></a>
+                <a  id="logo" href="<?=site_url('/')?>" class="navbar-brand"><span class="icon"></span></a>
             </div>
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li><?= anchor('/', '<img src="/images/home.png">')?></li>
+                    <li><?= anchor('/', '<span class="icon"></span>','id="home"')?></li>
                     <li><?= anchor('about','Партнерство')?></li>
                     <li><?= anchor('actions','Акции')?></a></li>
                     <li class="dropdown">
                         <?= anchor('','Новости<span class="caret"></span>',array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'))?>
                         <ul  class="dropdown-menu" role="menu">
-                            <li id="arrow-sub" class="hidden-xs"><img src="/images/arrow-sub.png"></li>
+                            <li id="arrow-sub" class="hidden-xs"><span class="icon arrow-sub"></span></li>
                             <li><a href="<?=site_url('news')?>">Все новости</a></li>
                             <?php
                                 foreach($this->data->aCategories as $aCategory)
@@ -96,7 +96,8 @@
                 </div>
                 <div class="col-md-offset-1 col-lg-5 col-md-6 col-sm-6 col-xs-6 copy-text">
                     <a href="http://intelweb-nsk.ru">
-                        <img src="/images/image-footer.png"/>
+                        <span class="icon devel_logo"></span>
+<!--                        <img src="/images/image-footer.png"/>-->
                     </a>
                     <div class="col-lg-8 col-md-8">
                         <p class="title-copyright">Электрика &trade;</p>
